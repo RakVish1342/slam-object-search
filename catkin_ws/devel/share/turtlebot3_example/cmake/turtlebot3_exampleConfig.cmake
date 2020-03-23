@@ -67,7 +67,7 @@ set(turtlebot3_example_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(turtlebot3_example_SOURCE_PREFIX /home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/turtlebot3/turtlebot3_example)
+  set(turtlebot3_example_SOURCE_PREFIX /home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/old__turtlebot3/turtlebot3_example)
   set(turtlebot3_example_DEVEL_PREFIX /home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/devel)
   set(turtlebot3_example_INSTALL_PREFIX "")
   set(turtlebot3_example_PREFIX ${turtlebot3_example_DEVEL_PREFIX})
@@ -103,7 +103,7 @@ if(NOT "/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/
         message(FATAL_ERROR "Project 'turtlebot3_example' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Pyo <pyo@robotis.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'turtlebot3_example' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/turtlebot3/turtlebot3_example/${idir}'.  Ask the maintainer 'Pyo <pyo@robotis.com>' to fix it.")
+      message(FATAL_ERROR "Project 'turtlebot3_example' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/old__turtlebot3/turtlebot3_example/${idir}'.  Ask the maintainer 'Pyo <pyo@robotis.com>' to fix it.")
     endif()
     _list_append_unique(turtlebot3_example_INCLUDE_DIRS ${include})
   endforeach()

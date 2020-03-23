@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/turtlebot3/turtlebot3_teleop/src".split(";")
+__extended_path = "/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/old__turtlebot3/turtlebot3_teleop/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p
