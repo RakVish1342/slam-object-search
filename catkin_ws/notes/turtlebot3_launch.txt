@@ -1,0 +1,40 @@
+robond@udacity:~/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+... logging to /home/robond/.ros/log/ee6aa33a-666c-11ea-87a9-000c298815f2/roslaunch-udacity-17940.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.129.128:33223/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+ * /turtlebot3_core/baud: 115200
+ * /turtlebot3_core/port: /dev/ttyACM0
+ * /turtlebot3_core/tf_prefix: 
+ * /turtlebot3_lds/frame_id: base_scan
+ * /turtlebot3_lds/port: /dev/ttyUSB0
+
+NODES
+  /
+    turtlebot3_core (rosserial_python/serial_node.py)
+    turtlebot3_diagnostics (turtlebot3_bringup/turtlebot3_diagnostics)
+    turtlebot3_lds (hls_lfcd_lds_driver/hlds_laser_publisher)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[turtlebot3_core-1]: started with pid [17957]
+ERROR: cannot launch node of type [hls_lfcd_lds_driver/hlds_laser_publisher]: hls_lfcd_lds_driver
+ROS path [0]=/opt/ros/kinetic/share/ros
+ROS path [1]=/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src
+ROS path [2]=/opt/ros/kinetic/share
+process[turtlebot3_diagnostics-3]: started with pid [17958]
+[INFO] [1584246627.838015]: ROS Serial Python Node
+[INFO] [1584246627.845322]: Connecting to /dev/ttyACM0 at 115200 baud
+[ERROR] [1584246627.847030]: Error opening serial: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+[turtlebot3_core-1] process has finished cleanly
+log file: /home/robond/.ros/log/ee6aa33a-666c-11ea-87a9-000c298815f2/turtlebot3_core-1*.log
+

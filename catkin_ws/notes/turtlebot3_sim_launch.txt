@@ -1,0 +1,9 @@
+export TURTLEBOT3_MODEL=${TB3_MODEL}
+export TURTLEBOT3_MODEL=${TB3_MODEL}
+export TURTLEBOT3_MODEL=${TB3_MODEL}
+
+with TB3_MODEL = waffle_pi
+
+robond@udacity:~/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+[turtlebot3_empty_world.launch] is neither a launch file in package [turtlebot3_gazebo] nor is [turtlebot3_gazebo] a launch file name
+The traceback for the exception was written to the log file
