@@ -55,6 +55,7 @@ include_directories(
 )
 
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
+add_executable(motion_model src/motionModel.cpp)
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
@@ -72,6 +73,9 @@ install(DIRECTORY include/${PROJECT_NAME}/
 install(DIRECTORY launch models rviz worlds 
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+message("***************************************")
+message(CATKIN_PACKAGE_BIN_DESTINATION)
 
 ################################################################################
 # Test
