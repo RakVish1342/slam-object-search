@@ -11,7 +11,6 @@ void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
 
     double odomX = msg->pose.pose.position.x;
     double odomY = msg->pose.pose.position.y;
-
     std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
 }
 
@@ -41,12 +40,12 @@ int main(int argc, char** argv)
     double nextY = 0, prevY = 0;
     double nextTh = PI/2.0, prevTh = PI/2.0;
     geometry_msgs::Twist msg;
-    ros::Rate loop_rate(125);
+    ros::Rate loop_rate(100);
     while (ros::ok()) 
     {
         // global time
         double tstop = ros::Time::now().toSec() - tstart;
-        std::cout << "glabal_time: " << tstop << std::endl;
+        std::cout << "global_time: " << tstop << std::endl;
 
         //delta_t calc
         currT = ros::Time::now().toSec();
@@ -59,8 +58,9 @@ int main(int argc, char** argv)
         if(tstop>0 && tstop<4)
         {
             msg.linear.x = 0.5;
+            msg.angular.z = 0.25;
             linVel = 0.5;
-            angVel = 0.0;
+            angVel = 0.25;
         }
         // else if(tstop>=3 && tstop<4)
         // {
@@ -108,7 +108,7 @@ int main(int argc, char** argv)
 
         turtle_vel.publish(msg);
 
-        // ros::spinOnce();
+        ros::spinOnce();
 
         loop_rate.sleep();
     }
