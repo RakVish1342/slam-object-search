@@ -55,7 +55,7 @@ int main(int argc, char** argv)
         std::cout << "DeltaT: " << deltaT << std::endl;
 
         double linVel, angVel;
-        if(tstop>0 && tstop<4)
+        if(tstop>0 && tstop<6)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
@@ -69,7 +69,7 @@ int main(int argc, char** argv)
         //     linVel = 0.5;
         //     angVel = 3.1415/2;
         // }
-        else if(tstop>=4)
+        else if(tstop>=6)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
