@@ -17,14 +17,9 @@ void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
 
 int main(int argc, char** argv)
 {
-    std::cout << "hello" << std::endl;
-    std::cout << "hello" << std::endl;
-    std::cout << "hello" << std::endl;
-    std::cout << "hello" << std::endl;
-    std::cout << "hello" << std::endl;
 
     ros::init(argc, argv, "motion_model");
-    // ROS_ERROR_STREAM("personal ERROR MESSAGE");
+    ROS_INFO_STREAM("Started: motion_model Node");
 
     ros::NodeHandle n;
 
@@ -34,12 +29,16 @@ int main(int argc, char** argv)
     ros::Subscriber turtle_odom = n.subscribe("/odom", 10, cbOdom);
 
     double tstart = ros::Time::now().toSec();
-    double currT = ros::Time::now().toSec();
-    double prevT = ros::Time::now().toSec();
+    double currT = tstart;
+    double prevT = tstart;
+
     double nextX = 0, prevX = 0;
     double nextY = 0, prevY = 0;
-    double nextTh = PI/2.0, prevTh = PI/2.0;
+    double nextTh = PI/2.0, prevTh = PI/2.0; // Angle measured wrt global horizontal frame that gets initialized to
+                                             // Z(into plane), Y(forward direction of init robot pose), X(right of robot)
+
     geometry_msgs::Twist msg;
+
     ros::Rate loop_rate(100);
     while (ros::ok()) 
     {
@@ -55,7 +54,13 @@ int main(int argc, char** argv)
         std::cout << "DeltaT: " << deltaT << std::endl;
 
         double linVel, angVel;
-        if(tstop>0 && tstop<6)
+        // test cases
+        // t: 0,4; vel: 0.5,0.25 (linVel, angVel)
+        // t: 0,6; vel: 0.5,0.25 (linVel, angVel)
+        // t: 0,6; vel: 0.25,0.5 (linVel, angVel)
+        // t: 0,8; vel: 0.25,0.5 (linVel, angVel)
+
+        if(tstop>0 && tstop<8)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
@@ -69,7 +74,7 @@ int main(int argc, char** argv)
         //     linVel = 0.5;
         //     angVel = 3.1415/2;
         // }
-        else if(tstop>=6)
+        else if(tstop>=8)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
@@ -91,7 +96,6 @@ int main(int argc, char** argv)
         else
         {
             std::cout << "ELSE" << std::endl;
-            std::cout << cos(prevTh) << std::endl;
             double dist = linVel*deltaT;
 
             // ADD other condition of angles 
