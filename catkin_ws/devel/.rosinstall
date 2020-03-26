@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/devel/setup.sh
+    local-name: /root/SES/slam-object-search/catkin_ws/devel/setup.sh
