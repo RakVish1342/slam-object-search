@@ -205,7 +205,7 @@
         <instance_light url="#Lamp-light"/>
       </node>
       <node id="Cube" name="Cube" type="NODE">
-        <matrix sid="transform">0.04500002 0 0 0 0 0.04500002 0 0 0 0 0.00735795 0 0 0 0 1</matrix>
+        <matrix sid="transform">0.04500002 0 0 0 0 0.04500002 0 0 0 0 0.04500002 0 0 0 0 1</matrix>
         <instance_geometry url="#Cube-mesh" name="Cube">
           <bind_material>
             <technique_common>

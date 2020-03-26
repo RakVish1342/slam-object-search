@@ -2,7 +2,7 @@
 <sdf version='1.6'>
   <model name='block_color'>
     <link name='link_1'>
-      <pose frame=''>0 0 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -13,13 +13,13 @@
           <iyz>0</iyz>
           <izz>0.166667</izz>
         </inertia>
-        <pose frame=''>1 0 0 0 -0 0</pose>
+        <pose frame=''>1 0 0 0 -3.14 0</pose>
       </inertial>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
-        <pose frame=''>1 0 0 0 -0 0</pose>
+        <pose frame=''>1 0 0 0 -3.14 0</pose>
         <geometry>
 	  <mesh><uri>model://block_color/apriltag.dae</uri></mesh>
 <!--
@@ -28,29 +28,33 @@
           </box>
 -->
         </geometry>
-<!--
+
         <material>
           <lighting>1</lighting>
+<!--
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/Grey</name>
           </script>
+-->
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
+<!--
           <ambient>1 0 0 1</ambient>
           <diffuse>1 0 0 1</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
 -->
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>1 0 0 0 -0 0</pose>
+        <pose frame=''>1 0 0 0 -3.14 0</pose>
         <geometry>
 	<mesh><uri>model://block_color/apriltag.dae</uri></mesh>
 <!--
