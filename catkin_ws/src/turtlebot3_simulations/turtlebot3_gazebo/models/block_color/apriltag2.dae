@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
     </contributor>
-    <created>2020-03-24T00:53:21</created>
-    <modified>2020-03-24T00:53:21</modified>
+    <created>2020-03-27T05:07:16</created>
+    <modified>2020-03-27T05:07:16</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -102,21 +102,21 @@
     </light>
   </library_lights>
   <library_images>
-    <image id="MarkerData_1_png" name="MarkerData_1_png">
-      <init_from>MarkerData_1.png</init_from>
+    <image id="MarkerData_2_png" name="MarkerData_2_png">
+      <init_from>MarkerData_2.png</init_from>
     </image>
   </library_images>
   <library_effects>
     <effect id="Material_001-effect">
       <profile_COMMON>
-        <newparam sid="MarkerData_1_png-surface">
+        <newparam sid="MarkerData_2_png-surface">
           <surface type="2D">
-            <init_from>MarkerData_1_png</init_from>
+            <init_from>MarkerData_2_png</init_from>
           </surface>
         </newparam>
-        <newparam sid="MarkerData_1_png-sampler">
+        <newparam sid="MarkerData_2_png-sampler">
           <sampler2D>
-            <source>MarkerData_1_png-surface</source>
+            <source>MarkerData_2_png-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -128,7 +128,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <texture texture="MarkerData_1_png-sampler"/>
+              <texture texture="MarkerData_2_png-sampler"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -205,7 +205,7 @@
         <instance_light url="#Lamp-light"/>
       </node>
       <node id="Cube" name="Cube" type="NODE">
-        <matrix sid="transform">0.04500002 0 0 0 0 0.04500002 0 0 0 0 0.04500002 0 0 0 0 1</matrix>
+        <matrix sid="transform">0.04499998 0 0 0 0 0.04499998 0 0 0 0 0.045 0 0 0 0 1</matrix>
         <instance_geometry url="#Cube-mesh" name="Cube">
           <bind_material>
             <technique_common>

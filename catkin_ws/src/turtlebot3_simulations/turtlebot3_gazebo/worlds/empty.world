@@ -39,6 +39,7 @@
     </physics>
 
  <!-- Load world -->
+
     <include>
       <uri>model://block_color</uri>
     </include>
