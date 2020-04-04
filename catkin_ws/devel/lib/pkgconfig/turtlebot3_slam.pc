@@ -1,8 +1,0 @@
-prefix=/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/devel
-
-Name: turtlebot3_slam
-Description: Description of turtlebot3_slam
-Version: 1.2.1
-Cflags: -I/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/src/old__turtlebot3/turtlebot3_slam/include
-Libs: -L/home/robond/Documents/rakshith/ASU/sem2/ses_598_autonomous_sys/project/catkin_ws/devel/lib 
-Requires: roscpp sensor_msgs
