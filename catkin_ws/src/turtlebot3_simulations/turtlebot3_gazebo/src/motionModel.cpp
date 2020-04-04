@@ -6,6 +6,43 @@
 #define PI 3.14159265
 
 
+double normalizeAngle(double angle)
+{
+	double output;
+	//double rem = std::abs(angle) % PI;
+	double rem = std::fmod(std::abs(angle), PI);
+	double quo = (std::abs(angle) - rem) / PI;
+
+	int oddQuo = std::fmod(quo, 2);
+	// Positive angle input or 0
+	if (angle >= 0)
+	{
+		if (oddQuo == 0)
+		{
+			output = rem;
+		}
+		else
+		{
+			output = -(PI - rem);
+		}
+	}
+	// Negative Angle received
+	else
+	{
+		if (oddQuo == 0)
+		{
+			output = -rem;
+		}
+		else
+		{
+			output = (PI - rem);
+		}
+	}
+
+	return output;
+}
+
+
 void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
 {
 
@@ -82,13 +119,14 @@ int main(int argc, char** argv)
             angVel = 0.0;         
         }
 
+        
         //motion model
         if (angVel > 0.001)
         {
             std::cout << "IF" << std::endl;
             double r = linVel/angVel;
 
-            // ADD other condition of angles 
+            //?? ADD other condition of angles 
             nextX = prevX + ( -r*sin(prevTh) + r*sin(prevTh + angVel*deltaT) );
             nextY = prevY + ( +r*cos(prevTh) - r*cos(prevTh + angVel*deltaT) );
             nextTh = prevTh + angVel*deltaT;
@@ -103,6 +141,8 @@ int main(int argc, char** argv)
             nextY = prevY + dist*sin(prevTh);
             nextTh = prevTh;
         }
+
+        nextTh = normalizeAngle(nextTh);
     
         prevX = nextX;
         prevY = nextY;
@@ -116,9 +156,6 @@ int main(int argc, char** argv)
 
         loop_rate.sleep();
     }
-
-    
-
 
     return 0;
 }
