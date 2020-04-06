@@ -7,6 +7,9 @@ project(turtlebot3_gazebo)
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
 
+## User defined valriables
+set(EIGEN_DIRS "/usr/include/eigen3")
+
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################
@@ -52,6 +55,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${GAZEBO_INCLUDE_DIRS}
+  ${EIGEN_DIRS}
 )
 
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
