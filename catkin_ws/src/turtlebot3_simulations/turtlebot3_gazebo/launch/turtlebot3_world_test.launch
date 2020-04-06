@@ -19,8 +19,12 @@
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
+  <?ignore
   <!-- The motion model node -->
   <node name="motion_model" pkg="turtlebot3_gazebo" type="motion_model" output="screen"/>
+  ?>
 
+  <!-- The ekfSingleBlock node -->
+  <node name="ekf_singleBlock" pkg="turtlebot3_gazebo" type="ekf_singleBlock" output="screen"/>
 
 </launch>
