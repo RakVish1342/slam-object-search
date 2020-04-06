@@ -45,12 +45,70 @@ double normalizeAngle(double angle)
 }
 
 
+
+class turtleEkf
+{
+
+private:
+double nextX, prevX;
+double nextY, prevY;
+double nextTh, prevTh; // Angle measured wrt global horizontal frame that gets initialized to
+                                            // Z(into plane), Y(forward direction of init robot pose), X(right of robot)
+
+public:
+turtleEkf() :
+nextX(0), prevX(0),
+nextY(0), prevY(0),
+nextTh(PI/2.0), prevTh(PI/2.0)
+{
+
+}
+
+~turtleEkf();
+
+// void motionModel()
+void motionModel(double angVel, double linVel, double deltaT)
+{
+  
+    if (angVel > 0.001)
+    {
+        std::cout << "IF" << std::endl;
+        double r = linVel/angVel;
+
+        //?? ADD other condition of angles 
+        nextX = prevX + ( -r*sin(prevTh) + r*sin(prevTh + angVel*deltaT) );
+        nextY = prevY + ( +r*cos(prevTh) - r*cos(prevTh + angVel*deltaT) );
+        nextTh = prevTh + angVel*deltaT;
+    }
+    else
+    {
+        // std::cout << "ELSE" << std::endl;
+        double dist = linVel*deltaT;
+
+        // ADD other condition of angles 
+        nextX = prevX - dist*cos(prevTh);
+        nextY = prevY + dist*sin(prevTh);
+        nextTh = prevTh;
+    }
+
+    nextTh = normalizeAngle(nextTh);
+
+    prevX = nextX;
+    prevY = nextY;
+    prevTh = nextTh;
+
+    std::cout << "X', Y', Th': " << nextX << ", " << nextY << ", " << nextTh << std::endl;
+};    
+
+};
+
+
 void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
 {
 
     double odomX = msg->pose.pose.position.x;
     double odomY = msg->pose.pose.position.y;
-    // std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
+    std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
 }
 
 void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
@@ -69,7 +127,7 @@ void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
         // Considering only finite ranges
         if (ray >= std::numeric_limits<float>::max())
         {
-            std::cout << "LOL";
+            std::cout << "LEL";
             continue;
         }
         std::cout << ray << ", ";
@@ -87,46 +145,25 @@ int main(int argc, char** argv)
     ROS_INFO_STREAM("Started: efk_singleBlock Node");
 
     ros::NodeHandle n;
-
     ros::Publisher turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-
-    // ros::Subscriber turtle_odom = n.subscribe<geometry_msgs::Twist>("/odom", 10, cbOdom);
     ros::Subscriber turtle_odom = n.subscribe("/odom", 10, cbOdom);
-
     ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
 
     double tstart = ros::Time::now().toSec();
     double currT = tstart;
     double prevT = tstart;
 
-    double nextX = 0, prevX = 0;
-    double nextY = 0, prevY = 0;
-    double nextTh = PI/2.0, prevTh = PI/2.0; // Angle measured wrt global horizontal frame that gets initialized to
-                                             // Z(into plane), Y(forward direction of init robot pose), X(right of robot)
-
     geometry_msgs::Twist msg;
+
+    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue
 
     ros::Rate loop_rate(100);
     while (ros::ok()) 
     {
         // global time
         double tstop = ros::Time::now().toSec() - tstart;
-        // std::cout << "global_time: " << tstop << std::endl;
-
-        //delta_t calc
-        currT = ros::Time::now().toSec();
-        double deltaT = currT - prevT;
-        prevT = currT;
-        // std::cout << std::endl;
-        // std::cout << "DeltaT: " << deltaT << std::endl;
 
         double linVel, angVel;
-        // test cases
-        // t: 0,4; vel: 0.5,0.25 (linVel, angVel)
-        // t: 0,6; vel: 0.5,0.25 (linVel, angVel)
-        // t: 0,6; vel: 0.25,0.5 (linVel, angVel)
-        // t: 0,8; vel: 0.25,0.5 (linVel, angVel)
-
         if(tstop>0 && tstop<12)
         {
             msg.linear.x = 0.5;
@@ -134,13 +171,6 @@ int main(int argc, char** argv)
             linVel = 0.5;
             angVel = 0.25;
         }
-        // else if(tstop>=3 && tstop<4)
-        // {
-        //     msg.linear.x = 0.5;
-        //     msg.angular.z = PI/2;
-        //     linVel = 0.5;
-        //     angVel = 3.1415/2;
-        // }
         else if(tstop>=12)
         {
             msg.linear.x = 0.0;
@@ -149,39 +179,19 @@ int main(int argc, char** argv)
             angVel = 0.0;         
         }
 
-        
-        //motion model
-        if (angVel > 0.001)
-        {
-            // std::cout << "IF" << std::endl;
-            double r = linVel/angVel;
-
-            //?? ADD other condition of angles 
-            nextX = prevX + ( -r*sin(prevTh) + r*sin(prevTh + angVel*deltaT) );
-            nextY = prevY + ( +r*cos(prevTh) - r*cos(prevTh + angVel*deltaT) );
-            nextTh = prevTh + angVel*deltaT;
-        }
-        else
-        {
-            // std::cout << "ELSE" << std::endl;
-            double dist = linVel*deltaT;
-
-            // ADD other condition of angles 
-            nextX = prevX - dist*cos(prevTh);
-            nextY = prevY + dist*sin(prevTh);
-            nextTh = prevTh;
-        }
-
-        nextTh = normalizeAngle(nextTh);
-    
-        prevX = nextX;
-        prevY = nextY;
-        prevTh = nextTh;
-
-        // std::cout << "X', Y', Th': " << nextX << ", " << nextY << ", " << nextTh << std::endl;
-
+        // send velocity commands
         turtle_vel.publish(msg);
 
+        //delta_t calc
+        currT = ros::Time::now().toSec();
+        double deltaT = currT - prevT;
+        prevT = currT;
+
+        // Call the motion model and pass lin and angular vel
+        turtlebot->motionModel(angVel, linVel, deltaT);
+        // turtlebot->motionModel();
+
+        // Call subscriber callbacks once
         ros::spinOnce();
 
         loop_rate.sleep();
