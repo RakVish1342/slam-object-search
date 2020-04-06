@@ -1,6 +1,7 @@
 #include "/opt/ros/kinetic/include/ros/ros.h"
 #include "/opt/ros/kinetic/include/geometry_msgs/Twist.h"
 #include <math.h>
+#include <limits>
 #include <nav_msgs/Odometry.h> // Found it using "rostopic info /odom". Is located in /opt/ros/kinetic/include/nav_msgs
 #include <sensor_msgs/LaserScan.h> // Found it using "rostopic info /scan". Is located in /opt/ros/kinetic/include/sensor_msgs
 
@@ -49,7 +50,7 @@ void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
 
     double odomX = msg->pose.pose.position.x;
     double odomY = msg->pose.pose.position.y;
-    std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
+    // std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
 }
 
 void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
@@ -64,6 +65,13 @@ void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
     std::cout << "--- LIDAR ---" << std::endl;
     for (float ray : lidarRange)
     {
+
+        // Considering only finite ranges
+        if (ray >= std::numeric_limits<float>::max())
+        {
+            std::cout << "LOL";
+            continue;
+        }
         std::cout << ray << ", ";
     }
     std::cout << std::endl;
@@ -103,14 +111,14 @@ int main(int argc, char** argv)
     {
         // global time
         double tstop = ros::Time::now().toSec() - tstart;
-        std::cout << "global_time: " << tstop << std::endl;
+        // std::cout << "global_time: " << tstop << std::endl;
 
         //delta_t calc
         currT = ros::Time::now().toSec();
         double deltaT = currT - prevT;
         prevT = currT;
-        std::cout << std::endl;
-        std::cout << "DeltaT: " << deltaT << std::endl;
+        // std::cout << std::endl;
+        // std::cout << "DeltaT: " << deltaT << std::endl;
 
         double linVel, angVel;
         // test cases
@@ -119,7 +127,7 @@ int main(int argc, char** argv)
         // t: 0,6; vel: 0.25,0.5 (linVel, angVel)
         // t: 0,8; vel: 0.25,0.5 (linVel, angVel)
 
-        if(tstop>0 && tstop<6)
+        if(tstop>0 && tstop<12)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
@@ -133,7 +141,7 @@ int main(int argc, char** argv)
         //     linVel = 0.5;
         //     angVel = 3.1415/2;
         // }
-        else if(tstop>=6)
+        else if(tstop>=12)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
@@ -145,7 +153,7 @@ int main(int argc, char** argv)
         //motion model
         if (angVel > 0.001)
         {
-            std::cout << "IF" << std::endl;
+            // std::cout << "IF" << std::endl;
             double r = linVel/angVel;
 
             //?? ADD other condition of angles 
@@ -155,7 +163,7 @@ int main(int argc, char** argv)
         }
         else
         {
-            std::cout << "ELSE" << std::endl;
+            // std::cout << "ELSE" << std::endl;
             double dist = linVel*deltaT;
 
             // ADD other condition of angles 
@@ -170,7 +178,7 @@ int main(int argc, char** argv)
         prevY = nextY;
         prevTh = nextTh;
 
-        std::cout << "X', Y', Th': " << nextX << ", " << nextY << ", " << nextTh << std::endl;
+        // std::cout << "X', Y', Th': " << nextX << ", " << nextY << ", " << nextTh << std::endl;
 
         turtle_vel.publish(msg);
 

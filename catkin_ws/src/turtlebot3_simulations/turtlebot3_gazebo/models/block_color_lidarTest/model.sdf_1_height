@@ -1,8 +1,10 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='block_color_lidarTest'>
-    <link name='link_1'>
-      <pose frame=''>-0 -0 0 0 -0 0</pose>
+
+
+    <link name='link_2'>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -18,38 +20,48 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='visual'>
+      <visual name='visual_2'>
         <pose frame=''>0 1 0 0 -0 0</pose>
         <geometry>
+	  <mesh><uri>model://block_color_lidarTest/apriltag2.dae</uri></mesh>
           <box>
-            <size>0.05 0.05 2</size>
+            <size>1 1 2</size>
           </box>
         </geometry>
+
         <material>
           <lighting>1</lighting>
+<!--
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/Grey</name>
           </script>
+-->
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
+<!--
           <ambient>1 0 0 1</ambient>
           <diffuse>1 0 0 1</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
-          <emissive>0 0 0 1</emissive>
+-->
+          <emissive>0.5 0.5 0.5 1</emissive>
         </material>
+
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <collision name='collision'>
+      <collision name='collision_2'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
         <pose frame=''>0 1 0 0 -0 0</pose>
         <geometry>
+	<mesh><uri>model://block_color_lidarTest/apriltag2.dae</uri></mesh>
+<!--
           <box>
             <size>1 1 1</size>
           </box>
+-->
         </geometry>
         <surface>
           <friction>
