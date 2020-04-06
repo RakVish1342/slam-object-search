@@ -1,7 +1,8 @@
 #include "/opt/ros/kinetic/include/ros/ros.h"
 #include "/opt/ros/kinetic/include/geometry_msgs/Twist.h"
 #include <math.h>
-#include <nav_msgs/Odometry.h>
+#include <nav_msgs/Odometry.h> // Found it using "rostopic info /odom". Is located in /opt/ros/kinetic/include/nav_msgs
+#include <sensor_msgs/LaserScan.h> // Found it using "rostopic info /scan". Is located in /opt/ros/kinetic/include/sensor_msgs
 
 #define PI 3.14159265
 
@@ -51,6 +52,25 @@ void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
     std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
 }
 
+void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
+{
+    double angleMin = msg->angle_min;
+    double angleInc = msg->angle_increment;
+
+    // std::vector<double> lidarRange = msg->ranges;
+    std::vector<float> lidarRange = msg->ranges;
+    // std::vector<double> lidarIntensity = msg.intensities;
+
+    std::cout << "--- LIDAR ---" << std::endl;
+    for (float ray : lidarRange)
+    {
+        std::cout << ray << ", ";
+    }
+    std::cout << std::endl;
+    std::cout << "--- /LIDAR ---" << std::endl;    
+
+}
+
 
 int main(int argc, char** argv)
 {
@@ -64,6 +84,8 @@ int main(int argc, char** argv)
 
     // ros::Subscriber turtle_odom = n.subscribe<geometry_msgs::Twist>("/odom", 10, cbOdom);
     ros::Subscriber turtle_odom = n.subscribe("/odom", 10, cbOdom);
+
+    ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
 
     double tstart = ros::Time::now().toSec();
     double currT = tstart;
@@ -97,7 +119,7 @@ int main(int argc, char** argv)
         // t: 0,6; vel: 0.25,0.5 (linVel, angVel)
         // t: 0,8; vel: 0.25,0.5 (linVel, angVel)
 
-        if(tstop>0 && tstop<8)
+        if(tstop>0 && tstop<6)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
@@ -111,7 +133,7 @@ int main(int argc, char** argv)
         //     linVel = 0.5;
         //     angVel = 3.1415/2;
         // }
-        else if(tstop>=8)
+        else if(tstop>=6)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
