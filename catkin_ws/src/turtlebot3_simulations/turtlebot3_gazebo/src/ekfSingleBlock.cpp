@@ -54,37 +54,39 @@ class turtleEkf
 {
 
 private:
-    double nextX, prevX;
-    double nextY, prevY;
-    double nextTh, prevTh; // Angle measured wrt global horizontal frame that gets initialized to
-                                                // Z(into plane), Y(forward direction of init robot pose), X(right of robot)
     float INF; // float type since lidar vals are in float
+
     int numModelStates;
     int numLandmarks;
     int numStates;
-    std::vector<double> states;
+
+    Eigen::VectorXd states;
+    Eigen::VectorXd prevStates;
     Eigen::MatrixXd variances;
+    Eigen::MatrixXd Fx;
 
 public:
     turtleEkf() :
     INF(std::numeric_limits<float>::max()),
-    nextX(0), prevX(0),
-    nextY(0), prevY(0),
-    nextTh(PI/2.0), prevTh(PI/2.0),
     numModelStates(3),
     numLandmarks(1),
     numStates(numModelStates + 2*numLandmarks),
-    states(std::vector<double> (0)), 
-    variances(Eigen::MatrixXd::Zero(numStates, numStates))
+    states(Eigen::VectorXd::Zero(numStates)),
+    prevStates(Eigen::VectorXd::Zero(numStates)),
+    variances(Eigen::MatrixXd::Zero(numStates, numStates)),
+    Fx (Eigen::MatrixXd::Zero(numStates, numStates))
     {
+        // Init theta to PI/2 as per X axis definition: perp to the right
+        states(2) = PI/2.0;
+        prevStates(2) = PI/2.0;
         // Set landmark variances to inf
-        variances.bottomRightCorner(numLandmarks, numLandmarks) = Eigen::MatrixXd::Constant(numLandmarks, numLandmarks, INF);
+        variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
+        Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
     };
 
     ~turtleEkf() {};
 
-    // void motionModel()
-    std::vector<double> motionModel(double angVel, double linVel, double deltaT)
+    Eigen::VectorXd motionModel(double angVel, double linVel, double deltaT)
     {
     
         if (angVel > 0.001)
@@ -93,9 +95,9 @@ public:
             double r = linVel/angVel;
 
             //?? ADD other condition of angles 
-            nextX = prevX + ( -r*sin(prevTh) + r*sin(prevTh + angVel*deltaT) );
-            nextY = prevY + ( +r*cos(prevTh) - r*cos(prevTh + angVel*deltaT) );
-            nextTh = prevTh + angVel*deltaT;
+            states(0) = prevStates(0) + ( -r*sin(prevStates(2)) + r*sin(prevStates(2) + angVel*deltaT) );
+            states(1) = prevStates(1) + ( +r*cos(prevStates(2)) - r*cos(prevStates(2) + angVel*deltaT) );
+            states(2) = prevStates(2) + angVel*deltaT;
         }
         else
         {
@@ -103,30 +105,28 @@ public:
             double dist = linVel*deltaT;
 
             // ADD other condition of angles 
-            nextX = prevX - dist*cos(prevTh);
-            nextY = prevY + dist*sin(prevTh);
-            nextTh = prevTh;
+            states(0) = prevStates(0) - dist*cos(prevStates(2));
+            states(1) = prevStates(1) + dist*sin(prevStates(2));
+            states(2) = prevStates(2);
         }
 
-        nextTh = normalizeAngle(nextTh);
+        states(2) = normalizeAngle(states(2));
 
-        prevX = nextX;
-        prevY = nextY;
-        prevTh = nextTh;
+        prevStates(0) = states(0);
+        prevStates(1) = states(1);
+        prevStates(2) = states(2);
 
-        std::cout << "X', Y', Th': " << nextX << ", " << nextY << ", " << nextTh << std::endl;
+        std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
 
-        return {nextX, nextY, nextTh};
-
-    };
-
-    std::vector<double> motionModelFx(double angVel, double linVel, double deltaT)
-    {
-
-
-        return {nextX, nextY, nextTh};
+        return states;
 
     };
+
+    // Eigen::VectorXd motionModelFx(double angVel, double linVel, double deltaT)
+    // {
+    //     states = Fx*states;
+    //     return states;
+    // };
 
 };
 
@@ -220,7 +220,7 @@ int main(int argc, char** argv)
         std::cout << "rad, time: " << linVel/angVel << ", " << deltaT << std::endl;
 
         // Call the motion model and pass lin and angular vel
-        std::vector<double> xyth = turtlebot->motionModel(angVel, linVel, deltaT);
+        turtlebot->motionModel(angVel, linVel, deltaT);
         // turtlebot->motionModel();
 
         // Call subscriber callbacks once
