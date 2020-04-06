@@ -164,14 +164,14 @@ int main(int argc, char** argv)
         double tstop = ros::Time::now().toSec() - tstart;
 
         double linVel, angVel;
-        if(tstop>0 && tstop<12)
+        if(tstop>0 && tstop<8)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
             linVel = 0.5;
             angVel = 0.25;
         }
-        else if(tstop>=12)
+        else if(tstop>=8)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;

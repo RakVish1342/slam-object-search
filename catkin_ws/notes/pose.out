@@ -1,0 +1,10210 @@
+[0m[ INFO] [1586066918.247829589]: Started: motion_model Node[0m
+global_time: 0
+
+DeltaT: 0
+IF
+X', Y', Th': 0, 0, 1.5708
+global_time: 0.05
+
+DeltaT: 0.05
+IF
+X', Y', Th': -0.000156248, 0.0249993, 1.5833
+global_time: 0.05
+
+DeltaT: 0
+IF
+X', Y', Th': -0.000156248, 0.0249993, 1.5833
+global_time: 0.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.000224996, 0.0299989, 1.5858
+global_time: 0.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.000306242, 0.0349982, 1.5883
+global_time: 0.081
+
+DeltaT: 0.013
+IF
+X', Y', Th': -0.000430547, 0.041497, 1.59155
+global_time: 0.09
+
+DeltaT: 0.007
+IF
+X', Y', Th': -0.000506229, 0.0449962, 1.5933
+global_time: 0.101
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.000637529, 0.0504946, 1.59605
+global_time: 0.11
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.000756202, 0.0549931, 1.5983
+global_time: 0.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.000899932, 0.059991, 1.6008
+global_time: 0.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00105616, 0.0649886, 1.6033
+global_time: 0.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00122487, 0.0699857, 1.6058
+global_time: 0.151
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.00142489, 0.0754821, 1.60855
+global_time: 0.16
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.00159979, 0.0799787, 1.6108
+global_time: 0.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00180598, 0.0849744, 1.6133
+global_time: 0.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00202466, 0.0899696, 1.6158
+odomX, odomY: -1.42901e-06, -1.48267e-06
+global_time: 0.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00225583, 0.0949643, 1.6183
+global_time: 0.201
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.00252453, 0.100458, 1.62105
+global_time: 0.21
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.00275562, 0.104952, 1.6233
+odomX, odomY: 0.000545616, 1.01753e-05
+global_time: 0.22
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.00305179, 0.110444, 1.62605
+global_time: 0.23
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.00330534, 0.114937, 1.6283
+global_time: 0.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00359892, 0.119928, 1.6308
+odomX, odomY: 0.00207455, 1.07319e-05
+global_time: 0.251
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.00393627, 0.125418, 1.63355
+global_time: 0.261
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00425605, 0.130407, 1.63605
+global_time: 0.27
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.00455452, 0.134898, 1.6383
+global_time: 0.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.004898, 0.139886, 1.6408
+odomX, odomY: 0.00466377, 1.15271e-05
+global_time: 0.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00525395, 0.144873, 1.6433
+global_time: 0.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00562236, 0.149859, 1.6458
+global_time: 0.311
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.00604202, 0.155343, 1.64855
+odomX, odomY: 0.00815374, 1.23018e-05
+global_time: 0.32
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.00639659, 0.159829, 1.6508
+global_time: 0.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00680239, 0.164813, 1.6533
+global_time: 0.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00722065, 0.169795, 1.6558
+odomX, odomY: 0.0125799, 1.30009e-05
+global_time: 0.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00765137, 0.174777, 1.6583
+global_time: 0.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00809453, 0.179757, 1.6608
+global_time: 0.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00855015, 0.184736, 1.6633
+global_time: 0.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00901821, 0.189714, 1.6658
+odomX, odomY: 0.0180561, 1.35767e-05
+global_time: 0.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00949872, 0.194691, 1.6683
+global_time: 0.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.00999167, 0.199667, 1.6708
+global_time: 0.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0104971, 0.204641, 1.6733
+odomX, odomY: 0.0241473, 1.37604e-05
+global_time: 0.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0110149, 0.209614, 1.6758
+global_time: 0.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0115451, 0.214586, 1.6783
+global_time: 0.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0120878, 0.219557, 1.6808
+odomX, odomY: 0.0308235, 1.26232e-05
+global_time: 0.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0126429, 0.224526, 1.6833
+global_time: 0.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0132104, 0.229493, 1.6858
+global_time: 0.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0137904, 0.23446, 1.6883
+global_time: 0.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0143827, 0.239424, 1.6908
+odomX, odomY: 0.0380429, -3.49589e-06
+global_time: 0.491
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0150487, 0.244884, 1.69355
+global_time: 0.5
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0156047, 0.249349, 1.6958
+global_time: 0.511
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0162979, 0.254806, 1.69855
+odomX, odomY: 0.0451289, -7.67875e-06
+global_time: 0.52
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0168762, 0.259268, 1.7008
+global_time: 0.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0175306, 0.264225, 1.7033
+global_time: 0.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0181973, 0.269181, 1.7058
+odomX, odomY: 0.0524559, 3.15834e-06
+global_time: 0.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0188765, 0.274134, 1.7083
+global_time: 0.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.019568, 0.279086, 1.7108
+global_time: 0.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0202719, 0.284036, 1.7133
+global_time: 0.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0209882, 0.288985, 1.7158
+odomX, odomY: 0.0605774, 6.90097e-06
+global_time: 0.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0217168, 0.293931, 1.7183
+global_time: 0.601
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0225326, 0.299371, 1.72105
+global_time: 0.61
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0232112, 0.303819, 1.7233
+odomX, odomY: 0.0692763, 8.46077e-06
+global_time: 0.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0239769, 0.30876, 1.7258
+global_time: 0.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.024755, 0.313699, 1.7283
+global_time: 0.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0255454, 0.318636, 1.7308
+odomX, odomY: 0.0789198, 8.48208e-06
+global_time: 0.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0263482, 0.323572, 1.7333
+global_time: 0.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0271633, 0.328505, 1.7358
+global_time: 0.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0279907, 0.333436, 1.7383
+global_time: 0.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0288305, 0.338365, 1.7408
+odomX, odomY: 0.0897873, 5.98649e-06
+global_time: 0.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0296825, 0.343292, 1.7433
+global_time: 0.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0305469, 0.348216, 1.7458
+global_time: 0.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0314236, 0.353139, 1.7483
+odomX, odomY: 0.100939, -5.18204e-06
+global_time: 0.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0323126, 0.358059, 1.7508
+global_time: 0.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0332139, 0.362977, 1.7533
+global_time: 0.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0341275, 0.367893, 1.7558
+odomX, odomY: 0.112275, -5.81465e-07
+global_time: 0.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0350534, 0.372807, 1.7583
+global_time: 0.76
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0359915, 0.377718, 1.7608
+global_time: 0.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.036942, 0.382627, 1.7633
+global_time: 0.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0379047, 0.387533, 1.7658
+odomX, odomY: 0.124264, 9.34968e-06
+global_time: 0.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0388796, 0.392437, 1.7683
+global_time: 0.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0398668, 0.397339, 1.7708
+global_time: 0.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0408663, 0.402238, 1.7733
+odomX, odomY: 0.13658, 2.66091e-05
+global_time: 0.821
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0419799, 0.407624, 1.77605
+global_time: 0.831
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0430051, 0.412518, 1.77855
+global_time: 0.841
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0440425, 0.417409, 1.78105
+odomX, odomY: 0.14979, 6.10895e-05
+global_time: 0.85
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0449866, 0.421809, 1.7833
+global_time: 0.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0460472, 0.426695, 1.7858
+global_time: 0.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0471201, 0.431578, 1.7883
+global_time: 0.881
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0483143, 0.436947, 1.79105
+odomX, odomY: 0.164344, 0.000107902
+global_time: 0.891
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0494127, 0.441825, 1.79355
+global_time: 0.9
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0504118, 0.446213, 1.7958
+global_time: 0.91
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0515334, 0.451085, 1.7983
+odomX, odomY: 0.179141, 0.000150596
+global_time: 0.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0526672, 0.455955, 1.8008
+global_time: 0.931
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0539284, 0.461308, 1.80355
+global_time: 0.94
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0549713, 0.465686, 1.8058
+odomX, odomY: 0.194192, 0.000174954
+global_time: 0.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0561416, 0.470547, 1.8083
+global_time: 0.961
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.057443, 0.475891, 1.81105
+global_time: 0.971
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0586388, 0.480746, 1.81355
+global_time: 0.98
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0597253, 0.485113, 1.8158
+odomX, odomY: 0.209953, 0.000185592
+global_time: 0.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0609442, 0.489962, 1.8183
+global_time: 1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0621752, 0.494808, 1.8208
+global_time: 1.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0634182, 0.499651, 1.8233
+odomX, odomY: 0.225769, 0.000231363
+global_time: 1.02
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0646734, 0.504491, 1.8258
+global_time: 1.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0659407, 0.509328, 1.8283
+global_time: 1.04
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.06722, 0.514161, 1.8308
+odomX, odomY: 0.242111, 0.000378171
+global_time: 1.05
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0685115, 0.518991, 1.8333
+global_time: 1.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.069815, 0.523819, 1.8358
+global_time: 1.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0711306, 0.528642, 1.8383
+global_time: 1.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0724582, 0.533463, 1.8408
+odomX, odomY: 0.259054, 0.000672187
+global_time: 1.091
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0739325, 0.538762, 1.84355
+global_time: 1.1
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0751496, 0.543094, 1.8458
+global_time: 1.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0765134, 0.547904, 1.8483
+odomX, odomY: 0.275491, 0.00109597
+global_time: 1.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0778891, 0.552711, 1.8508
+global_time: 1.131
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0794163, 0.557995, 1.85355
+global_time: 1.14
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0806767, 0.562315, 1.8558
+odomX, odomY: 0.291911, 0.00164961
+global_time: 1.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0820885, 0.567111, 1.8583
+global_time: 1.161
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0836553, 0.572384, 1.86105
+global_time: 1.171
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0850922, 0.577173, 1.86355
+global_time: 1.18
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0863957, 0.58148, 1.8658
+odomX, odomY: 0.308841, 0.00235542
+global_time: 1.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0878554, 0.586262, 1.8683
+global_time: 1.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.089327, 0.59104, 1.8708
+global_time: 1.211
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0909596, 0.596293, 1.87355
+odomX, odomY: 0.32524, 0.00317655
+global_time: 1.221
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0924563, 0.601063, 1.87605
+global_time: 1.23
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0938135, 0.605354, 1.8783
+global_time: 1.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0953329, 0.610117, 1.8808
+odomX, odomY: 0.341634, 0.0041322
+global_time: 1.251
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.0970179, 0.615353, 1.88355
+global_time: 1.261
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.0985622, 0.620108, 1.88605
+global_time: 1.27
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.0999623, 0.624385, 1.8883
+global_time: 1.281
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.101687, 0.629608, 1.89105
+odomX, odomY: 0.358533, 0.00526165
+global_time: 1.29
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.103108, 0.633877, 1.8933
+global_time: 1.301
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.104858, 0.639091, 1.89605
+global_time: 1.31
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.106301, 0.643354, 1.8983
+odomX, odomY: 0.374914, 0.00649348
+global_time: 1.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.107915, 0.648086, 1.9008
+global_time: 1.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.109541, 0.652814, 1.9033
+global_time: 1.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.111179, 0.657538, 1.9058
+odomX, odomY: 0.391282, 0.00785964
+global_time: 1.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.112829, 0.662258, 1.9083
+global_time: 1.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.114491, 0.666974, 1.9108
+global_time: 1.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.116164, 0.671686, 1.9133
+global_time: 1.381
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.118018, 0.676864, 1.91605
+odomX, odomY: 0.408151, 0.00940193
+global_time: 1.39
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.119546, 0.681097, 1.9183
+global_time: 1.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.121255, 0.685796, 1.9208
+global_time: 1.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.122975, 0.69049, 1.9233
+odomX, odomY: 0.424499, 0.0110335
+global_time: 1.421
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.124881, 0.69565, 1.92605
+global_time: 1.43
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.126451, 0.699867, 1.9283
+global_time: 1.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.128206, 0.704548, 1.9308
+odomX, odomY: 0.440816, 0.0128027
+global_time: 1.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.129974, 0.709226, 1.9333
+global_time: 1.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.131752, 0.713899, 1.9358
+global_time: 1.471
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.133723, 0.719034, 1.93855
+global_time: 1.48
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.135345, 0.723231, 1.9408
+odomX, odomY: 0.457631, 0.0147691
+global_time: 1.491
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.137341, 0.728356, 1.94355
+global_time: 1.5
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.138985, 0.732545, 1.9458
+global_time: 1.513
+
+DeltaT: 0.013
+IF
+X', Y', Th': -0.141375, 0.738589, 1.94905
+odomX, odomY: 0.473931, 0.0168194
+global_time: 1.52
+
+DeltaT: 0.007
+IF
+X', Y', Th': -0.142671, 0.741841, 1.9508
+global_time: 1.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.144531, 0.746482, 1.9533
+global_time: 1.541
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.146591, 0.751582, 1.95605
+odomX, odomY: 0.490204, 0.0190003
+global_time: 1.55
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.148287, 0.75575, 1.9583
+global_time: 1.561
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.150372, 0.760839, 1.96105
+global_time: 1.57
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.152089, 0.764999, 1.9633
+global_time: 1.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.154007, 0.769616, 1.9658
+odomX, odomY: 0.506975, 0.021386
+global_time: 1.591
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.15613, 0.77469, 1.96855
+global_time: 1.6
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.157878, 0.778837, 1.9708
+global_time: 1.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.159831, 0.78344, 1.9733
+odomX, odomY: 0.523245, 0.023834
+global_time: 1.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.161795, 0.788038, 1.9758
+global_time: 1.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.163771, 0.792631, 1.9783
+global_time: 1.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.165758, 0.797219, 1.9808
+odomX, odomY: 0.539468, 0.0264159
+global_time: 1.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.167757, 0.801802, 1.9833
+global_time: 1.661
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.169969, 0.806837, 1.98605
+global_time: 1.67
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.171789, 0.810953, 1.9883
+global_time: 1.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.173822, 0.815521, 1.9908
+odomX, odomY: 0.556161, 0.029218
+global_time: 1.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.175867, 0.820084, 1.9933
+global_time: 1.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.177923, 0.824642, 1.9958
+global_time: 1.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.17999, 0.829194, 1.9983
+odomX, odomY: 0.572324, 0.0320809
+global_time: 1.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.182068, 0.833742, 2.0008
+global_time: 1.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.184159, 0.838284, 2.0033
+global_time: 1.741
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.186471, 0.843274, 2.00605
+odomX, odomY: 0.588461, 0.0350722
+global_time: 1.75
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.188373, 0.847353, 2.0083
+global_time: 1.76
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.190497, 0.851879, 2.0108
+global_time: 1.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.192632, 0.8564, 2.0133
+global_time: 1.781
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.194994, 0.861367, 2.01605
+odomX, odomY: 0.605087, 0.038295
+global_time: 1.79
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.196937, 0.865426, 2.0183
+global_time: 1.801
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.199323, 0.870381, 2.02105
+global_time: 1.81
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.201286, 0.874431, 2.0233
+odomX, odomY: 0.621218, 0.0415593
+global_time: 1.82
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.203478, 0.878925, 2.0258
+global_time: 1.831
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.205902, 0.883862, 2.02855
+global_time: 1.841
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.208117, 0.888344, 2.03105
+odomX, odomY: 0.637328, 0.0449512
+global_time: 1.85
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.21012, 0.892374, 2.0333
+global_time: 1.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.212357, 0.896846, 2.0358
+global_time: 1.871
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.21483, 0.901758, 2.03855
+global_time: 1.881
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.21709, 0.906218, 2.04105
+odomX, odomY: 0.653863, 0.048581
+global_time: 1.89
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.219133, 0.910228, 2.0433
+global_time: 1.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.221415, 0.914677, 2.0458
+global_time: 1.91
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.223707, 0.91912, 2.0483
+odomX, odomY: 0.66985, 0.0522491
+global_time: 1.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.22601, 0.923558, 2.0508
+global_time: 1.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.228325, 0.92799, 2.0533
+global_time: 1.941
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.230883, 0.932859, 2.05605
+odomX, odomY: 0.685811, 0.0560433
+global_time: 1.95
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.232987, 0.936837, 2.0583
+global_time: 1.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.235334, 0.941252, 2.0608
+global_time: 1.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.237693, 0.94566, 2.0633
+global_time: 1.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.240063, 0.950063, 2.0658
+odomX, odomY: 0.702247, 0.0600951
+global_time: 1.991
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.242682, 0.9549, 2.06855
+global_time: 2
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.244835, 0.958851, 2.0708
+global_time: 2.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.247237, 0.963236, 2.0733
+odomX, odomY: 0.71819, 0.0641653
+global_time: 2.02
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.249651, 0.967615, 2.0758
+global_time: 2.031
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.252319, 0.972425, 2.07855
+global_time: 2.04
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.254511, 0.976354, 2.0808
+odomX, odomY: 0.734115, 0.0683684
+global_time: 2.051
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.257203, 0.981151, 2.08355
+global_time: 2.061
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.259661, 0.985505, 2.08605
+global_time: 2.071
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.26213, 0.989853, 2.08855
+global_time: 2.08
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.264362, 0.99376, 2.0908
+odomX, odomY: 0.750491, 0.0728029
+global_time: 2.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.266851, 0.998096, 2.0933
+global_time: 2.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.269352, 1.00243, 2.0958
+global_time: 2.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.271864, 1.00675, 2.0983
+odomX, odomY: 0.76626, 0.0772355
+global_time: 2.121
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.274639, 1.0115, 2.10105
+global_time: 2.13
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.276919, 1.01538, 2.1033
+global_time: 2.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.279463, 1.01968, 2.1058
+odomX, odomY: 0.782005, 0.081821
+global_time: 2.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.282017, 1.02398, 2.1083
+global_time: 2.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.284583, 1.02827, 2.1108
+global_time: 2.17
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.287417, 1.03299, 2.11355
+global_time: 2.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.290005, 1.03726, 2.11605
+odomX, odomY: 0.798211, 0.0866874
+global_time: 2.19
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.292343, 1.04111, 2.1183
+global_time: 2.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.294951, 1.04537, 2.1208
+global_time: 2.211
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.297832, 1.05006, 2.12355
+odomX, odomY: 0.813924, 0.0915489
+global_time: 2.22
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.300199, 1.05389, 2.1258
+global_time: 2.231
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.303104, 1.05856, 2.12855
+global_time: 2.24
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.30549, 1.06237, 2.1308
+odomX, odomY: 0.829616, 0.0965439
+global_time: 2.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.308151, 1.06661, 2.1333
+global_time: 2.261
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.311091, 1.07125, 2.13605
+global_time: 2.27
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.313505, 1.07505, 2.1383
+global_time: 2.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.316198, 1.07926, 2.1408
+odomX, odomY: 0.845747, 0.101819
+global_time: 2.291
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.319172, 1.08389, 2.14355
+global_time: 2.3
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.321615, 1.08767, 2.1458
+global_time: 2.311
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.324613, 1.09228, 2.14855
+odomX, odomY: 0.861299, 0.10706
+global_time: 2.32
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.327075, 1.09605, 2.1508
+global_time: 2.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.32982, 1.10023, 2.1533
+global_time: 2.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.332576, 1.1044, 2.1558
+odomX, odomY: 0.876789, 0.112421
+global_time: 2.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.335342, 1.10856, 2.1583
+global_time: 2.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.338119, 1.11272, 2.1608
+global_time: 2.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.340906, 1.11687, 2.1633
+global_time: 2.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.343703, 1.12102, 2.1658
+odomX, odomY: 0.892725, 0.118086
+global_time: 2.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.346511, 1.12515, 2.1683
+global_time: 2.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.349329, 1.12928, 2.1708
+global_time: 2.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.352157, 1.13341, 2.1733
+odomX, odomY: 0.908171, 0.123723
+global_time: 2.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.354996, 1.13752, 2.1758
+global_time: 2.431
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.35813, 1.14204, 2.17855
+global_time: 2.44
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.360704, 1.14573, 2.1808
+odomX, odomY: 0.923585, 0.129492
+global_time: 2.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.363573, 1.14983, 2.1833
+global_time: 2.461
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.366742, 1.15433, 2.18605
+global_time: 2.473
+
+DeltaT: 0.012
+IF
+X', Y', Th': -0.370212, 1.15922, 2.18905
+odomX, odomY: 0.939411, 0.135567
+global_time: 2.48
+
+DeltaT: 0.007
+IF
+X', Y', Th': -0.372243, 1.16207, 2.1908
+global_time: 2.49
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.375445, 1.16654, 2.19355
+global_time: 2.5
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.378074, 1.17019, 2.1958
+global_time: 2.51
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.381298, 1.17465, 2.19855
+odomX, odomY: 0.9547, 0.141576
+global_time: 2.52
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.383945, 1.17829, 2.2008
+global_time: 2.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.386896, 1.18233, 2.2033
+global_time: 2.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.389857, 1.18636, 2.2058
+odomX, odomY: 0.969906, 0.147703
+global_time: 2.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.392828, 1.19038, 2.2083
+global_time: 2.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.395808, 1.19439, 2.2108
+global_time: 2.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.398799, 1.1984, 2.2133
+global_time: 2.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.4018, 1.2024, 2.2158
+odomX, odomY: 0.985538, 0.154154
+global_time: 2.59
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.405113, 1.20679, 2.21855
+global_time: 2.6
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.407832, 1.21037, 2.2208
+global_time: 2.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.410863, 1.21435, 2.2233
+odomX, odomY: 1.00068, 0.160551
+global_time: 2.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.413904, 1.21832, 2.2258
+global_time: 2.631
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.417261, 1.22268, 2.22855
+global_time: 2.64
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.420016, 1.22623, 2.2308
+odomX, odomY: 1.01577, 0.167078
+global_time: 2.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.423086, 1.23018, 2.2333
+global_time: 2.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.426166, 1.23412, 2.2358
+global_time: 2.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.429257, 1.23805, 2.2383
+global_time: 2.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.432357, 1.24197, 2.2408
+odomX, odomY: 1.03125, 0.173929
+global_time: 2.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.435466, 1.24589, 2.2433
+global_time: 2.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.438586, 1.24979, 2.2458
+global_time: 2.711
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.442029, 1.25408, 2.24855
+odomX, odomY: 1.04623, 0.1807
+global_time: 2.72
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.444855, 1.25759, 2.2508
+global_time: 2.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.448003, 1.26147, 2.2533
+global_time: 2.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.451162, 1.26535, 2.2558
+odomX, odomY: 1.06115, 0.187588
+global_time: 2.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.45433, 1.26921, 2.2583
+global_time: 2.76
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.457826, 1.27346, 2.26105
+global_time: 2.77
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.460695, 1.27693, 2.2633
+global_time: 2.781
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.464213, 1.28115, 2.26605
+odomX, odomY: 1.07644, 0.194806
+global_time: 2.79
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.467099, 1.28461, 2.2683
+global_time: 2.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.470316, 1.28844, 2.2708
+global_time: 2.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.473541, 1.29226, 2.2733
+odomX, odomY: 1.09123, 0.201946
+global_time: 2.821
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.477101, 1.29645, 2.27605
+global_time: 2.831
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.480347, 1.30025, 2.27855
+global_time: 2.84
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.483276, 1.30367, 2.2808
+odomX, odomY: 1.10597, 0.209212
+global_time: 2.85
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.48654, 1.30746, 2.2833
+global_time: 2.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.489814, 1.31123, 2.2858
+global_time: 2.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.493096, 1.31501, 2.2883
+global_time: 2.881
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.496718, 1.31915, 2.29105
+odomX, odomY: 1.12108, 0.216821
+global_time: 2.89
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.49969, 1.32252, 2.2933
+global_time: 2.901
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.503333, 1.32665, 2.29605
+global_time: 2.91
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.506322, 1.33001, 2.2983
+odomX, odomY: 1.1357, 0.22433
+global_time: 2.921
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.509985, 1.33411, 2.30105
+global_time: 2.931
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.513325, 1.33783, 2.30355
+global_time: 2.94
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.516338, 1.34117, 2.3058
+odomX, odomY: 1.15027, 0.231961
+global_time: 2.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.519696, 1.34488, 2.3083
+global_time: 2.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.523063, 1.34858, 2.3108
+global_time: 2.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.526439, 1.35226, 2.3133
+global_time: 2.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.529824, 1.35594, 2.3158
+odomX, odomY: 1.1652, 0.239941
+global_time: 2.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.533219, 1.35961, 2.3183
+global_time: 3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.536622, 1.36328, 2.3208
+global_time: 3.011
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.540377, 1.3673, 2.32355
+odomX, odomY: 1.17961, 0.247806
+global_time: 3.02
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.543457, 1.37058, 2.3258
+global_time: 3.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.546888, 1.37421, 2.3283
+global_time: 3.04
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.550328, 1.37784, 2.3308
+odomX, odomY: 1.19397, 0.255791
+global_time: 3.05
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.553777, 1.38146, 2.3333
+global_time: 3.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.557235, 1.38507, 2.3358
+global_time: 3.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.560702, 1.38868, 2.3383
+global_time: 3.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.564179, 1.39227, 2.3408
+odomX, odomY: 1.20866, 0.264137
+global_time: 3.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.567664, 1.39586, 2.3433
+global_time: 3.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.571158, 1.39943, 2.3458
+global_time: 3.111
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.575012, 1.40336, 2.34855
+odomX, odomY: 1.22288, 0.272363
+global_time: 3.12
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.578173, 1.40656, 2.3508
+global_time: 3.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.581694, 1.41011, 2.3533
+global_time: 3.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.585223, 1.41365, 2.3558
+odomX, odomY: 1.23705, 0.280714
+global_time: 3.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.588762, 1.41718, 2.3583
+global_time: 3.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.592309, 1.42071, 2.3608
+global_time: 3.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.595866, 1.42422, 2.3633
+global_time: 3.181
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.599787, 1.42808, 2.36605
+odomX, odomY: 1.25159, 0.28944
+global_time: 3.19
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.603004, 1.43122, 2.3683
+global_time: 3.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.606587, 1.43471, 2.3708
+global_time: 3.211
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.610537, 1.43854, 2.37355
+odomX, odomY: 1.26561, 0.298016
+global_time: 3.22
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.613778, 1.44166, 2.3758
+global_time: 3.23
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.617386, 1.44512, 2.3783
+global_time: 3.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.621003, 1.44857, 2.3808
+odomX, odomY: 1.27954, 0.306707
+global_time: 3.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.624629, 1.45202, 2.3833
+global_time: 3.26
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.628263, 1.45545, 2.3858
+global_time: 3.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.631906, 1.45888, 2.3883
+global_time: 3.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.635558, 1.46229, 2.3908
+odomX, odomY: 1.29379, 0.31577
+global_time: 3.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.639218, 1.4657, 2.3933
+global_time: 3.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.642886, 1.4691, 2.3958
+global_time: 3.31
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.646563, 1.47248, 2.3983
+odomX, odomY: 1.30758, 0.324693
+global_time: 3.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.650248, 1.47586, 2.4008
+global_time: 3.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.653942, 1.47923, 2.4033
+global_time: 3.341
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.658015, 1.48293, 2.40605
+odomX, odomY: 1.32131, 0.33374
+global_time: 3.35
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.661355, 1.48594, 2.4083
+global_time: 3.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.665074, 1.48929, 2.4108
+global_time: 3.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.668802, 1.49262, 2.4133
+global_time: 3.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.672537, 1.49594, 2.4158
+odomX, odomY: 1.3354, 0.343188
+global_time: 3.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.676281, 1.49926, 2.4183
+global_time: 3.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.680034, 1.50256, 2.4208
+global_time: 3.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.683794, 1.50586, 2.4233
+odomX, odomY: 1.349, 0.352466
+global_time: 3.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.687563, 1.50914, 2.4258
+global_time: 3.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.69134, 1.51242, 2.4283
+global_time: 3.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.695125, 1.51569, 2.4308
+odomX, odomY: 1.36249, 0.361829
+global_time: 3.451
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.699298, 1.51927, 2.43355
+global_time: 3.46
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.70272, 1.52219, 2.4358
+global_time: 3.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.706529, 1.52543, 2.4383
+global_time: 3.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.710347, 1.52866, 2.4408
+odomX, odomY: 1.37627, 0.37159
+global_time: 3.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.714173, 1.53188, 2.4433
+global_time: 3.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.718006, 1.53509, 2.4458
+global_time: 3.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.721848, 1.53829, 2.4483
+odomX, odomY: 1.38958, 0.381185
+global_time: 3.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.725698, 1.54148, 2.4508
+global_time: 3.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.729555, 1.54466, 2.4533
+global_time: 3.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.733421, 1.54783, 2.4558
+odomX, odomY: 1.40284, 0.390904
+global_time: 3.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.737295, 1.55099, 2.4583
+global_time: 3.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.741176, 1.55414, 2.4608
+global_time: 3.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.745065, 1.55729, 2.4633
+global_time: 3.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.748962, 1.56042, 2.4658
+odomX, odomY: 1.41643, 0.401045
+global_time: 3.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.752867, 1.56354, 2.4683
+global_time: 3.601
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.757172, 1.56696, 2.47105
+global_time: 3.61
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.760701, 1.56976, 2.4733
+odomX, odomY: 1.42956, 0.410999
+global_time: 3.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.764629, 1.57285, 2.4758
+global_time: 3.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.768565, 1.57593, 2.4783
+global_time: 3.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.772508, 1.57901, 2.4808
+odomX, odomY: 1.44259, 0.421026
+global_time: 3.651
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.776855, 1.58238, 2.48355
+global_time: 3.66
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.780419, 1.58513, 2.4858
+global_time: 3.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.784385, 1.58817, 2.4883
+global_time: 3.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.78836, 1.5912, 2.4908
+odomX, odomY: 1.45586, 0.431456
+global_time: 3.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.792341, 1.59423, 2.4933
+global_time: 3.701
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.79673, 1.59754, 2.49605
+global_time: 3.71
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.800328, 1.60025, 2.4983
+odomX, odomY: 1.46867, 0.441698
+global_time: 3.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.804332, 1.60324, 2.5008
+global_time: 3.731
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.808745, 1.60652, 2.50355
+global_time: 3.741
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.812765, 1.6095, 2.50605
+odomX, odomY: 1.48142, 0.452062
+global_time: 3.75
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.81639, 1.61216, 2.5083
+global_time: 3.761
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.820828, 1.61541, 2.51105
+global_time: 3.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.82487, 1.61835, 2.51355
+global_time: 3.78
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.828514, 1.62099, 2.5158
+odomX, odomY: 1.49449, 0.462864
+global_time: 3.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.83257, 1.62392, 2.5183
+global_time: 3.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.836634, 1.62683, 2.5208
+global_time: 3.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.840705, 1.62973, 2.5233
+odomX, odomY: 1.50709, 0.473457
+global_time: 3.82
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.844782, 1.63263, 2.5258
+global_time: 3.83
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.848868, 1.63551, 2.5283
+global_time: 3.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.85296, 1.63838, 2.5308
+odomX, odomY: 1.51959, 0.484136
+global_time: 3.851
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.85747, 1.64153, 2.53355
+global_time: 3.86
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.861166, 1.6441, 2.5358
+global_time: 3.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.86528, 1.64694, 2.5383
+global_time: 3.881
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.869813, 1.65005, 2.54105
+odomX, odomY: 1.53235, 0.495227
+global_time: 3.89
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.873529, 1.65259, 2.5433
+global_time: 3.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.877664, 1.6554, 2.5458
+global_time: 3.91
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.881806, 1.6582, 2.5483
+odomX, odomY: 1.54463, 0.506089
+global_time: 3.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.885955, 1.66099, 2.5508
+global_time: 3.931
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.890527, 1.66405, 2.55355
+global_time: 3.94
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.894274, 1.66654, 2.5558
+odomX, odomY: 1.55685, 0.517069
+global_time: 3.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.898444, 1.6693, 2.5583
+global_time: 3.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.90262, 1.67205, 2.5608
+global_time: 3.971
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.907223, 1.67506, 2.56355
+global_time: 3.98
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.910994, 1.67752, 2.5658
+odomX, odomY: 1.56936, 0.528502
+global_time: 3.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.915191, 1.68024, 2.5683
+global_time: 4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.919395, 1.68294, 2.5708
+global_time: 4.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.923606, 1.68564, 2.5733
+odomX, odomY: 1.58141, 0.5397
+global_time: 4.02
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.927824, 1.68832, 2.5758
+global_time: 4.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.932048, 1.691, 2.5783
+global_time: 4.04
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.936279, 1.69366, 2.5808
+odomX, odomY: 1.59335, 0.550985
+global_time: 4.05
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.940516, 1.69632, 2.5833
+global_time: 4.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.94476, 1.69896, 2.5858
+global_time: 4.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.949011, 1.70159, 2.5883
+global_time: 4.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.953268, 1.70422, 2.5908
+odomX, odomY: 1.60556, 0.562711
+global_time: 4.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.957532, 1.70683, 2.5933
+global_time: 4.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.961802, 1.70943, 2.5958
+global_time: 4.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.966079, 1.71202, 2.5983
+odomX, odomY: 1.61729, 0.574172
+global_time: 4.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.970362, 1.7146, 2.6008
+global_time: 4.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.974652, 1.71717, 2.6033
+global_time: 4.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -0.978948, 1.71972, 2.6058
+odomX, odomY: 1.62895, 0.585741
+global_time: 4.151
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.983681, 1.72253, 2.60855
+global_time: 4.16
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.987559, 1.72481, 2.6108
+global_time: 4.171
+
+DeltaT: 0.011
+IF
+X', Y', Th': -0.992307, 1.72759, 2.61355
+global_time: 4.18
+
+DeltaT: 0.009
+IF
+X', Y', Th': -0.996196, 1.72985, 2.6158
+odomX, odomY: 1.64086, 0.597776
+global_time: 4.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.00052, 1.73235, 2.6183
+global_time: 4.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.00486, 1.73485, 2.6208
+global_time: 4.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.0092, 1.73733, 2.6233
+odomX, odomY: 1.65232, 0.609548
+global_time: 4.22
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.01354, 1.7398, 2.6258
+global_time: 4.23
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.0179, 1.74226, 2.6283
+global_time: 4.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.02226, 1.74471, 2.6308
+odomX, odomY: 1.66368, 0.621407
+global_time: 4.251
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.02706, 1.74739, 2.63355
+global_time: 4.26
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.03099, 1.74958, 2.6358
+global_time: 4.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.03537, 1.75199, 2.6383
+global_time: 4.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.03975, 1.7544, 2.6408
+odomX, odomY: 1.6753, 0.633733
+global_time: 4.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.04414, 1.7568, 2.6433
+global_time: 4.301
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.04898, 1.75942, 2.64605
+global_time: 4.31
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.05294, 1.76155, 2.6483
+odomX, odomY: 1.68648, 0.645788
+global_time: 4.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.05734, 1.76392, 2.6508
+global_time: 4.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.06176, 1.76627, 2.6533
+global_time: 4.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.06617, 1.76861, 2.6558
+odomX, odomY: 1.69754, 0.657917
+global_time: 4.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.0706, 1.77094, 2.6583
+global_time: 4.361
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.07547, 1.77349, 2.66105
+global_time: 4.37
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.07947, 1.77556, 2.6633
+global_time: 4.381
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.08435, 1.77809, 2.66605
+odomX, odomY: 1.70884, 0.67052
+global_time: 4.39
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.08835, 1.78014, 2.6683
+global_time: 4.401
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.09325, 1.78264, 2.67105
+global_time: 4.411
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.09771, 1.7849, 2.67355
+odomX, odomY: 1.71969, 0.682834
+global_time: 4.42
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.10173, 1.78693, 2.6758
+global_time: 4.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.1062, 1.78917, 2.6783
+global_time: 4.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.11068, 1.7914, 2.6808
+odomX, odomY: 1.73044, 0.69524
+global_time: 4.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.11516, 1.79362, 2.6833
+global_time: 4.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.11965, 1.79582, 2.6858
+global_time: 4.471
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.12459, 1.79824, 2.68855
+global_time: 4.48
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.12864, 1.8002, 2.6908
+odomX, odomY: 1.74143, 0.708128
+global_time: 4.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.13314, 1.80237, 2.6933
+global_time: 4.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.13765, 1.80454, 2.6958
+global_time: 4.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.14216, 1.80669, 2.6983
+odomX, odomY: 1.75201, 0.720734
+global_time: 4.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.14668, 1.80882, 2.7008
+global_time: 4.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.15121, 1.81095, 2.7033
+global_time: 4.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.15574, 1.81307, 2.7058
+odomX, odomY: 1.76247, 0.733418
+global_time: 4.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.16027, 1.81517, 2.7083
+global_time: 4.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.16481, 1.81727, 2.7108
+global_time: 4.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.16936, 1.81935, 2.7133
+global_time: 4.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.17391, 1.82142, 2.7158
+odomX, odomY: 1.77312, 0.746561
+global_time: 4.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.17846, 1.82348, 2.7183
+global_time: 4.6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.18303, 1.82553, 2.7208
+global_time: 4.611
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.18805, 1.82777, 2.72355
+odomX, odomY: 1.78334, 0.759391
+global_time: 4.62
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.19216, 1.82959, 2.7258
+global_time: 4.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.19674, 1.8316, 2.7283
+global_time: 4.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.20132, 1.83361, 2.7308
+odomX, odomY: 1.79345, 0.772312
+global_time: 4.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.20591, 1.8356, 2.7333
+global_time: 4.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.2105, 1.83758, 2.7358
+global_time: 4.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.2151, 1.83954, 2.7383
+global_time: 4.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.2197, 1.8415, 2.7408
+odomX, odomY: 1.80379, 0.785728
+global_time: 4.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.2243, 1.84345, 2.7433
+global_time: 4.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.22891, 1.84538, 2.7458
+global_time: 4.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.23353, 1.8473, 2.7483
+odomX, odomY: 1.81372, 0.798848
+global_time: 4.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.23815, 1.84921, 2.7508
+global_time: 4.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.24278, 1.85111, 2.7533
+global_time: 4.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.24741, 1.853, 2.7558
+odomX, odomY: 1.82355, 0.812055
+global_time: 4.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.25204, 1.85487, 2.7583
+global_time: 4.76
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.25668, 1.85674, 2.7608
+global_time: 4.771
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.26179, 1.85878, 2.76355
+global_time: 4.78
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.26597, 1.86043, 2.7658
+odomX, odomY: 1.83356, 0.825724
+global_time: 4.791
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.27109, 1.86244, 2.76855
+global_time: 4.801
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.27575, 1.86426, 2.77105
+global_time: 4.811
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.28041, 1.86606, 2.77355
+odomX, odomY: 1.84311, 0.839044
+global_time: 4.821
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.28508, 1.86786, 2.77605
+global_time: 4.83
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.28929, 1.86946, 2.7783
+global_time: 4.841
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.29443, 1.87141, 2.78105
+odomX, odomY: 1.85257, 0.852446
+global_time: 4.85
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.29864, 1.87299, 2.7833
+global_time: 4.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.30333, 1.87474, 2.7858
+global_time: 4.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.30802, 1.87647, 2.7883
+global_time: 4.881
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.31318, 1.87837, 2.79105
+odomX, odomY: 1.86222, 0.866355
+global_time: 4.89
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.31741, 1.87991, 2.7933
+global_time: 4.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.32211, 1.88161, 2.7958
+global_time: 4.91
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.32681, 1.8833, 2.7983
+odomX, odomY: 1.87148, 0.879953
+global_time: 4.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.33152, 1.88498, 2.8008
+global_time: 4.931
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.33671, 1.88681, 2.80355
+global_time: 4.941
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.34143, 1.88846, 2.80605
+odomX, odomY: 1.88064, 0.893639
+global_time: 4.95
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.34568, 1.88994, 2.8083
+global_time: 4.961
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.35088, 1.89173, 2.81105
+global_time: 4.97
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.35514, 1.89319, 2.8133
+global_time: 4.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.35987, 1.89479, 2.8158
+odomX, odomY: 1.88998, 0.907804
+global_time: 4.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.36461, 1.89639, 2.8183
+global_time: 5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.36936, 1.89797, 2.8208
+global_time: 5.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.3741, 1.89954, 2.8233
+odomX, odomY: 1.89887, 0.921564
+global_time: 5.021
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.37933, 1.90125, 2.82605
+global_time: 5.03
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.38361, 1.90265, 2.8283
+global_time: 5.041
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.38884, 1.90433, 2.83105
+odomX, odomY: 1.90765, 0.935415
+global_time: 5.05
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.39313, 1.9057, 2.8333
+global_time: 5.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.39789, 1.90722, 2.8358
+global_time: 5.071
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.40314, 1.90886, 2.83855
+global_time: 5.08
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.40744, 1.9102, 2.8408
+odomX, odomY: 1.91659, 0.94978
+global_time: 5.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.41222, 1.91168, 2.8433
+global_time: 5.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.417, 1.91314, 2.8458
+global_time: 5.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.42178, 1.91459, 2.8483
+odomX, odomY: 1.92516, 0.963816
+global_time: 5.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.42657, 1.91603, 2.8508
+global_time: 5.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.43136, 1.91746, 2.8533
+global_time: 5.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.43616, 1.91887, 2.8558
+odomX, odomY: 1.93363, 0.977938
+global_time: 5.151
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.44144, 1.92042, 2.85855
+global_time: 5.16
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.44576, 1.92167, 2.8608
+global_time: 5.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.45056, 1.92305, 2.8633
+global_time: 5.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.45537, 1.92442, 2.8658
+odomX, odomY: 1.94223, 0.992553
+global_time: 5.191
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.46067, 1.92591, 2.86855
+global_time: 5.2
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.465, 1.92712, 2.8708
+global_time: 5.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.46982, 1.92845, 2.8733
+odomX, odomY: 1.95044, 1.00678
+global_time: 5.22
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.47464, 1.92977, 2.8758
+global_time: 5.23
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.47947, 1.93107, 2.8783
+global_time: 5.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.4843, 1.93237, 2.8808
+odomX, odomY: 1.95852, 1.02104
+global_time: 5.251
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.48962, 1.93378, 2.88355
+global_time: 5.26
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.49397, 1.93492, 2.8858
+global_time: 5.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.49881, 1.93618, 2.8883
+global_time: 5.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.50365, 1.93743, 2.8908
+odomX, odomY: 1.96673, 1.03583
+global_time: 5.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.50849, 1.93867, 2.8933
+global_time: 5.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.51334, 1.93989, 2.8958
+global_time: 5.31
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.51819, 1.9411, 2.8983
+odomX, odomY: 1.9746, 1.05026
+global_time: 5.321
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.52353, 1.94242, 2.90105
+global_time: 5.33
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.52791, 1.94348, 2.9033
+global_time: 5.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.53277, 1.94466, 2.9058
+odomX, odomY: 1.98235, 1.06478
+global_time: 5.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.53763, 1.94582, 2.9083
+global_time: 5.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.54249, 1.94697, 2.9108
+global_time: 5.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.54736, 1.94811, 2.9133
+global_time: 5.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.55223, 1.94923, 2.9158
+odomX, odomY: 1.9902, 1.07979
+global_time: 5.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.55711, 1.95035, 2.9183
+global_time: 5.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.56199, 1.95145, 2.9208
+global_time: 5.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.56687, 1.95254, 2.9233
+odomX, odomY: 1.9977, 1.09441
+global_time: 5.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.57175, 1.95361, 2.9258
+global_time: 5.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.57663, 1.95468, 2.9283
+global_time: 5.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.58152, 1.95573, 2.9308
+odomX, odomY: 2.00508, 1.10907
+global_time: 5.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.58641, 1.95677, 2.9333
+global_time: 5.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.59131, 1.9578, 2.9358
+global_time: 5.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.5962, 1.95881, 2.9383
+global_time: 5.481
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.60159, 1.95992, 2.94105
+odomX, odomY: 2.01254, 1.12424
+global_time: 5.49
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.606, 1.96081, 2.9433
+global_time: 5.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.6109, 1.96179, 2.9458
+global_time: 5.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.61581, 1.96275, 2.9483
+odomX, odomY: 2.01968, 1.13905
+global_time: 5.521
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.62121, 1.9638, 2.95105
+global_time: 5.53
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.62563, 1.96465, 2.9533
+global_time: 5.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.63054, 1.96558, 2.9558
+odomX, odomY: 2.02669, 1.15392
+global_time: 5.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.63546, 1.9665, 2.9583
+global_time: 5.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.64037, 1.9674, 2.9608
+global_time: 5.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.64529, 1.96829, 2.9633
+global_time: 5.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.65022, 1.96918, 2.9658
+odomX, odomY: 2.03378, 1.16928
+global_time: 5.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.65514, 1.97004, 2.9683
+global_time: 5.6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.66007, 1.9709, 2.9708
+global_time: 5.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.66499, 1.97174, 2.9733
+odomX, odomY: 2.04055, 1.18426
+global_time: 5.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.66992, 1.97257, 2.9758
+global_time: 5.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.67486, 1.97339, 2.9783
+global_time: 5.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.67979, 1.9742, 2.9808
+odomX, odomY: 2.0472, 1.1993
+global_time: 5.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.68473, 1.97499, 2.9833
+global_time: 5.662
+
+DeltaT: 0.012
+IF
+X', Y', Th': -1.69065, 1.97593, 2.9863
+global_time: 5.67
+
+DeltaT: 0.008
+IF
+X', Y', Th': -1.69461, 1.97655, 2.9883
+global_time: 5.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.69955, 1.9773, 2.9908
+odomX, odomY: 2.05391, 1.21482
+global_time: 5.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.70449, 1.97805, 2.9933
+global_time: 5.701
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.70993, 1.97885, 2.99605
+global_time: 5.71
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.71439, 1.9795, 2.9983
+odomX, odomY: 2.0603, 1.22995
+global_time: 5.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.71934, 1.98021, 3.0008
+global_time: 5.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.72429, 1.9809, 3.0033
+global_time: 5.741
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.72974, 1.98166, 3.00605
+odomX, odomY: 2.06657, 1.24514
+global_time: 5.751
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.73469, 1.98232, 3.00855
+global_time: 5.76
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.73915, 1.98292, 3.0108
+global_time: 5.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.74411, 1.98356, 3.0133
+global_time: 5.781
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.74957, 1.98426, 3.01605
+odomX, odomY: 2.07288, 1.26083
+global_time: 5.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.75453, 1.98488, 3.01855
+global_time: 5.8
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.75899, 1.98543, 3.0208
+global_time: 5.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.76396, 1.98602, 3.0233
+odomX, odomY: 2.07889, 1.27612
+global_time: 5.82
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.76892, 1.98661, 3.0258
+global_time: 5.83
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.77389, 1.98718, 3.0283
+global_time: 5.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.77886, 1.98774, 3.0308
+odomX, odomY: 2.08479, 1.29147
+global_time: 5.85
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.78383, 1.98828, 3.0333
+global_time: 5.861
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.7893, 1.98887, 3.03605
+global_time: 5.871
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.79427, 1.98939, 3.03855
+global_time: 5.88
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.79875, 1.98985, 3.0408
+odomX, odomY: 2.09074, 1.30735
+global_time: 5.89
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.80372, 1.99035, 3.0433
+global_time: 5.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.8087, 1.99083, 3.0458
+global_time: 5.91
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.81368, 1.9913, 3.0483
+odomX, odomY: 2.09637, 1.32277
+global_time: 5.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.81866, 1.99176, 3.0508
+global_time: 5.931
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.82413, 1.99225, 3.05355
+global_time: 5.94
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.82862, 1.99264, 3.0558
+odomX, odomY: 2.10187, 1.33824
+global_time: 5.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.8336, 1.99307, 3.0583
+global_time: 5.961
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.83908, 1.99352, 3.06105
+global_time: 5.97
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.84357, 1.99387, 3.0633
+global_time: 5.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.84855, 1.99426, 3.0658
+odomX, odomY: 2.1074, 1.35421
+global_time: 5.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.85354, 1.99463, 3.0683
+global_time: 6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.85853, 1.99499, 3.0708
+global_time: 6.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.86351, 1.99534, 3.0733
+odomX, odomY: 2.11264, 1.36977
+global_time: 6.021
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.869, 1.99571, 3.07605
+global_time: 6.032
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.87449, 1.99606, 3.0788
+global_time: 6.04
+
+DeltaT: 0.008
+IF
+X', Y', Th': -1.87848, 1.9963, 3.0808
+odomX, odomY: 2.11777, 1.3854
+global_time: 6.051
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.88397, 1.99663, 3.08355
+global_time: 6.06
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.88847, 1.99689, 3.0858
+global_time: 6.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.89346, 1.99716, 3.0883
+global_time: 6.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.89845, 1.99742, 3.0908
+odomX, odomY: 2.12293, 1.40156
+global_time: 6.09
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.90394, 1.99769, 3.09355
+global_time: 6.1
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.90844, 1.9979, 3.0958
+global_time: 6.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.91343, 1.99813, 3.0983
+odomX, odomY: 2.1278, 1.41727
+global_time: 6.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.91843, 1.99834, 3.1008
+global_time: 6.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.92343, 1.99853, 3.1033
+global_time: 6.144
+
+DeltaT: 0.014
+IF
+X', Y', Th': -1.93042, 1.99879, 3.1068
+odomX, odomY: 2.13252, 1.43299
+global_time: 6.15
+
+DeltaT: 0.006
+IF
+X', Y', Th': -1.93342, 1.99889, 3.1083
+global_time: 6.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.93842, 1.99905, 3.1108
+global_time: 6.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.94341, 1.9992, 3.1133
+global_time: 6.182
+
+DeltaT: 0.013
+IF
+X', Y', Th': -1.94991, 1.99937, 3.11655
+odomX, odomY: 2.13725, 1.4492
+global_time: 6.19
+
+DeltaT: 0.007
+IF
+X', Y', Th': -1.95341, 1.99946, 3.1183
+global_time: 6.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.95841, 1.99957, 3.1208
+global_time: 6.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.96341, 1.99967, 3.1233
+odomX, odomY: 2.14171, 1.465
+global_time: 6.221
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.96891, 1.99976, 3.12605
+global_time: 6.23
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.97341, 1.99982, 3.1283
+global_time: 6.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.97841, 1.99988, 3.1308
+odomX, odomY: 2.14605, 1.48086
+global_time: 6.251
+
+DeltaT: 0.011
+IF
+X', Y', Th': -1.98391, 1.99994, 3.13355
+global_time: 6.26
+
+DeltaT: 0.009
+IF
+X', Y', Th': -1.98841, 1.99997, 3.1358
+global_time: 6.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.99341, 1.99999, 3.1383
+global_time: 6.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -1.99841, 2, 3.1408
+odomX, odomY: 2.1504, 1.49726
+global_time: 6.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.00341, 2, -3.13989
+global_time: 6.3
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.00891, 1.99998, -3.13714
+global_time: 6.31
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.01341, 1.99996, -3.13489
+odomX, odomY: 2.1545, 1.51322
+global_time: 6.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.01841, 1.99992, -3.13239
+global_time: 6.331
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.02391, 1.99986, -3.12964
+global_time: 6.34
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.02841, 1.9998, -3.12739
+odomX, odomY: 2.15845, 1.52916
+global_time: 6.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.03341, 1.99972, -3.12489
+global_time: 6.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0384, 1.99963, -3.12239
+global_time: 6.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0434, 1.99953, -3.11989
+global_time: 6.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0484, 1.99941, -3.11739
+odomX, odomY: 2.16236, 1.54559
+global_time: 6.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0534, 1.99929, -3.11489
+global_time: 6.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0584, 1.99915, -3.11239
+global_time: 6.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.0634, 1.99899, -3.10989
+odomX, odomY: 2.16603, 1.56158
+global_time: 6.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.06839, 1.99883, -3.10739
+global_time: 6.431
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.07389, 1.99863, -3.10464
+global_time: 6.44
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.07839, 1.99846, -3.10239
+odomX, odomY: 2.16958, 1.57763
+global_time: 6.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.08338, 1.99826, -3.09989
+global_time: 6.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.08838, 1.99805, -3.09739
+global_time: 6.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.09337, 1.99782, -3.09489
+global_time: 6.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.09837, 1.99758, -3.09239
+odomX, odomY: 2.1731, 1.59422
+global_time: 6.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.10336, 1.99733, -3.08989
+global_time: 6.501
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.10885, 1.99704, -3.08714
+global_time: 6.51
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.11335, 1.99679, -3.08489
+odomX, odomY: 2.17639, 1.61036
+global_time: 6.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.11834, 1.9965, -3.08239
+global_time: 6.531
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.12383, 1.99616, -3.07964
+global_time: 6.541
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.12882, 1.99585, -3.07714
+odomX, odomY: 2.17956, 1.6265
+global_time: 6.55
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.13331, 1.99555, -3.07489
+global_time: 6.562
+
+DeltaT: 0.012
+IF
+X', Y', Th': -2.13929, 1.99514, -3.07189
+global_time: 6.57
+
+DeltaT: 0.008
+IF
+X', Y', Th': -2.14328, 1.99486, -3.06989
+global_time: 6.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.14827, 1.9945, -3.06739
+odomX, odomY: 2.18266, 1.6431
+global_time: 6.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.15326, 1.99412, -3.06489
+global_time: 6.6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.15824, 1.99373, -3.06239
+global_time: 6.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.16323, 1.99333, -3.05989
+odomX, odomY: 2.18553, 1.65926
+global_time: 6.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.16821, 1.99291, -3.05739
+global_time: 6.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.17319, 1.99249, -3.05489
+global_time: 6.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.17817, 1.99205, -3.05239
+odomX, odomY: 2.18828, 1.67545
+global_time: 6.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.18315, 1.9916, -3.04989
+global_time: 6.661
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.18863, 1.99109, -3.04714
+global_time: 6.671
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.1936, 1.99061, -3.04464
+global_time: 6.681
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.19858, 1.99012, -3.04214
+odomX, odomY: 2.19098, 1.69219
+global_time: 6.691
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.20355, 1.98961, -3.03964
+global_time: 6.7
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.20803, 1.98915, -3.03739
+global_time: 6.711
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.2135, 1.98857, -3.03464
+odomX, odomY: 2.19346, 1.70846
+global_time: 6.72
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.21797, 1.98809, -3.03239
+global_time: 6.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.22294, 1.98754, -3.02989
+global_time: 6.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.22791, 1.98697, -3.02739
+odomX, odomY: 2.19581, 1.72473
+global_time: 6.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.23288, 1.9864, -3.02489
+global_time: 6.76
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.23834, 1.98575, -3.02214
+global_time: 6.77
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.24281, 1.98521, -3.01989
+global_time: 6.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.24777, 1.98459, -3.01739
+odomX, odomY: 2.19809, 1.74151
+global_time: 6.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.25273, 1.98397, -3.01489
+global_time: 6.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.25769, 1.98333, -3.01239
+global_time: 6.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.26265, 1.98268, -3.00989
+odomX, odomY: 2.20017, 1.75777
+global_time: 6.82
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.2676, 1.98202, -3.00739
+global_time: 6.83
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.27256, 1.98134, -3.00489
+global_time: 6.84
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.278, 1.98058, -3.00214
+odomX, odomY: 2.20211, 1.77408
+global_time: 6.85
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.28246, 1.97995, -2.99989
+global_time: 6.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.28741, 1.97924, -2.99739
+global_time: 6.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.29236, 1.97852, -2.99489
+global_time: 6.88
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.2973, 1.97778, -2.99239
+odomX, odomY: 2.20397, 1.79092
+global_time: 6.89
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.30224, 1.97703, -2.98989
+global_time: 6.901
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.30768, 1.97619, -2.98714
+global_time: 6.911
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.31262, 1.97542, -2.98464
+odomX, odomY: 2.20565, 1.80728
+global_time: 6.92
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.31706, 1.97471, -2.98239
+global_time: 6.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.322, 1.97391, -2.97989
+global_time: 6.94
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.32693, 1.9731, -2.97739
+odomX, odomY: 2.20718, 1.82364
+global_time: 6.951
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.33236, 1.97219, -2.97464
+global_time: 6.96
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.33679, 1.97144, -2.97239
+global_time: 6.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.34172, 1.97059, -2.96989
+global_time: 6.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.34665, 1.96973, -2.96739
+odomX, odomY: 2.20864, 1.84052
+global_time: 6.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.35157, 1.96886, -2.96489
+global_time: 7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.35649, 1.96797, -2.96239
+global_time: 7.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.36141, 1.96707, -2.95989
+global_time: 7.02
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.36633, 1.96616, -2.95739
+odomX, odomY: 2.2099, 1.85689
+global_time: 7.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.37124, 1.96524, -2.95489
+global_time: 7.04
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.37615, 1.96431, -2.95239
+global_time: 7.05
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.38106, 1.96336, -2.94989
+global_time: 7.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.38597, 1.9624, -2.94739
+global_time: 7.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.39088, 1.96143, -2.94489
+odomX, odomY: 2.21104, 1.87327
+global_time: 7.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.39578, 1.96045, -2.94239
+global_time: 7.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.40068, 1.95945, -2.93989
+global_time: 7.101
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.40606, 1.95834, -2.93714
+global_time: 7.111
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.41096, 1.95732, -2.93464
+odomX, odomY: 2.21207, 1.89017
+odomX, odomY: 2.21293, 1.90658
+global_time: 7.121
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.41585, 1.95629, -2.93214
+global_time: 7.13
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.42025, 1.95535, -2.92989
+global_time: 7.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.42514, 1.95429, -2.92739
+global_time: 7.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.43002, 1.95322, -2.92489
+odomX, odomY: 2.21365, 1.92298
+global_time: 7.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.4349, 1.95214, -2.92239
+global_time: 7.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.43978, 1.95105, -2.91989
+global_time: 7.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.44466, 1.94994, -2.91739
+odomX, odomY: 2.21427, 1.93991
+global_time: 7.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.44953, 1.94883, -2.91489
+global_time: 7.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.4544, 1.9477, -2.91239
+global_time: 7.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.45927, 1.94655, -2.90989
+global_time: 7.22
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.46414, 1.9454, -2.90739
+odomX, odomY: 2.21473, 1.95636
+global_time: 7.23
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.469, 1.94423, -2.90489
+global_time: 7.24
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.47434, 1.94294, -2.90214
+global_time: 7.25
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.47871, 1.94186, -2.89989
+global_time: 7.261
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.48405, 1.94054, -2.89714
+odomX, odomY: 2.21505, 1.97278
+global_time: 7.27
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.48842, 1.93945, -2.89489
+global_time: 7.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.49326, 1.93822, -2.89239
+global_time: 7.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.49811, 1.93698, -2.88989
+global_time: 7.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.50295, 1.93573, -2.88739
+odomX, odomY: 2.21524, 1.98971
+global_time: 7.31
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.50779, 1.93446, -2.88489
+global_time: 7.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.51262, 1.93319, -2.88239
+global_time: 7.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.51745, 1.9319, -2.87989
+global_time: 7.341
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.52276, 1.93047, -2.87714
+global_time: 7.35
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.52711, 1.92929, -2.87489
+odomX, odomY: 2.21529, 2.00612
+odomX, odomY: 2.2152, 2.02253
+global_time: 7.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.53193, 1.92797, -2.87239
+global_time: 7.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.53675, 1.92663, -2.86989
+global_time: 7.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.54156, 1.92528, -2.86739
+global_time: 7.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.54637, 1.92392, -2.86489
+global_time: 7.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.55118, 1.92255, -2.86239
+odomX, odomY: 2.21498, 2.03947
+global_time: 7.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.55599, 1.92117, -2.85989
+odomX, odomY: 2.21463, 2.05592
+global_time: 7.421
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.56127, 1.91963, -2.85714
+global_time: 7.43
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.56558, 1.91836, -2.85489
+global_time: 7.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.57038, 1.91694, -2.85239
+global_time: 7.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.57517, 1.91551, -2.84989
+odomX, odomY: 2.21414, 2.07238
+global_time: 7.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.57996, 1.91407, -2.84739
+global_time: 7.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.58474, 1.91261, -2.84489
+global_time: 7.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.58952, 1.91114, -2.84239
+global_time: 7.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.59429, 1.90966, -2.83989
+odomX, odomY: 2.2135, 2.08929
+global_time: 7.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.59907, 1.90817, -2.83739
+global_time: 7.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.60384, 1.90667, -2.83489
+global_time: 7.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.6086, 1.90515, -2.83239
+global_time: 7.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.61336, 1.90362, -2.82989
+odomX, odomY: 2.21273, 2.10567
+global_time: 7.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.61812, 1.90209, -2.82739
+global_time: 7.551
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.62335, 1.90038, -2.82464
+global_time: 7.56
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.62762, 1.89897, -2.82239
+global_time: 7.571
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.63284, 1.89724, -2.81964
+global_time: 7.58
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.63711, 1.89581, -2.81739
+odomX, odomY: 2.21183, 2.12205
+odomX, odomY: 2.21077, 2.13895
+global_time: 7.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.64185, 1.89421, -2.81489
+global_time: 7.6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.64658, 1.8926, -2.81239
+global_time: 7.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.65131, 1.89098, -2.80989
+global_time: 7.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.65603, 1.88934, -2.80739
+global_time: 7.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.66076, 1.8877, -2.80489
+odomX, odomY: 2.2096, 2.15537
+global_time: 7.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.66547, 1.88604, -2.80239
+odomX, odomY: 2.2083, 2.17179
+global_time: 7.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.67019, 1.88437, -2.79989
+global_time: 7.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.67489, 1.88269, -2.79739
+global_time: 7.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.6796, 1.881, -2.79489
+global_time: 7.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.6843, 1.87929, -2.79239
+odomX, odomY: 2.20683, 2.18868
+global_time: 7.691
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.68946, 1.8774, -2.78964
+global_time: 7.7
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.69369, 1.87585, -2.78739
+global_time: 7.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.69837, 1.87411, -2.78489
+global_time: 7.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.70306, 1.87235, -2.78239
+global_time: 7.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.70774, 1.87059, -2.77989
+odomX, odomY: 2.20525, 2.20502
+global_time: 7.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.71241, 1.86882, -2.77739
+global_time: 7.751
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.71755, 1.86685, -2.77464
+global_time: 7.764
+
+DeltaT: 0.013
+IF
+X', Y', Th': -2.72361, 1.86451, -2.77139
+global_time: 7.77
+
+DeltaT: 0.006
+IF
+X', Y', Th': -2.72641, 1.86342, -2.76989
+odomX, odomY: 2.20353, 2.22133
+global_time: 7.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.73106, 1.8616, -2.76739
+global_time: 7.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.73571, 1.85976, -2.76489
+global_time: 7.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.74036, 1.85792, -2.76239
+global_time: 7.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.745, 1.85606, -2.75989
+odomX, odomY: 2.20163, 2.23814
+odomX, odomY: 2.19964, 2.25447
+global_time: 7.82
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.75011, 1.85401, -2.75714
+global_time: 7.83
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.75428, 1.85231, -2.75489
+global_time: 7.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.7589, 1.85042, -2.75239
+global_time: 7.85
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.76353, 1.84852, -2.74989
+global_time: 7.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.76815, 1.84661, -2.74739
+odomX, odomY: 2.19751, 2.2708
+global_time: 7.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.77276, 1.84468, -2.74489
+global_time: 7.88
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.77737, 1.84274, -2.74239
+odomX, odomY: 2.19521, 2.28762
+global_time: 7.89
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.78197, 1.84079, -2.73989
+global_time: 7.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.78657, 1.83883, -2.73739
+global_time: 7.911
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.79163, 1.83666, -2.73464
+global_time: 7.92
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.79576, 1.83488, -2.73239
+odomX, odomY: 2.19285, 2.30384
+global_time: 7.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.80034, 1.83288, -2.72989
+global_time: 7.944
+
+DeltaT: 0.014
+IF
+X', Y', Th': -2.80675, 1.83007, -2.72639
+global_time: 7.95
+
+DeltaT: 0.006
+IF
+X', Y', Th': -2.8095, 1.82886, -2.72489
+global_time: 7.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.81407, 1.82683, -2.72239
+odomX, odomY: 2.19032, 2.32004
+global_time: 7.971
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.81909, 1.82458, -2.71964
+global_time: 7.98
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.82319, 1.82273, -2.71739
+global_time: 7.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.82774, 1.82067, -2.71489
+global_time: 8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.83229, 1.81859, -2.71239
+global_time: 8.01
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.83729, 1.8163, -2.70964
+odomX, odomY: 2.18758, 2.33673
+global_time: 8.021
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.84183, 1.8142, -2.70714
+global_time: 8.031
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.84636, 1.81209, -2.70464
+global_time: 8.04
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.85044, 1.81018, -2.70239
+global_time: 8.051
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.85541, 1.80784, -2.69964
+odomX, odomY: 2.18477, 2.35294
+odomX, odomY: 2.18183, 2.36914
+global_time: 8.06
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.85948, 1.80591, -2.69739
+global_time: 8.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.86399, 1.80375, -2.69489
+global_time: 8.081
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.86895, 1.80137, -2.69214
+global_time: 8.09
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.873, 1.79941, -2.68989
+global_time: 8.101
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.87794, 1.797, -2.68714
+odomX, odomY: 2.17867, 2.38581
+global_time: 8.11
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.88198, 1.79502, -2.68489
+odomX, odomY: 2.17547, 2.40193
+global_time: 8.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.88647, 1.79281, -2.68239
+global_time: 8.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.89095, 1.79059, -2.67989
+global_time: 8.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.89542, 1.78836, -2.67739
+global_time: 8.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.89989, 1.78611, -2.67489
+odomX, odomY: 2.17214, 2.41797
+global_time: 8.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.90435, 1.78386, -2.67239
+global_time: 8.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.90881, 1.78159, -2.66989
+global_time: 8.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.91326, 1.77931, -2.66739
+global_time: 8.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.91771, 1.77702, -2.66489
+global_time: 8.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.92215, 1.77472, -2.66239
+odomX, odomY: 2.16857, 2.4345
+global_time: 8.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.92658, 1.77241, -2.65989
+global_time: 8.221
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.93145, 1.76986, -2.65714
+global_time: 8.231
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.93587, 1.76752, -2.65464
+global_time: 8.24
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.93985, 1.76541, -2.65239
+odomX, odomY: 2.16496, 2.45054
+global_time: 8.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.94426, 1.76306, -2.64989
+global_time: 8.26
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.94866, 1.76069, -2.64739
+global_time: 8.271
+
+DeltaT: 0.011
+IF
+X', Y', Th': -2.9535, 1.75808, -2.64464
+global_time: 8.28
+
+DeltaT: 0.009
+IF
+X', Y', Th': -2.95745, 1.75593, -2.64239
+global_time: 8.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.96184, 1.75353, -2.63989
+odomX, odomY: 2.16122, 2.46656
+odomX, odomY: 2.15722, 2.48304
+global_time: 8.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.96622, 1.75112, -2.63739
+global_time: 8.31
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.9706, 1.7487, -2.63489
+global_time: 8.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.97496, 1.74627, -2.63239
+global_time: 8.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.97933, 1.74382, -2.62989
+odomX, odomY: 2.15322, 2.49898
+global_time: 8.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.98368, 1.74137, -2.62739
+odomX, odomY: 2.1491, 2.51485
+global_time: 8.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.98803, 1.7389, -2.62489
+global_time: 8.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.99238, 1.73643, -2.62239
+global_time: 8.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -2.99672, 1.73394, -2.61989
+global_time: 8.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.00105, 1.73145, -2.61739
+global_time: 8.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.00537, 1.72894, -2.61489
+odomX, odomY: 2.14471, 2.53118
+global_time: 8.401
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.01012, 1.72617, -2.61214
+global_time: 8.41
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.01401, 1.72389, -2.60989
+global_time: 8.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.01831, 1.72135, -2.60739
+global_time: 8.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.02261, 1.7188, -2.60489
+odomX, odomY: 2.14031, 2.54701
+global_time: 8.441
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.02733, 1.71598, -2.60214
+global_time: 8.45
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.03119, 1.71366, -2.59989
+global_time: 8.46
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.03547, 1.71108, -2.59739
+global_time: 8.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.03975, 1.70849, -2.59489
+odomX, odomY: 2.13577, 2.56282
+global_time: 8.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.04402, 1.70588, -2.59239
+global_time: 8.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.04828, 1.70327, -2.58989
+global_time: 8.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.05253, 1.70064, -2.58739
+global_time: 8.511
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.05721, 1.69774, -2.58464
+global_time: 8.52
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.06102, 1.69536, -2.58239
+odomX, odomY: 2.13096, 2.57906
+odomX, odomY: 2.12617, 2.59478
+global_time: 8.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.06526, 1.6927, -2.57989
+global_time: 8.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.06949, 1.69003, -2.57739
+global_time: 8.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.07371, 1.68735, -2.57489
+global_time: 8.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.07792, 1.68466, -2.57239
+global_time: 8.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.08213, 1.68196, -2.56989
+odomX, odomY: 2.12125, 2.61046
+global_time: 8.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.08633, 1.67925, -2.56739
+odomX, odomY: 2.11605, 2.62654
+global_time: 8.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.09053, 1.67653, -2.56489
+global_time: 8.601
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.09513, 1.67352, -2.56214
+global_time: 8.611
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.09931, 1.67078, -2.55964
+global_time: 8.621
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.10349, 1.66803, -2.55714
+odomX, odomY: 2.11087, 2.64213
+global_time: 8.63
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.10724, 1.66554, -2.55489
+global_time: 8.641
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.11181, 1.66249, -2.55214
+global_time: 8.65
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.11555, 1.65998, -2.54989
+global_time: 8.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.1197, 1.65719, -2.54739
+global_time: 8.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.12384, 1.65438, -2.54489
+odomX, odomY: 2.10556, 2.65768
+global_time: 8.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.12797, 1.65157, -2.54239
+global_time: 8.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.1321, 1.64874, -2.53989
+global_time: 8.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.13621, 1.64591, -2.53739
+global_time: 8.711
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.14074, 1.64278, -2.53464
+odomX, odomY: 2.09995, 2.67364
+global_time: 8.721
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.14484, 1.63992, -2.53214
+global_time: 8.73
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.14853, 1.63734, -2.52989
+global_time: 8.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.15262, 1.63447, -2.52739
+global_time: 8.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.1567, 1.63158, -2.52489
+odomX, odomY: 2.09437, 2.6891
+odomX, odomY: 2.08867, 2.70453
+global_time: 8.76
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.16077, 1.62868, -2.52239
+global_time: 8.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.16484, 1.62577, -2.51989
+global_time: 8.781
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.16931, 1.62257, -2.51714
+global_time: 8.791
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.17336, 1.61964, -2.51464
+global_time: 8.8
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.177, 1.61699, -2.51239
+odomX, odomY: 2.08267, 2.72037
+global_time: 8.81
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.18144, 1.61375, -2.50964
+odomX, odomY: 2.07672, 2.73567
+global_time: 8.821
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.18548, 1.61079, -2.50714
+global_time: 8.83
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.1891, 1.60812, -2.50489
+global_time: 8.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.19311, 1.60514, -2.50239
+global_time: 8.85
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.19712, 1.60215, -2.49989
+odomX, odomY: 2.07064, 2.75093
+global_time: 8.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.20112, 1.59916, -2.49739
+global_time: 8.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.20512, 1.59615, -2.49489
+global_time: 8.881
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.2095, 1.59283, -2.49214
+global_time: 8.89
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.21308, 1.5901, -2.48989
+global_time: 8.9
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.21706, 1.58707, -2.48739
+odomX, odomY: 2.06425, 2.76657
+global_time: 8.911
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.22141, 1.58371, -2.48464
+global_time: 8.92
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.22498, 1.58096, -2.48239
+global_time: 8.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.22892, 1.57789, -2.47989
+global_time: 8.94
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.23286, 1.57482, -2.47739
+odomX, odomY: 2.05791, 2.78173
+odomX, odomY: 2.05145, 2.79685
+global_time: 8.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.2368, 1.57173, -2.47489
+global_time: 8.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.24072, 1.56863, -2.47239
+global_time: 8.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.24464, 1.56553, -2.46989
+global_time: 8.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.24855, 1.56241, -2.46739
+global_time: 8.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.25245, 1.55928, -2.46489
+odomX, odomY: 2.04466, 2.81239
+global_time: 9
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.25674, 1.55583, -2.46214
+global_time: 9.011
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.26062, 1.55269, -2.45964
+odomX, odomY: 2.03794, 2.82739
+global_time: 9.02
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.26411, 1.54985, -2.45739
+global_time: 9.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.26798, 1.54668, -2.45489
+global_time: 9.041
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.27223, 1.54319, -2.45214
+global_time: 9.051
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.27609, 1.54, -2.44964
+odomX, odomY: 2.03111, 2.84233
+global_time: 9.06
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.27955, 1.53713, -2.44739
+global_time: 9.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.28339, 1.53392, -2.44489
+global_time: 9.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.28722, 1.53071, -2.44239
+global_time: 9.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.29104, 1.52749, -2.43989
+global_time: 9.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.29485, 1.52425, -2.43739
+odomX, odomY: 2.02395, 2.85762
+global_time: 9.11
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.29904, 1.52069, -2.43464
+global_time: 9.12
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.30246, 1.51776, -2.43239
+global_time: 9.13
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.30625, 1.5145, -2.42989
+global_time: 9.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.31003, 1.51123, -2.42739
+odomX, odomY: 2.01687, 2.87243
+global_time: 9.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.31381, 1.50795, -2.42489
+global_time: 9.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.31757, 1.50466, -2.42239
+global_time: 9.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.32133, 1.50136, -2.41989
+global_time: 9.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.32508, 1.49805, -2.41739
+global_time: 9.19
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.32882, 1.49474, -2.41489
+odomX, odomY: 2.00966, 2.88721
+odomX, odomY: 2.00209, 2.90239
+global_time: 9.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.33255, 1.49141, -2.41239
+global_time: 9.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.33628, 1.48807, -2.40989
+global_time: 9.221
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.34036, 1.48439, -2.40714
+global_time: 9.23
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.3437, 1.48137, -2.40489
+odomX, odomY: 1.99463, 2.91707
+global_time: 9.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.3474, 1.47801, -2.40239
+odomX, odomY: 1.98708, 2.93167
+global_time: 9.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.35109, 1.47464, -2.39989
+global_time: 9.261
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.35514, 1.47092, -2.39714
+global_time: 9.27
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.35845, 1.46786, -2.39489
+global_time: 9.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.36211, 1.46446, -2.39239
+global_time: 9.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.36577, 1.46105, -2.38989
+odomX, odomY: 1.97917, 2.94658
+global_time: 9.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.36942, 1.45763, -2.38739
+global_time: 9.31
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.37306, 1.45421, -2.38489
+global_time: 9.32
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.37669, 1.45077, -2.38239
+global_time: 9.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.38031, 1.44732, -2.37989
+odomX, odomY: 1.97136, 2.96101
+global_time: 9.341
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.38429, 1.44352, -2.37714
+global_time: 9.35
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.38753, 1.4404, -2.37489
+global_time: 9.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.39113, 1.43693, -2.37239
+global_time: 9.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.39471, 1.43345, -2.36989
+global_time: 9.381
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.39865, 1.42961, -2.36714
+odomX, odomY: 1.96342, 2.9754
+odomX, odomY: 1.9551, 2.99017
+global_time: 9.391
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.40222, 1.42611, -2.36464
+global_time: 9.401
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.40578, 1.4226, -2.36214
+global_time: 9.41
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.40898, 1.41943, -2.35989
+global_time: 9.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.41252, 1.4159, -2.35739
+odomX, odomY: 1.94691, 3.00446
+global_time: 9.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.41606, 1.41237, -2.35489
+global_time: 9.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.41959, 1.40882, -2.35239
+odomX, odomY: 1.93862, 3.01868
+global_time: 9.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.4231, 1.40527, -2.34989
+global_time: 9.461
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.42696, 1.40135, -2.34714
+global_time: 9.471
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.43046, 1.39778, -2.34464
+global_time: 9.48
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.4336, 1.39456, -2.34239
+odomX, odomY: 1.92998, 3.03318
+global_time: 9.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.43708, 1.39097, -2.33989
+global_time: 9.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.44056, 1.38737, -2.33739
+global_time: 9.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.44402, 1.38376, -2.33489
+global_time: 9.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.44748, 1.38015, -2.33239
+global_time: 9.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.45092, 1.37653, -2.32989
+odomX, odomY: 1.92147, 3.0472
+global_time: 9.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.45436, 1.3729, -2.32739
+global_time: 9.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.45779, 1.36926, -2.32489
+global_time: 9.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.4612, 1.36561, -2.32239
+global_time: 9.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.46461, 1.36195, -2.31989
+odomX, odomY: 1.91282, 3.06117
+global_time: 9.581
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.46835, 1.35792, -2.31714
+global_time: 9.59
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.47141, 1.35461, -2.31489
+global_time: 9.601
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.47513, 1.35056, -2.31214
+global_time: 9.61
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.47816, 1.34724, -2.30989
+global_time: 9.62
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.48186, 1.34317, -2.30714
+odomX, odomY: 1.90379, 3.07551
+odomX, odomY: 1.89489, 3.08936
+global_time: 9.63
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.48488, 1.33983, -2.30489
+global_time: 9.641
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.48856, 1.33574, -2.30214
+global_time: 9.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.49189, 1.33201, -2.29964
+global_time: 9.66
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.49488, 1.32865, -2.29739
+odomX, odomY: 1.8859, 3.10312
+global_time: 9.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.4982, 1.32491, -2.29489
+global_time: 9.681
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.50184, 1.32079, -2.29214
+odomX, odomY: 1.87653, 3.1172
+global_time: 9.691
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.50514, 1.31703, -2.28964
+global_time: 9.7
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.5081, 1.31364, -2.28739
+global_time: 9.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.51138, 1.30986, -2.28489
+global_time: 9.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.51465, 1.30608, -2.28239
+odomX, odomY: 1.86733, 3.13078
+global_time: 9.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.51791, 1.30229, -2.27989
+global_time: 9.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.52116, 1.29849, -2.27739
+global_time: 9.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.5244, 1.29469, -2.27489
+global_time: 9.761
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.52795, 1.29049, -2.27214
+global_time: 9.77
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.53085, 1.28705, -2.26989
+odomX, odomY: 1.85801, 3.14429
+global_time: 9.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.53407, 1.28322, -2.26739
+global_time: 9.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.53727, 1.27938, -2.26489
+global_time: 9.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.54046, 1.27553, -2.26239
+global_time: 9.811
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.54396, 1.27129, -2.25964
+odomX, odomY: 1.84827, 3.15816
+odomX, odomY: 1.83871, 3.17154
+global_time: 9.82
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.54682, 1.26781, -2.25739
+global_time: 9.83
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.54999, 1.26394, -2.25489
+global_time: 9.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.55314, 1.26006, -2.25239
+global_time: 9.851
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.5566, 1.25579, -2.24964
+global_time: 9.86
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.55942, 1.25228, -2.24739
+odomX, odomY: 1.82904, 3.18483
+global_time: 9.871
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.56286, 1.24799, -2.24464
+global_time: 9.88
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.56566, 1.24447, -2.24239
+odomX, odomY: 1.81898, 3.19844
+global_time: 9.891
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.56908, 1.24016, -2.23964
+global_time: 9.901
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.57218, 1.23623, -2.23714
+global_time: 9.91
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.57495, 1.23269, -2.23489
+global_time: 9.921
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.57834, 1.22835, -2.23214
+odomX, odomY: 1.80911, 3.21155
+global_time: 9.93
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.5811, 1.2248, -2.22989
+global_time: 9.94
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.58415, 1.22084, -2.22739
+global_time: 9.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.5872, 1.21688, -2.22489
+global_time: 9.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.59024, 1.21291, -2.22239
+odomX, odomY: 1.79913, 3.22459
+global_time: 9.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.59327, 1.20893, -2.21989
+global_time: 9.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.59628, 1.20494, -2.21739
+global_time: 9.99
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.59929, 1.20095, -2.21489
+global_time: 10
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.60229, 1.19694, -2.21239
+global_time: 10.01
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.60527, 1.19293, -2.20989
+odomX, odomY: 1.78872, 3.23794
+global_time: 10.02
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.60825, 1.18892, -2.20739
+global_time: 10.03
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.61122, 1.18489, -2.20489
+global_time: 10.04
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.61418, 1.18086, -2.20239
+global_time: 10.051
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.61742, 1.17642, -2.19964
+odomX, odomY: 1.77851, 3.25082
+odomX, odomY: 1.7682, 3.2636
+global_time: 10.06
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.62006, 1.17278, -2.19739
+global_time: 10.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.62299, 1.16872, -2.19489
+global_time: 10.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.6259, 1.16466, -2.19239
+global_time: 10.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.62881, 1.16059, -2.18989
+odomX, odomY: 1.75746, 3.2767
+global_time: 10.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.63171, 1.15652, -2.18739
+global_time: 10.111
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.63488, 1.15203, -2.18464
+odomX, odomY: 1.74694, 3.28933
+global_time: 10.121
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.63776, 1.14793, -2.18214
+global_time: 10.13
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.64033, 1.14425, -2.17989
+global_time: 10.14
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.64319, 1.14014, -2.17739
+global_time: 10.15
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.64604, 1.13603, -2.17489
+odomX, odomY: 1.73632, 3.30185
+global_time: 10.16
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.64915, 1.1315, -2.17214
+global_time: 10.171
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.65198, 1.12737, -2.16964
+global_time: 10.181
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.65479, 1.12324, -2.16714
+global_time: 10.19
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.65731, 1.11951, -2.16489
+global_time: 10.2
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.66011, 1.11537, -2.16239
+odomX, odomY: 1.72527, 3.31467
+global_time: 10.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.66289, 1.11121, -2.15989
+global_time: 10.221
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.66594, 1.10664, -2.15714
+global_time: 10.23
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.66843, 1.10289, -2.15489
+global_time: 10.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.67118, 1.09871, -2.15239
+global_time: 10.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.67392, 1.09453, -2.14989
+odomX, odomY: 1.71444, 3.32701
+odomX, odomY: 1.70351, 3.33925
+global_time: 10.26
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.67665, 1.09034, -2.14739
+global_time: 10.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.67937, 1.08615, -2.14489
+global_time: 10.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.68208, 1.08194, -2.14239
+global_time: 10.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.68478, 1.07774, -2.13989
+odomX, odomY: 1.69214, 3.3518
+global_time: 10.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.68747, 1.07352, -2.13739
+global_time: 10.311
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.69042, 1.06888, -2.13464
+odomX, odomY: 1.68099, 3.3639
+global_time: 10.32
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.69282, 1.06507, -2.13239
+global_time: 10.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.69547, 1.06083, -2.12989
+global_time: 10.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.69812, 1.05659, -2.12739
+global_time: 10.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.70076, 1.05234, -2.12489
+odomX, odomY: 1.66974, 3.3759
+global_time: 10.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.70338, 1.04809, -2.12239
+global_time: 10.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.706, 1.04383, -2.11989
+global_time: 10.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.7086, 1.03956, -2.11739
+global_time: 10.39
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.71119, 1.03528, -2.11489
+global_time: 10.4
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.71378, 1.031, -2.11239
+odomX, odomY: 1.65807, 3.38814
+global_time: 10.41
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.71635, 1.02672, -2.10989
+global_time: 10.42
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.71891, 1.02242, -2.10739
+global_time: 10.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.72146, 1.01812, -2.10489
+global_time: 10.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.724, 1.01381, -2.10239
+odomX, odomY: 1.64664, 3.39992
+global_time: 10.451
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.72678, 1.00907, -2.09964
+global_time: 10.46
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.72905, 1.00518, -2.09739
+global_time: 10.47
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.73156, 1.00086, -2.09489
+global_time: 10.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.73405, 0.996523, -2.09239
+odomX, odomY: 1.63513, 3.41161
+odomX, odomY: 1.62314, 3.42356
+global_time: 10.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.73654, 0.992185, -2.08989
+global_time: 10.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.73901, 0.987841, -2.08739
+global_time: 10.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.74148, 0.98349, -2.08489
+global_time: 10.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.74393, 0.979133, -2.08239
+odomX, odomY: 1.6114, 3.43509
+global_time: 10.53
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.74637, 0.97477, -2.07989
+global_time: 10.54
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.74881, 0.970401, -2.07739
+odomX, odomY: 1.59956, 3.44653
+global_time: 10.55
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.75147, 0.965588, -2.07464
+global_time: 10.56
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.75364, 0.961645, -2.07239
+global_time: 10.571
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.75627, 0.956819, -2.06964
+global_time: 10.58
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.75842, 0.952865, -2.06739
+global_time: 10.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.7608, 0.948466, -2.06489
+odomX, odomY: 1.58728, 3.4582
+global_time: 10.6
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.76316, 0.944061, -2.06239
+global_time: 10.61
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.76552, 0.93965, -2.05989
+global_time: 10.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.76786, 0.935233, -2.05739
+global_time: 10.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.7702, 0.930811, -2.05489
+odomX, odomY: 1.57528, 3.46939
+global_time: 10.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.77252, 0.926383, -2.05239
+global_time: 10.65
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.77483, 0.921948, -2.04989
+global_time: 10.66
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.77713, 0.917508, -2.04739
+global_time: 10.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.77941, 0.913063, -2.04489
+odomX, odomY: 1.5632, 3.48048
+global_time: 10.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.78169, 0.908611, -2.04239
+global_time: 10.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.78396, 0.904154, -2.03989
+global_time: 10.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.78621, 0.899692, -2.03739
+global_time: 10.711
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.78868, 0.894776, -2.03464
+global_time: 10.721
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.79091, 0.890302, -2.03214
+odomX, odomY: 1.55064, 3.49182
+odomX, odomY: 1.53834, 3.50274
+global_time: 10.73
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.79291, 0.88627, -2.02989
+global_time: 10.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.79512, 0.881785, -2.02739
+global_time: 10.751
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.79754, 0.876845, -2.02464
+global_time: 10.76
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.79951, 0.872798, -2.02239
+odomX, odomY: 1.52594, 3.51357
+global_time: 10.77
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.80168, 0.868297, -2.01989
+global_time: 10.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.80385, 0.86379, -2.01739
+odomX, odomY: 1.51308, 3.52464
+global_time: 10.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.806, 0.859277, -2.01489
+global_time: 10.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.80814, 0.85476, -2.01239
+global_time: 10.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.81028, 0.850237, -2.00989
+global_time: 10.82
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.8124, 0.845708, -2.00739
+odomX, odomY: 1.50056, 3.53523
+global_time: 10.83
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.8145, 0.841175, -2.00489
+global_time: 10.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.8166, 0.836636, -2.00239
+global_time: 10.851
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.8189, 0.831637, -1.99964
+global_time: 10.86
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.82076, 0.827542, -1.99739
+odomX, odomY: 1.48795, 3.54571
+global_time: 10.87
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.82282, 0.822988, -1.99489
+global_time: 10.88
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.82488, 0.818428, -1.99239
+global_time: 10.891
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.82712, 0.813407, -1.98964
+global_time: 10.901
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.82915, 0.808836, -1.98714
+odomX, odomY: 1.47484, 3.5564
+global_time: 10.91
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.83096, 0.804719, -1.98489
+global_time: 10.92
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.83297, 0.800139, -1.98239
+global_time: 10.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.83496, 0.795554, -1.97989
+global_time: 10.941
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.83715, 0.790505, -1.97714
+global_time: 10.95
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.83892, 0.786369, -1.97489
+odomX, odomY: 1.46202, 3.56669
+odomX, odomY: 1.4491, 3.57689
+global_time: 10.961
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.84107, 0.781309, -1.97214
+global_time: 10.97
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.84283, 0.777165, -1.96989
+global_time: 10.981
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.84496, 0.772094, -1.96714
+global_time: 10.99
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.84669, 0.767941, -1.96489
+odomX, odomY: 1.4357, 3.58729
+global_time: 11.001
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.8488, 0.76286, -1.96214
+global_time: 11.011
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.8507, 0.758235, -1.95964
+odomX, odomY: 1.42263, 3.59726
+global_time: 11.02
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.8524, 0.754069, -1.95739
+global_time: 11.031
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.85446, 0.748973, -1.95464
+global_time: 11.04
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.85615, 0.744798, -1.95239
+global_time: 11.05
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.858, 0.740155, -1.94989
+odomX, odomY: 1.40952, 3.60709
+global_time: 11.06
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.85985, 0.735508, -1.94739
+global_time: 11.07
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.86168, 0.730856, -1.94489
+global_time: 11.08
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.8635, 0.7262, -1.94239
+global_time: 11.09
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.86531, 0.721539, -1.93989
+odomX, odomY: 1.39591, 3.61712
+global_time: 11.1
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.86711, 0.716873, -1.93739
+global_time: 11.11
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.86889, 0.712203, -1.93489
+global_time: 11.12
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.87067, 0.707529, -1.93239
+global_time: 11.131
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.87261, 0.702382, -1.92964
+global_time: 11.141
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.87436, 0.697698, -1.92714
+odomX, odomY: 1.38259, 3.62676
+global_time: 11.15
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.87592, 0.693479, -1.92489
+global_time: 11.16
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.87765, 0.688787, -1.92239
+global_time: 11.17
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.87937, 0.684091, -1.91989
+global_time: 11.18
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.88107, 0.67939, -1.91739
+odomX, odomY: 1.36919, 3.6363
+odomX, odomY: 1.3553, 3.64601
+global_time: 11.191
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.88293, 0.674215, -1.91464
+global_time: 11.2
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.88444, 0.669976, -1.91239
+global_time: 11.21
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.88611, 0.665263, -1.90989
+global_time: 11.22
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.88777, 0.660546, -1.90739
+global_time: 11.23
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.88942, 0.655824, -1.90489
+odomX, odomY: 1.34176, 3.65531
+global_time: 11.24
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89105, 0.651099, -1.90239
+odomX, odomY: 1.32815, 3.6645
+global_time: 11.25
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89267, 0.646369, -1.89989
+global_time: 11.26
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89428, 0.641635, -1.89739
+global_time: 11.27
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89588, 0.636898, -1.89489
+global_time: 11.28
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89747, 0.632156, -1.89239
+global_time: 11.29
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.89904, 0.62741, -1.88989
+odomX, odomY: 1.31406, 3.67384
+global_time: 11.3
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9006, 0.622661, -1.88739
+global_time: 11.311
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.90231, 0.617432, -1.88464
+global_time: 11.32
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.90369, 0.61315, -1.88239
+global_time: 11.33
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.90522, 0.608389, -1.87989
+odomX, odomY: 1.30029, 3.6828
+global_time: 11.34
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.90673, 0.603624, -1.87739
+global_time: 11.35
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.90824, 0.598855, -1.87489
+global_time: 11.36
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.90973, 0.594083, -1.87239
+global_time: 11.37
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.91121, 0.589307, -1.86989
+global_time: 11.38
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.91268, 0.584527, -1.86739
+odomX, odomY: 1.28644, 3.69166
+global_time: 11.391
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.91428, 0.579265, -1.86464
+global_time: 11.401
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.91572, 0.574477, -1.86214
+global_time: 11.412
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.91729, 0.569207, -1.85939
+global_time: 11.42
+
+DeltaT: 0.008
+IF
+X', Y', Th': -3.91843, 0.565371, -1.85739
+odomX, odomY: 1.27211, 3.70065
+odomX, odomY: 1.25811, 3.70927
+global_time: 11.43
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.91983, 0.560573, -1.85489
+global_time: 11.44
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.92123, 0.555772, -1.85239
+global_time: 11.45
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.92261, 0.550967, -1.84989
+global_time: 11.461
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.92412, 0.545678, -1.84714
+odomX, odomY: 1.24405, 3.71779
+global_time: 11.47
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.92534, 0.541347, -1.84489
+global_time: 11.48
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.92669, 0.536532, -1.84239
+odomX, odomY: 1.2295, 3.72643
+global_time: 11.49
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.92803, 0.531714, -1.83989
+global_time: 11.5
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.92935, 0.526892, -1.83739
+global_time: 11.51
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.93066, 0.522067, -1.83489
+global_time: 11.52
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.93196, 0.517239, -1.83239
+odomX, odomY: 1.21531, 3.73469
+global_time: 11.531
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.93337, 0.511924, -1.82964
+global_time: 11.54
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.93452, 0.507572, -1.82739
+global_time: 11.55
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.93578, 0.502735, -1.82489
+global_time: 11.56
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.93703, 0.497894, -1.82239
+odomX, odomY: 1.20105, 3.74284
+global_time: 11.57
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.93827, 0.493049, -1.81989
+global_time: 11.58
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9395, 0.488202, -1.81739
+global_time: 11.59
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.94071, 0.483352, -1.81489
+global_time: 11.601
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.94204, 0.478013, -1.81214
+global_time: 11.61
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.94311, 0.473642, -1.80989
+odomX, odomY: 1.1863, 3.7511
+global_time: 11.62
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.94428, 0.468783, -1.80739
+global_time: 11.63
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.94545, 0.463921, -1.80489
+global_time: 11.64
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9466, 0.459056, -1.80239
+global_time: 11.651
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.94786, 0.453701, -1.79964
+odomX, odomY: 1.1719, 3.75902
+odomX, odomY: 1.15742, 3.76682
+global_time: 11.66
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.94888, 0.449317, -1.79739
+global_time: 11.67
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.94999, 0.444444, -1.79489
+global_time: 11.68
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9511, 0.439567, -1.79239
+global_time: 11.69
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95219, 0.434688, -1.78989
+global_time: 11.7
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95327, 0.429806, -1.78739
+odomX, odomY: 1.14244, 3.77475
+global_time: 11.71
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95434, 0.424922, -1.78489
+odomX, odomY: 1.12785, 3.7823
+global_time: 11.72
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9554, 0.420035, -1.78239
+global_time: 11.73
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95644, 0.415145, -1.77989
+global_time: 11.74
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95747, 0.410252, -1.77739
+global_time: 11.75
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.95849, 0.405357, -1.77489
+odomX, odomY: 1.11321, 3.78973
+global_time: 11.761
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.9596, 0.39997, -1.77214
+global_time: 11.77
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.96049, 0.39556, -1.76989
+global_time: 11.78
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.96148, 0.390658, -1.76739
+global_time: 11.79
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.96245, 0.385753, -1.76489
+global_time: 11.8
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9634, 0.380845, -1.76239
+odomX, odomY: 1.09808, 3.79724
+global_time: 11.81
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.96435, 0.375936, -1.75989
+global_time: 11.821
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.96538, 0.370532, -1.75714
+global_time: 11.83
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.96621, 0.366109, -1.75489
+global_time: 11.84
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.96711, 0.361193, -1.75239
+odomX, odomY: 1.08332, 3.80443
+global_time: 11.85
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.96801, 0.356274, -1.74989
+global_time: 11.86
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9689, 0.351352, -1.74739
+global_time: 11.871
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.96985, 0.345937, -1.74464
+global_time: 11.88
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.97063, 0.341504, -1.74239
+odomX, odomY: 1.06847, 3.81151
+odomX, odomY: 1.0531, 3.81868
+global_time: 11.891
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.97156, 0.336083, -1.73964
+global_time: 11.901
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97239, 0.331153, -1.73714
+global_time: 11.911
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97322, 0.326221, -1.73464
+global_time: 11.92
+
+DeltaT: 0.009
+IF
+X', Y', Th': -3.97394, 0.321781, -1.73239
+global_time: 11.93
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97474, 0.316845, -1.72989
+odomX, odomY: 1.03813, 3.82552
+global_time: 11.94
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97553, 0.311907, -1.72739
+odomX, odomY: 1.02314, 3.83221
+global_time: 11.95
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.9763, 0.306967, -1.72489
+global_time: 11.96
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97706, 0.302025, -1.72239
+global_time: 11.97
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97781, 0.297082, -1.71989
+global_time: 11.98
+
+DeltaT: 0.01
+IF
+X', Y', Th': -3.97855, 0.292136, -1.71739
+global_time: 11.991
+
+DeltaT: 0.011
+IF
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 1.00766, 3.83896
+global_time: 12
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.02
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.992566, 3.8454
+global_time: 12.04
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.06
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.977903, 3.85151
+global_time: 12.081
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.091
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.1
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.12
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.96368, 3.85732
+odomX, odomY: 0.950548, 3.86258
+global_time: 12.13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.15
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.937833, 3.86761
+global_time: 12.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.924976, 3.87268
+global_time: 12.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.2
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.21
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.22
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.912764, 3.87746
+global_time: 12.23
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.241
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.25
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.26
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.900997, 3.88201
+global_time: 12.27
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.29
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.301
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.31
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.88954, 3.88636
+global_time: 12.32
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.331
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.34
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.35
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.879207, 3.89019
+odomX, odomY: 0.869741, 3.89361
+global_time: 12.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.37
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.38
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.39
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.860954, 3.89669
+global_time: 12.4
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.853395, 3.89926
+global_time: 12.42
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.431
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.44
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.451
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.846812, 3.90143
+global_time: 12.46
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.47
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.481
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.49
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.5
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.841063, 3.90326
+global_time: 12.511
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.521
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.53
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.54
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.836493, 3.90466
+odomX, odomY: 0.832924, 3.90572
+global_time: 12.551
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.56
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.57
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.58
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.59
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.830302, 3.90647
+global_time: 12.6
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.61
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828763, 3.90689
+global_time: 12.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.64
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.651
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827933, 3.90711
+global_time: 12.66
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.67
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.681
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.69
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.7
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827708, 3.90717
+global_time: 12.71
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.72
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.73
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.74
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827713, 3.90717
+global_time: 12.751
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.76
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.78
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827717, 3.90717
+odomX, odomY: 0.827722, 3.90717
+global_time: 12.791
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.8
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.81
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.82
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.83
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827726, 3.90716
+global_time: 12.84
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82773, 3.90716
+global_time: 12.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.86
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.87
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.88
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.89
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827734, 3.90716
+global_time: 12.9
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.91
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.921
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.93
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827739, 3.90716
+global_time: 12.94
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.951
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.96
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.97
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827743, 3.90716
+global_time: 12.98
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 12.99
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.02
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827747, 3.90715
+odomX, odomY: 0.827751, 3.90715
+global_time: 13.031
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.04
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.06
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827755, 3.90715
+global_time: 13.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.08
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82776, 3.90715
+global_time: 13.09
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.1
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.12
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827764, 3.90715
+global_time: 13.13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.141
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.15
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827768, 3.90715
+global_time: 13.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.191
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.2
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.21
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827773, 3.90714
+odomX, odomY: 0.827777, 3.90714
+global_time: 13.221
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.23
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.241
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.25
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827781, 3.90714
+global_time: 13.261
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.27
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827785, 3.90714
+global_time: 13.29
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.3
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.31
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.321
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82779, 3.90714
+global_time: 13.33
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.34
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.35
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827794, 3.90713
+global_time: 13.37
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.38
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.391
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.4
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827798, 3.90713
+global_time: 13.42
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.43
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.44
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.45
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827802, 3.90713
+odomX, odomY: 0.827807, 3.90713
+global_time: 13.46
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.471
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.48
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.49
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827811, 3.90713
+global_time: 13.5
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.51
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827815, 3.90712
+global_time: 13.52
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.531
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.54
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.551
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82782, 3.90712
+global_time: 13.56
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.571
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.58
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.59
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.601
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827824, 3.90712
+global_time: 13.61
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.641
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827828, 3.90712
+odomX, odomY: 0.827833, 3.90712
+global_time: 13.65
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.66
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.67
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.681
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.69
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827837, 3.90711
+global_time: 13.7
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.71
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827841, 3.90711
+global_time: 13.721
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.731
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.74
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.75
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827846, 3.90711
+global_time: 13.76
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.781
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.791
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82785, 3.90711
+global_time: 13.8
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.81
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.821
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.831
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.84
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827854, 3.90711
+global_time: 13.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.86
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.87
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.88
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827859, 3.9071
+odomX, odomY: 0.827863, 3.9071
+global_time: 13.89
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.901
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.91
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.921
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.93
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827868, 3.9071
+global_time: 13.941
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827872, 3.9071
+global_time: 13.95
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.96
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.97
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.98
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 13.991
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827876, 3.9071
+global_time: 14
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.02
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.031
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827881, 3.90709
+global_time: 14.04
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.05
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.06
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.08
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827885, 3.90709
+global_time: 14.09
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.1
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.121
+
+DeltaT: 0.012
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827889, 3.90709
+odomX, odomY: 0.827894, 3.90709
+global_time: 14.13
+
+DeltaT: 0.008
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.141
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.151
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.16
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827898, 3.90709
+global_time: 14.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827903, 3.90708
+global_time: 14.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.2
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.21
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.22
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827907, 3.90708
+global_time: 14.23
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.24
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.25
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.26
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827911, 3.90708
+global_time: 14.27
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.29
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.3
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.31
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827916, 3.90708
+global_time: 14.321
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.33
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.34
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.351
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82792, 3.90708
+odomX, odomY: 0.827925, 3.90707
+global_time: 14.36
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.371
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.38
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.39
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.4
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827929, 3.90707
+global_time: 14.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827934, 3.90707
+global_time: 14.42
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.43
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.44
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.451
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.461
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827938, 3.90707
+global_time: 14.47
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.48
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.49
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.501
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827943, 3.90707
+global_time: 14.51
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.521
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.53
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.54
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.55
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827947, 3.90706
+odomX, odomY: 0.827952, 3.90706
+global_time: 14.561
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.572
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.58
+
+DeltaT: 0.008
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.591
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827956, 3.90706
+global_time: 14.6
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.61
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827961, 3.90706
+global_time: 14.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.641
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.65
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.66
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827965, 3.90705
+global_time: 14.67
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.68
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.69
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.7
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82797, 3.90705
+global_time: 14.711
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.72
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.73
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.74
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827974, 3.90705
+global_time: 14.751
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.76
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.78
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.79
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827978, 3.90705
+odomX, odomY: 0.827983, 3.90705
+global_time: 14.8
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.81
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.82
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.83
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827987, 3.90704
+global_time: 14.841
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827992, 3.90704
+global_time: 14.85
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.86
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.871
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.881
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.827997, 3.90704
+global_time: 14.89
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.9
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.91
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.92
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828001, 3.90704
+global_time: 14.93
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.941
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.95
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.961
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.97
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828006, 3.90704
+global_time: 14.98
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 14.991
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.02
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82801, 3.90703
+odomX, odomY: 0.828015, 3.90703
+global_time: 15.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.041
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.051
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.06
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828019, 3.90703
+global_time: 15.08
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828024, 3.90703
+global_time: 15.09
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.1
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.12
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828028, 3.90703
+global_time: 15.13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.15
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828033, 3.90702
+global_time: 15.171
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.18
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.2
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.21
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828037, 3.90702
+global_time: 15.22
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.23
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.24
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.25
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828042, 3.90702
+odomX, odomY: 0.828047, 3.90702
+global_time: 15.26
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.27
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.29
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828051, 3.90702
+global_time: 15.3
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.311
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828056, 3.90701
+global_time: 15.32
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.331
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.341
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.35
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82806, 3.90701
+global_time: 15.37
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.38
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.39
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.401
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828065, 3.90701
+global_time: 15.41
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.42
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.431
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.44
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.45
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828069, 3.90701
+odomX, odomY: 0.828074, 3.90701
+global_time: 15.46
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.471
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.48
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.49
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828079, 3.907
+global_time: 15.5
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.51
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828083, 3.907
+global_time: 15.521
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.53
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.54
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.55
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828088, 3.907
+global_time: 15.561
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.57
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.581
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.59
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828093, 3.907
+global_time: 15.6
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.61
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.64
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828097, 3.907
+global_time: 15.65
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.66
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.67
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.681
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828102, 3.90699
+odomX, odomY: 0.828106, 3.90699
+global_time: 15.691
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.7
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.71
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.72
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.73
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828111, 3.90699
+global_time: 15.74
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828116, 3.90699
+global_time: 15.75
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.76
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.78
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.79
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82812, 3.90698
+global_time: 15.801
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.811
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.82
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.83
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828125, 3.90698
+global_time: 15.84
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.86
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.871
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.88
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82813, 3.90698
+global_time: 15.891
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.901
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.911
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.92
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828134, 3.90698
+odomX, odomY: 0.828139, 3.90698
+global_time: 15.931
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.94
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.95
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.96
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 15.971
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828144, 3.90697
+global_time: 15.98
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828148, 3.90697
+global_time: 15.991
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.02
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828153, 3.90697
+global_time: 16.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.04
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.06
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828158, 3.90697
+global_time: 16.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.08
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.091
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.101
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828163, 3.90697
+global_time: 16.111
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.121
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.13
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828167, 3.90696
+global_time: 16.15
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828172, 3.90696
+odomX, odomY: 0.828177, 3.90696
+global_time: 16.2
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.211
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.221
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.23
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828181, 3.90696
+global_time: 16.24
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828186, 3.90696
+global_time: 16.25
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.26
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.271
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.28
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.291
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828191, 3.90695
+global_time: 16.3
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.311
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.32
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.33
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828196, 3.90695
+global_time: 16.34
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.35
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.371
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.8282, 3.90695
+global_time: 16.38
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.39
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.4
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828205, 3.90695
+odomX, odomY: 0.82821, 3.90694
+global_time: 16.42
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.43
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.44
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.45
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.46
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828214, 3.90694
+global_time: 16.47
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.48
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828219, 3.90694
+global_time: 16.491
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.501
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.51
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.52
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828224, 3.90694
+global_time: 16.531
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.54
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.55
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.56
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828229, 3.90694
+global_time: 16.571
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.58
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.59
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.6
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828234, 3.90693
+global_time: 16.611
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.621
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.63
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.64
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.651
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828238, 3.90693
+odomX, odomY: 0.828243, 3.90693
+global_time: 16.66
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.671
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.681
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.691
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828248, 3.90693
+global_time: 16.701
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.71
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828253, 3.90693
+global_time: 16.72
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.731
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.741
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.75
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828257, 3.90692
+global_time: 16.76
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.78
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.79
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.8
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828262, 3.90692
+global_time: 16.81
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.82
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.83
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.84
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828267, 3.90692
+global_time: 16.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.861
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.87
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.88
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828272, 3.90692
+odomX, odomY: 0.828277, 3.90692
+global_time: 16.89
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.9
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.91
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.92
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828282, 3.90691
+global_time: 16.93
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.94
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828286, 3.90691
+global_time: 16.951
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.961
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.97
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.98
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 16.99
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828291, 3.90691
+global_time: 17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.01
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.021
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828296, 3.90691
+global_time: 17.04
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.06
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.08
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828301, 3.9069
+global_time: 17.09
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.1
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.12
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828306, 3.9069
+odomX, odomY: 0.828311, 3.9069
+global_time: 17.13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.15
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828315, 3.9069
+global_time: 17.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82832, 3.9069
+global_time: 17.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.2
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.21
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.22
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828325, 3.90689
+global_time: 17.23
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.241
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.251
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.261
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82833, 3.90689
+global_time: 17.27
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.29
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.3
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.31
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828335, 3.90689
+global_time: 17.32
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.33
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.34
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.351
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82834, 3.90689
+odomX, odomY: 0.828345, 3.90689
+global_time: 17.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.37
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.38
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.39
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.4
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82835, 3.90688
+global_time: 17.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828355, 3.90688
+global_time: 17.42
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.431
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.44
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.45
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.46
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828359, 3.90688
+global_time: 17.471
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.48
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.49
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.5
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828364, 3.90688
+global_time: 17.511
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.52
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.53
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.54
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828369, 3.90687
+global_time: 17.55
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.56
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.57
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.58
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828374, 3.90687
+odomX, odomY: 0.828379, 3.90687
+global_time: 17.591
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.6
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.61
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828384, 3.90687
+global_time: 17.64
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828389, 3.90687
+global_time: 17.651
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.66
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.67
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.68
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828394, 3.90686
+global_time: 17.69
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.7
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.71
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.72
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828399, 3.90686
+global_time: 17.73
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.74
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.751
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.761
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.77
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828404, 3.90686
+global_time: 17.78
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.791
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.801
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.811
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828409, 3.90686
+odomX, odomY: 0.828414, 3.90685
+global_time: 17.82
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.83
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.84
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.861
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828419, 3.90685
+global_time: 17.87
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.88
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828424, 3.90685
+global_time: 17.89
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.901
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.91
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.92
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828429, 3.90685
+global_time: 17.931
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.94
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.95
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.961
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828434, 3.90685
+global_time: 17.97
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.98
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 17.99
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.011
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828439, 3.90684
+global_time: 18.02
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.04
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828444, 3.90684
+odomX, odomY: 0.828449, 3.90684
+global_time: 18.061
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.07
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.08
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.09
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.1
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828454, 3.90684
+global_time: 18.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828459, 3.90684
+global_time: 18.121
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.13
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.151
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828464, 3.90683
+global_time: 18.16
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.171
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.18
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.201
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828469, 3.90683
+global_time: 18.21
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.22
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.231
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.24
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828474, 3.90683
+odomX, odomY: 0.828479, 3.90683
+global_time: 18.25
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.261
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.27
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.281
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.29
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828484, 3.90682
+global_time: 18.3
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.31
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828489, 3.90682
+global_time: 18.32
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.33
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.34
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.35
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828494, 3.90682
+global_time: 18.36
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.37
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.38
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.391
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828499, 3.90682
+global_time: 18.4
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.41
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.421
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.431
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828504, 3.90682
+global_time: 18.44
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.45
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.46
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.47
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.48
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828509, 3.90681
+global_time: 18.49
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.501
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.511
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.521
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828514, 3.90681
+odomX, odomY: 0.828519, 3.90681
+global_time: 18.53
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.54
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.55
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.56
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.57
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828524, 3.90681
+global_time: 18.581
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82853, 3.9068
+global_time: 18.59
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.6
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.61
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.62
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828535, 3.9068
+global_time: 18.63
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.64
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.65
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.66
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.671
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82854, 3.9068
+global_time: 18.68
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.69
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.7
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.711
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828545, 3.9068
+global_time: 18.72
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.73
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.74
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.75
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82855, 3.9068
+odomX, odomY: 0.828555, 3.90679
+global_time: 18.76
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.77
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.78
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.79
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.8
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82856, 3.90679
+global_time: 18.811
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828565, 3.90679
+global_time: 18.821
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.83
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.84
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.85
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.82857, 3.90679
+global_time: 18.861
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.87
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.88
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.891
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.9
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828576, 3.90678
+global_time: 18.91
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.921
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.93
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.94
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828581, 3.90678
+global_time: 18.951
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.961
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.97
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 18.98
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828586, 3.90678
+odomX, odomY: 0.828591, 3.90678
+global_time: 18.99
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.001
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.011
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.02
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.03
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828596, 3.90678
+global_time: 19.04
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828601, 3.90677
+global_time: 19.05
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.06
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.07
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.081
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828607, 3.90677
+global_time: 19.091
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.1
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.11
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.12
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.13
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828612, 3.90677
+global_time: 19.14
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.15
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.16
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.17
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828617, 3.90677
+global_time: 19.18
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.19
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.202
+
+DeltaT: 0.012
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.21
+
+DeltaT: 0.008
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828622, 3.90676
+odomX, odomY: 0.828627, 3.90676
+global_time: 19.22
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.23
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.24
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.25
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.261
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828632, 3.90676
+global_time: 19.27
+
+DeltaT: 0.009
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+global_time: 19.28
+
+DeltaT: 0.01
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
+odomX, odomY: 0.828638, 3.90676
+global_time: 19.291
+
+DeltaT: 0.011
+ELSE
+X', Y', Th': -3.97934, 0.286694, -1.71464
