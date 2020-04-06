@@ -161,10 +161,32 @@ public:
 
     };
 
+    // Also behaves as the sensorModel()
+    void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
+    {
+        double angleMin = msg->angle_min;
+        double angleInc = msg->angle_increment;
 
+        // std::vector<double> lidarRange = msg->ranges;
+        std::vector<float> lidarRange = msg->ranges;
+        // std::vector<double> lidarIntensity = msg.intensities;
 
+        std::cout << "--- LIDAR ---" << std::endl;
+        for (float ray : lidarRange)
+        {
 
+            // Considering only finite ranges
+            if (ray >= std::numeric_limits<float>::max())
+            {
+                std::cout << "LEL";
+                continue;
+            }
+            std::cout << ray << ", ";
+        }
+        std::cout << std::endl;
+        std::cout << "--- /LIDAR ---" << std::endl;    
 
+    };
 
 
 
@@ -180,31 +202,31 @@ void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
        
 }
 
-void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
-{
-    double angleMin = msg->angle_min;
-    double angleInc = msg->angle_increment;
+// void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
+// {
+//     double angleMin = msg->angle_min;
+//     double angleInc = msg->angle_increment;
 
-    // std::vector<double> lidarRange = msg->ranges;
-    std::vector<float> lidarRange = msg->ranges;
-    // std::vector<double> lidarIntensity = msg.intensities;
+//     // std::vector<double> lidarRange = msg->ranges;
+//     std::vector<float> lidarRange = msg->ranges;
+//     // std::vector<double> lidarIntensity = msg.intensities;
 
-    std::cout << "--- LIDAR ---" << std::endl;
-    for (float ray : lidarRange)
-    {
+//     std::cout << "--- LIDAR ---" << std::endl;
+//     for (float ray : lidarRange)
+//     {
 
-        // Considering only finite ranges
-        if (ray >= std::numeric_limits<float>::max())
-        {
-            std::cout << "LEL";
-            continue;
-        }
-        std::cout << ray << ", ";
-    }
-    std::cout << std::endl;
-    std::cout << "--- /LIDAR ---" << std::endl;    
+//         // Considering only finite ranges
+//         if (ray >= std::numeric_limits<float>::max())
+//         {
+//             std::cout << "LEL";
+//             continue;
+//         }
+//         std::cout << ray << ", ";
+//     }
+//     std::cout << std::endl;
+//     std::cout << "--- /LIDAR ---" << std::endl;    
 
-}
+// }
 
 
 int main(int argc, char** argv)
@@ -213,18 +235,27 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "ekf_singleBlock");
     ROS_INFO_STREAM("Started: efk_singleBlock Node");
 
+    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue    
+
     ros::NodeHandle n;
     ros::Publisher turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     ros::Subscriber turtle_odom = n.subscribe("/odom", 10, cbOdom);
-    ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
+    // ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
+    // ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, turtlebot->cbLidarTest);
+    ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, turtleEkf::cbLidarTest);
+    // *** WHEN THE lidar CALLBACK IS CALLED FROM THE MAIN FUNCTION, the turtleEkf object goes OUT OF SCOPE.
+    // DUE TO THIS, need to restructure code such that the node handle, publisher and subscriber are all member functions of the 
+    // turtelEkf class.
+    // https://answers.ros.org/question/282259/ros-class-with-callback-methods/
+    // Only other way to interact with data is coming in from subscribers or going to publishers from within the scope of variables
+    // in the class object is some complex and probabaly a partial hacky method of using boost::bind()
+    // https://answers.ros.org/question/232204/passing-multiple-arguments-to-a-callback-c/
 
     double tstart = ros::Time::now().toSec();
     double currT = tstart;
     double prevT = tstart;
 
     geometry_msgs::Twist msg;
-
-    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue
 
     ros::Rate loop_rate(100);
     while (ros::ok()) 
