@@ -95,8 +95,11 @@ public:
         // Init theta to PI/2 as per X axis definition: perp to the right
         states(2) = PI/2.0;
         prevStates(2) = PI/2.0;
+
         // Set landmark variances to inf
         variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
+        variances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
+        variances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         globalTStart = ros::Time::now().toSec();
@@ -224,14 +227,14 @@ public:
         double globalTStop = ros::Time::now().toSec() - globalTStart;
 
         double linVel, angVel;
-        if(globalTStop > 0 && globalTStop < 8)
+        if(globalTStop > 0 && globalTStop < 0.001)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
             linVel = 0.5;
             angVel = 0.25;
         }
-        else if(globalTStop >= 8)
+        else if(globalTStop >= 0.001)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
@@ -272,7 +275,7 @@ int main(int argc, char** argv)
         turtlebot->controlLoop();
         ros::spinOnce();
         
-        loop_rate.sleep();        
+        loop_rate.sleep();
     }
 
     return 0;
