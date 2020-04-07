@@ -50,7 +50,7 @@ double normalizeAngle(double angle)
 
 
 
-class turtleEkf
+class TurtleEkf
 {
 
 private:
@@ -74,7 +74,7 @@ private:
     Eigen::MatrixXd Fx;
 
 public:
-    turtleEkf() :
+    TurtleEkf() :
     INF(std::numeric_limits<float>::max()),
     numModelStates(3),
     numLandmarks(1),
@@ -104,7 +104,7 @@ public:
 
     };
 
-    ~turtleEkf() {};
+    ~TurtleEkf() {};
 
     Eigen::VectorXd motionModel(double angVel, double linVel, double deltaT)
     {
@@ -264,7 +264,7 @@ int main(int argc, char** argv)
     // Must perform ROS init before object creation, as node handles are created in the obj constructor
     ros::init(argc, argv, "ekf_singleBlock");
 
-    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue
+    TurtleEkf* turtlebot = new TurtleEkf(); // Init on heap so that large lidar data isn't an issue
 
     ros::Rate loop_rate(100);
     while(ros::ok())
