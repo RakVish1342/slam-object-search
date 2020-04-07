@@ -54,6 +54,13 @@ class turtleEkf
 {
 
 private:
+    ros::NodeHandle n;
+    ros::Publisher turtle_vel;
+    ros::Subscriber turtle_odom;
+    ros::Subscriber turtle_lidar;
+    double globalTStart;
+    double prevT;
+
     float INF; // float type since lidar vals are in float
 
     int numModelStates;
@@ -77,12 +84,24 @@ public:
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates))
     {
+        ROS_INFO("Started Node: efk_singleBlock");
+        ROS_INFO_STREAM("Started Node: efk_singleBlock");
+
+        // Init the publishers and subscribers
+        turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+        turtle_odom = n.subscribe("/odom", 10, cbOdom);
+        turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
+
         // Init theta to PI/2 as per X axis definition: perp to the right
         states(2) = PI/2.0;
         prevStates(2) = PI/2.0;
         // Set landmark variances to inf
         variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
+
+        globalTStart = ros::Time::now().toSec();
+        prevT = globalTStart;
+
     };
 
     ~turtleEkf() {};
@@ -162,7 +181,7 @@ public:
     };
 
     // Also behaves as the sensorModel()
-    void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
+    static void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
     {
         double angleMin = msg->angle_min;
         double angleInc = msg->angle_increment;
@@ -188,90 +207,31 @@ public:
 
     };
 
-
-
-};
-
-
-void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
-{
-
-    double odomX = msg->pose.pose.position.x;
-    double odomY = msg->pose.pose.position.y;
-    std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
-       
-}
-
-// void cbLidarTest(const sensor_msgs::LaserScan::ConstPtr &msg)
-// {
-//     double angleMin = msg->angle_min;
-//     double angleInc = msg->angle_increment;
-
-//     // std::vector<double> lidarRange = msg->ranges;
-//     std::vector<float> lidarRange = msg->ranges;
-//     // std::vector<double> lidarIntensity = msg.intensities;
-
-//     std::cout << "--- LIDAR ---" << std::endl;
-//     for (float ray : lidarRange)
-//     {
-
-//         // Considering only finite ranges
-//         if (ray >= std::numeric_limits<float>::max())
-//         {
-//             std::cout << "LEL";
-//             continue;
-//         }
-//         std::cout << ray << ", ";
-//     }
-//     std::cout << std::endl;
-//     std::cout << "--- /LIDAR ---" << std::endl;    
-
-// }
-
-
-int main(int argc, char** argv)
-{
-
-    ros::init(argc, argv, "ekf_singleBlock");
-    ROS_INFO_STREAM("Started: efk_singleBlock Node");
-
-    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue    
-
-    ros::NodeHandle n;
-    ros::Publisher turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-    ros::Subscriber turtle_odom = n.subscribe("/odom", 10, cbOdom);
-    // ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, cbLidarTest);
-    // ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, turtlebot->cbLidarTest);
-    ros::Subscriber turtle_lidar = n.subscribe("/scan", 10, turtleEkf::cbLidarTest);
-    // *** WHEN THE lidar CALLBACK IS CALLED FROM THE MAIN FUNCTION, the turtleEkf object goes OUT OF SCOPE.
-    // DUE TO THIS, need to restructure code such that the node handle, publisher and subscriber are all member functions of the 
-    // turtelEkf class.
-    // https://answers.ros.org/question/282259/ros-class-with-callback-methods/
-    // Only other way to interact with data is coming in from subscribers or going to publishers from within the scope of variables
-    // in the class object is some complex and probabaly a partial hacky method of using boost::bind()
-    // https://answers.ros.org/question/232204/passing-multiple-arguments-to-a-callback-c/
-
-    double tstart = ros::Time::now().toSec();
-    double currT = tstart;
-    double prevT = tstart;
-
-    geometry_msgs::Twist msg;
-
-    ros::Rate loop_rate(100);
-    while (ros::ok()) 
+    static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
     {
-        // global time
-        double tstop = ros::Time::now().toSec() - tstart;
+
+        double odomX = msg->pose.pose.position.x;
+        double odomY = msg->pose.pose.position.y;
+        std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
+        
+    };
+
+    void controlLoop()
+    {
+        geometry_msgs::Twist msg;        
+
+        // global execution time
+        double globalTStop = ros::Time::now().toSec() - globalTStart;
 
         double linVel, angVel;
-        if(tstop>0 && tstop<8)
+        if(globalTStop > 0 && globalTStop < 8)
         {
             msg.linear.x = 0.5;
             msg.angular.z = 0.25;
             linVel = 0.5;
             angVel = 0.25;
         }
-        else if(tstop>=8)
+        else if(globalTStop >= 8)
         {
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;
@@ -283,7 +243,7 @@ int main(int argc, char** argv)
         turtle_vel.publish(msg);
 
         //delta_t calc
-        currT = ros::Time::now().toSec();
+        double currT = ros::Time::now().toSec();
         double deltaT = currT - prevT;
         prevT = currT;
 
@@ -291,16 +251,28 @@ int main(int argc, char** argv)
         std::cout << "rad, time: " << linVel/angVel << ", " << deltaT << std::endl;
 
         // Call the motion model and pass lin and angular vel
-        turtlebot->motionModel(angVel, linVel, deltaT);
-        turtlebot->motionModelVariance(angVel, linVel, deltaT);
+        motionModel(angVel, linVel, deltaT);
+        motionModelVariance(angVel, linVel, deltaT);
 
-        // Call subscriber callbacks once
+    };
+
+};
+
+
+int main(int argc, char** argv)
+{
+    // Must perform ROS init before object creation, as node handles are created in the obj constructor
+    ros::init(argc, argv, "ekf_singleBlock");
+
+    turtleEkf* turtlebot = new turtleEkf(); // Init on heap so that large lidar data isn't an issue
+
+    ros::Rate loop_rate(100);
+    while(ros::ok())
+    {
+        turtlebot->controlLoop();
         ros::spinOnce();
-
-        // Call the sensor model
-
-
-        loop_rate.sleep();
+        
+        loop_rate.sleep();        
     }
 
     return 0;
