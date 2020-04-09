@@ -189,33 +189,8 @@ public:
 
     };
 
-    // Also behaves as the sensorModel()
-    static void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
+    static void lidarRangeHeading(const std::vector<float> &lidarRange, const double angleInc)
     {
-        double angleMin = msg->angle_min;
-        double angleInc = msg->angle_increment;
-
-        // std::vector<double> lidarRange = msg->ranges;
-        std::vector<float> lidarRange = msg->ranges;
-        // std::vector<double> lidarIntensity = msg.intensities;
-
-        // std::cout << "--- LIDAR ---" << std::endl;
-        // for (float ray : lidarRange)
-        // {
-
-        //     // Considering only finite ranges
-        //     if (ray >= std::numeric_limits<float>::max())
-        //     {
-        //         std::cout << "LEL";
-        //         continue;
-        //     }
-        //     std::cout << ray << ", ";
-        // }
-        // std::cout << std::endl;
-        // std::cout << "--- /LIDAR ---" << std::endl;
-
-        //?? Assuming all lidar points belong to this one landmark
-        // So taking avg of the range and heading of these lidar points, for this single landmark
         double avgRange = 0;
         int ctr = 0;
         for (int i = 0; i < lidarRange.size(); ++i)
@@ -282,23 +257,73 @@ public:
             }
         }
 
-
         std::cout << "LIDARLIDARLIDAR EKFEKFEKFEKFEKF" << std::endl;
         std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
         std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
 
-        // Eigen::VectorXd predictedStates = states; //?? May not be needed to make a copy.
+    }
 
-        // landmarkId = 1; // Setting it manuall this time
-        // if (!bSeenLandmark(landmarkId))
-        // {
-            
-        // }
-        // else
-        // {
 
-        // }
+    // Also behaves as the sensorModel()
+    static void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
+    {
+        double angleMin = msg->angle_min;
+        double angleInc = msg->angle_increment;
+        std::vector<float> lidarRange = msg->ranges;
+        
 
+        std::vector<double> landmarkMeasurement = lidarRangeHeading(lidarRange, angleInc);
+        double avgRange = landmarkMeasurement[0];
+        double headingMiddle = landmarkMeasurement[1];
+
+/*
+
+        //?? May not be needed to make a copy.
+        Eigen::VectorXd predictedStates = states;
+        Eigen::MatrixXd predictedVariances = variances;
+
+        //?? Setting a landmark manually for now. Will need a loop actually
+        landmarkId = 1;
+        int stateIdx = numModelStates + landmarkId;
+        if ( !bSeenLandmark[landmarkId] ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
+        {
+            // u_jx = u_tx + r*cos(phi + u_tth)
+            // land_x = robot_x + r*cos(phi + robot_heading)
+            states[stateIdx] = predictedStates[0] + avgRange * cos(headingMiddle + predictedStates[2]);
+            states[stateIdx+1] = predictedStates[1] + avgRange * sin(headingMiddle + predictedStates[2]);
+        }
+        double delx = states[stateIdx] - predictedStates[0];
+        double dely = states[stateIdx+1] - predictedStates[1];
+        double q = delx*delx + dely*dely;
+
+        Eigen::VectorXd zHat(2) << std::sqrt(q) << atan2(dely, delx) - predictedStates[2];
+
+        // (numComponentsMotionModel + numComponentsLandmarks) * (numComponentsMotionModel + numComponentsLandmarks*numLandmarks) 
+        // (3 + 2) * (3 + 2*numLandmarks)
+        //?? Replace all 2s everywhere with numLandmarkComponents OR numLandmarkDims
+        Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + 2), (numModelStates + 2*numLandmarks) );
+        Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::Identity(3,3);
+        Fxj(numModelStates+1, landmarkId) = 1;
+        Fxj(numModelStates+1+1, landmarkId+1) = 1;
+
+        Eigen::Matrix H(2, numModelStates + 2*numLandmarkComponents) << 
+            std::sqrt(q)*delx << -std::sqrt(q)*dely << 0    << -std::sqrt(q)*delx   << std::sqrt(q)*dely <<
+            dely              << delx               << -1   << -dely                << -delx;
+        H = (1/q) * H;
+
+        // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
+        Eigen::Matrix HFxj (numModelStates + 2*numLandmarkComponents, numModelStates + 2*numLandmarkComponents) = H * Fxj;
+
+        // K = sigma * H' * (H * sigma * H')
+        // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
+        // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
+        Eigen::MatrixXd K (numModelStates + 2*numLandmarkComponents, numModelStates + 2*numLandmarkComponents) = 
+            predictedVariances*HFxj.transpose()*(H*predictedVariances*HFxj.transpose()).inverse(); //?? Add process/variance noise inside inversion term
+
+
+        // Type final update step.
+        // Check dimensions first though
+*/
 
 
     };
