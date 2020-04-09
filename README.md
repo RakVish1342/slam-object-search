@@ -47,6 +47,6 @@ Location of ekfLidarTest.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtleb
 ```
 roslaunch turtlebot3_gazebo turtlebot3_empty_world_ekf.launch
 ```
-Call sequence: turtlebot3_empty_world_lidarTest.launch >> empty\_lidarTest.world, turtlebot, ekfSingleBlock.cpp
+Call sequence: turtlebot3_empty_world_lidarTest.launch >> empty\_lidarTest.world, turtlebot, ekfTest.cpp
 
-Location of ekfSingleBlock.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src```
+Location of ekfTest.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src```

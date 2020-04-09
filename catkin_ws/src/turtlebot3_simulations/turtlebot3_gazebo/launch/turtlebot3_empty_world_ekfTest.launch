@@ -22,8 +22,13 @@
   <node name="motion_model" pkg="turtlebot3_gazebo" type="motion_model" output="screen"/>
   ?>
 
-
+  <?ignore
   <!-- The ekf_lidarTest node -->
   <node name="ekf_lidarTest" pkg="turtlebot3_gazebo" type="ekf_lidarTest" output="screen"/>
+  ?>
+
+
+  <!-- The ekfSingleBlock node -->
+  <node name="ekf_Test" pkg="turtlebot3_gazebo" type="ekf_Test" output="screen"/>
 
 </launch>

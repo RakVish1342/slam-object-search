@@ -61,11 +61,15 @@ include_directories(
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
 add_executable(motion_model src/motionModel.cpp)
 add_executable(ekf_lidarTest src/ekfLidarTest.cpp)
+add_executable(ekf_Test src/ekfTest.cpp)
+
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 #target_link_libraries(motion_model ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 target_link_libraries(motion_model ${catkin_LIBRARIES})
 target_link_libraries(ekf_lidarTest ${catkin_LIBRARIES})
+target_link_libraries(ekf_Test ${catkin_LIBRARIES})
 
 ################################################################################
 # Install

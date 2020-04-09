@@ -283,7 +283,7 @@ public:
         }
 
 
-        std::cout << "LIDARLIDARLIDAR" << std::endl;
+        std::cout << "LIDARLIDARLIDAR EKFEKFEKFEKFEKF" << std::endl;
         std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
         std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
 
@@ -361,7 +361,7 @@ public:
 int main(int argc, char** argv)
 {
     // Must perform ROS init before object creation, as node handles are created in the obj constructor
-    ros::init(argc, argv, "ekf_lidarTest");
+    ros::init(argc, argv, "ekf_Test");
 
     TurtleEkf* turtlebot = new TurtleEkf(); // Init on heap so that large lidar data isn't an issue
 
