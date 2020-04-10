@@ -10,8 +10,6 @@
 
 
 #define PI 3.14159265
-#define STATIC_INF std::numeric_limits<float>::max()
-
 
 
 double normalizeAngle(double angle)
@@ -68,6 +66,7 @@ private:
     int numModelStates;
     int numLandmarks;
     int numTotStates;
+    int numComponents;
 
     Eigen::VectorXd states;
     Eigen::VectorXd prevStates; // Prev State vector also being maintained since while calc of variance, prevState vec would be reqd, 
@@ -83,6 +82,7 @@ public:
     numModelStates(3),
     numLandmarks(1),
     numTotStates(numModelStates + 2*numLandmarks),
+    numComponents(2),
     states(Eigen::VectorXd::Zero(numTotStates)),
     prevStates(Eigen::VectorXd::Zero(numTotStates)),
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
@@ -94,8 +94,8 @@ public:
 
         // Init the publishers and subscribers
         turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-        turtle_odom = n.subscribe("/odom", 10, cbOdom);
-        turtle_lidar = n.subscribe("/scan", 10, cbLidar);
+        turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
+        turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  // turtle_lidar = n.subscribe("/scan", 10, cbLidar);
 
         // Init theta to PI/2 as per X axis definition: perp to the right
         states(2) = PI/2.0;
@@ -189,13 +189,14 @@ public:
 
     };
 
-    static void lidarRangeHeading(const std::vector<float> &lidarRange, const double angleInc)
+    // static std::vector<double> lidarRangeHeading(const std::vector<float> &lidarRange, const double angleInc)
+    std::vector<double> lidarRangeHeading(const std::vector<float> &lidarRange, const double angleInc)
     {
         double avgRange = 0;
         int ctr = 0;
         for (int i = 0; i < lidarRange.size(); ++i)
         {
-            if (lidarRange[i] < STATIC_INF)
+            if (lidarRange[i] < INF)
             {
                 avgRange += lidarRange[i];
                 ctr += 1;
@@ -208,7 +209,7 @@ public:
         double headingMiddle = 0;
         for (int i = 0; i < lidarRange.size()-1; ++i)
         {
-            if(lidarRange[i] >= STATIC_INF && lidarRange[i+1] < STATIC_INF)
+            if(lidarRange[i] >= INF && lidarRange[i+1] < INF)
             {
                 headingStart = (i+1)*angleInc;
                 break;
@@ -218,7 +219,7 @@ public:
 
         for (int i = 0; i < lidarRange.size()-1; ++i)
         {
-            if(lidarRange[i] < STATIC_INF && lidarRange[i+1] >= STATIC_INF)
+            if(lidarRange[i] < INF && lidarRange[i+1] >= INF)
             {
                 headingStop = i*angleInc;
             }
@@ -261,32 +262,41 @@ public:
         std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
         std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
 
+        std::vector<double> output = {avgRange, headingMiddle};
+        return output;
     }
 
 
     // Also behaves as the sensorModel()
-    static void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
+    //OR instead of making it static, might be able to use: 
+    //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
+    //turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  --- In the constructor where the subscriber is initiated.
+
+    // static void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
+    void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
     {
         double angleMin = msg->angle_min;
         double angleInc = msg->angle_increment;
         std::vector<float> lidarRange = msg->ranges;
-        
 
         std::vector<double> landmarkMeasurement = lidarRangeHeading(lidarRange, angleInc);
         double avgRange = landmarkMeasurement[0];
         double headingMiddle = landmarkMeasurement[1];
 
-/*
-
+///*
         //?? May not be needed to make a copy.
         Eigen::VectorXd predictedStates = states;
         Eigen::MatrixXd predictedVariances = variances;
 
+//// Begin For loop for each landmark
+
         //?? Setting a landmark manually for now. Will need a loop actually
-        landmarkId = 1;
+        int landmarkId = 1;
         int stateIdx = numModelStates + landmarkId;
         if ( !bSeenLandmark[landmarkId] ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
         {
+            // NOTE: ujx is the state in states that corsp to this j-th landmark
+
             // u_jx = u_tx + r*cos(phi + u_tth)
             // land_x = robot_x + r*cos(phi + robot_heading)
             states[stateIdx] = predictedStates[0] + avgRange * cos(headingMiddle + predictedStates[2]);
@@ -296,39 +306,62 @@ public:
         double dely = states[stateIdx+1] - predictedStates[1];
         double q = delx*delx + dely*dely;
 
-        Eigen::VectorXd zHat(2) << std::sqrt(q) << atan2(dely, delx) - predictedStates[2];
+        Eigen::VectorXd zj(2);
+        Eigen::VectorXd zjHat;
+        zj << avgRange, headingMiddle;
+        zjHat << std::sqrt(q) , ( atan2(dely, delx) - predictedStates[2] );
 
         // (numComponentsMotionModel + numComponentsLandmarks) * (numComponentsMotionModel + numComponentsLandmarks*numLandmarks) 
         // (3 + 2) * (3 + 2*numLandmarks)
         //?? Replace all 2s everywhere with numLandmarkComponents OR numLandmarkDims
-        Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + 2), (numModelStates + 2*numLandmarks) );
-        Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::Identity(3,3);
+        Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);
+        Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(3,3);
         Fxj(numModelStates+1, landmarkId) = 1;
         Fxj(numModelStates+1+1, landmarkId+1) = 1;
 
-        Eigen::Matrix H(2, numModelStates + 2*numLandmarkComponents) << 
-            std::sqrt(q)*delx << -std::sqrt(q)*dely << 0    << -std::sqrt(q)*delx   << std::sqrt(q)*dely <<
-            dely              << delx               << -1   << -dely                << -delx;
+        // Partial differential of:
+        // zHat_x wrt modelX, modelY, modelTh, mx, my
+        // zHat_y wrt modelX, modelY, modelTh, mx, my
+        // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
+        Eigen::MatrixXd H (numComponents, numTotStates);
+        H << 
+            std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , -std::sqrt(q)*delx   , std::sqrt(q)*dely ,
+            dely              , delx               , -1   , -dely                , -delx;
         H = (1/q) * H;
 
         // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
-        Eigen::Matrix HFxj (numModelStates + 2*numLandmarkComponents, numModelStates + 2*numLandmarkComponents) = H * Fxj;
+        Eigen::MatrixXd HFxj (numTotStates, numTotStates);
+        HFxj = H * Fxj;
 
         // K = sigma * H' * (H * sigma * H')
         // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
         // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
-        Eigen::MatrixXd K (numModelStates + 2*numLandmarkComponents, numModelStates + 2*numLandmarkComponents) = 
-            predictedVariances*HFxj.transpose()*(H*predictedVariances*HFxj.transpose()).inverse(); //?? Add process/variance noise inside inversion term
+        Eigen::MatrixXd K (numTotStates, numComponents);
+        K = predictedVariances*HFxj.transpose()*( H * predictedVariances * HFxj.transpose() ).inverse(); //?? Add process/variance noise inside inversion term
 
 
-        // Type final update step.
-        // Check dimensions first though
-*/
+        predictedStates = predictedStates + K * (zj - zjHat);
+        predictedVariances = ( Eigen::MatrixXd::Identity(numTotStates, numTotStates) - K*HFxj) * predictedVariances;
+        
+//// End For loop for each landmark
 
+        states = predictedStates;
+        variances = predictedVariances;
+
+//*/
+
+        std::cout << "STATES and VARIANCES" << std::endl;
+        std::cout << states << std::endl;
+        std::cout << variances << std::endl;
 
     };
 
-    static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
+    // OR instead of making it static, can use:
+    //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
+    //turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  --- In the constructor where the subscriber is initiated.
+
+    // static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
+    void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
     {
 
         double odomX = msg->pose.pose.position.x;
@@ -409,3 +442,4 @@ int main(int argc, char** argv)
 //?? For pure motion model only, check eqn wise why SIGMA ain't changing ... does makes sense since no info about landmarks so that
 // remains at inf, and only motion model is present so that stays fully certain at 0. Eqn wise, tmp happens to just stay really close to 0
 // Later see how it performs when some noise is incorporated. Noise to be added to v, w, th and to variance matrix as Rt.
+//?? Get rid of the the static functions in the class by using the "&" template in the subscriber description line
