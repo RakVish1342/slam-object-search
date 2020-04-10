@@ -114,7 +114,7 @@ public:
 
     ~TurtleEkf() {};
 
-    Eigen::VectorXd motionModel(double angVel, double linVel, double deltaT)
+    void motionModel(double angVel, double linVel, double deltaT)
     {
     
         if (angVel > 0.001)
@@ -142,13 +142,15 @@ public:
         prevStates = states; 
 
         //??prt
+        std::cout << "Predicted states = " << std::endl;
+        std::cout << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
         // std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
 
-        return states;
+        // return states;
 
     };
 
-    Eigen::VectorXd motionModelVariance(double angVel, double linVel, double deltaT)
+    void motionModelVariance(double angVel, double linVel, double deltaT)
     {
         double derivXTh, derivYTh;
     
@@ -182,10 +184,10 @@ public:
 
         //??prt
         // std::cout << tmp << std::endl;
-        // std::cout << "..." << std::endl;
-        // std::cout << variances << std::endl;
+        std::cout << "Predicted variances = " << std::endl;
+        std::cout << variances << std::endl;
 
-        return states;
+        // return variances;
 
     };
 
@@ -258,9 +260,9 @@ public:
             }
         }
 
-        std::cout << "LIDARLIDARLIDAR EKFEKFEKFEKFEKF" << std::endl;
-        std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
-        std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
+        // std::cout << "LIDARLIDARLIDAR EKFEKFEKFEKFEKF" << std::endl;
+        // std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
+        // std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
 
         std::vector<double> output = {avgRange, headingMiddle};
         return output;
@@ -300,6 +302,8 @@ public:
             // land_x = robot_x + r*cos(phi + robot_heading)
             states(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
             states(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
+
+            bSeenLandmark(landmarkId) = 1;
         }
 
         double delx = states(stateIdx) - predictedStates(0);
@@ -310,6 +314,9 @@ public:
         Eigen::VectorXd zjHat (2);
         zj << avgRange, headingMiddle;
         zjHat << std::sqrt(q) , ( atan2(dely, delx) - predictedStates(2) );
+        std::cout << "z and zHat = " << std::endl;
+        std::cout << zj << std::endl;
+        std::cout << zjHat << std::endl;
 
         // (numComponentsMotionModel + numComponentsLandmarks) * (numComponentsMotionModel + numComponentsLandmarks*numLandmarks) 
         // (3 + 2) * (3 + 2*numLandmarks)
@@ -317,13 +324,11 @@ public:
         Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
         Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
         
+        Fxj(numModelStates, numModelStates + landmarkId) = 1;
+        Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
+        std::cout << "Fxj = " << std::endl;
         std::cout << Fxj << std::endl;
 
-        Fxj(numModelStates, numModelStates + landmarkId) = 1;
-        std::cout << Fxj << std::endl;
-        Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
-        std::cout << Fxj << std::endl;
-/*
         // Partial differential of:
         // zHat_x wrt modelX, modelY, modelTh, mx, my
         // zHat_y wrt modelX, modelY, modelTh, mx, my
@@ -333,17 +338,22 @@ public:
             std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , -std::sqrt(q)*delx   , std::sqrt(q)*dely ,
             dely              , delx               , -1   , -dely                , -delx;
         H = (1/q) * H;
+        // std::cout << "H = " << std::endl;
+        // std::cout << H << std::endl;
 
         // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
         Eigen::MatrixXd HFxj (numTotStates, numTotStates);
         HFxj = H * Fxj;
+        std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
+        std::cout << HFxj << std::endl;        
 
         // K = sigma * H' * (H * sigma * H')
         // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
         // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
         Eigen::MatrixXd K (numTotStates, numComponents);
         K = predictedVariances*HFxj.transpose()*( H * predictedVariances * HFxj.transpose() ).inverse(); //?? Add process/variance noise inside inversion term
-
+        std::cout << "K = " << std::endl;
+        std::cout << K << std::endl;
 
         predictedStates = predictedStates + K * (zj - zjHat);
         predictedVariances = ( Eigen::MatrixXd::Identity(numTotStates, numTotStates) - K*HFxj) * predictedVariances;
@@ -353,10 +363,9 @@ public:
         states = predictedStates;
         variances = predictedVariances;
 
-        std::cout << "STATES and VARIANCES" << std::endl;
+        std::cout << "Corrected states and variances" << std::endl;
         std::cout << states << std::endl;
         std::cout << variances << std::endl;
-*/        
 
     };
 
@@ -430,7 +439,10 @@ int main(int argc, char** argv)
     ros::Rate loop_rate(100);
     while(ros::ok())
     {
+        std::cout << "===========" << std::endl;
+        std::cout << ">>> Prediction Step" << std::endl;
         turtlebot->controlLoop();
+        std::cout << ">>> Correction Step" << std::endl;
         ros::spinOnce();
         
         loop_rate.sleep();
