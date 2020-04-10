@@ -283,7 +283,6 @@ public:
         double avgRange = landmarkMeasurement[0];
         double headingMiddle = landmarkMeasurement[1];
 
-///*
         //?? May not be needed to make a copy.
         Eigen::VectorXd predictedStates = states;
         Eigen::MatrixXd predictedVariances = variances;
@@ -291,34 +290,40 @@ public:
 //// Begin For loop for each landmark
 
         //?? Setting a landmark manually for now. Will need a loop actually
-        int landmarkId = 1;
+        int landmarkId = 0;
         int stateIdx = numModelStates + landmarkId;
-        if ( !bSeenLandmark[landmarkId] ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
+        if ( !bSeenLandmark(landmarkId) ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
         {
             // NOTE: ujx is the state in states that corsp to this j-th landmark
 
             // u_jx = u_tx + r*cos(phi + u_tth)
             // land_x = robot_x + r*cos(phi + robot_heading)
-            states[stateIdx] = predictedStates[0] + avgRange * cos(headingMiddle + predictedStates[2]);
-            states[stateIdx+1] = predictedStates[1] + avgRange * sin(headingMiddle + predictedStates[2]);
+            states(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
+            states(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
         }
-        double delx = states[stateIdx] - predictedStates[0];
-        double dely = states[stateIdx+1] - predictedStates[1];
+
+        double delx = states(stateIdx) - predictedStates(0);
+        double dely = states(stateIdx+1) - predictedStates(1);
         double q = delx*delx + dely*dely;
 
         Eigen::VectorXd zj(2);
-        Eigen::VectorXd zjHat;
+        Eigen::VectorXd zjHat (2);
         zj << avgRange, headingMiddle;
-        zjHat << std::sqrt(q) , ( atan2(dely, delx) - predictedStates[2] );
+        zjHat << std::sqrt(q) , ( atan2(dely, delx) - predictedStates(2) );
 
         // (numComponentsMotionModel + numComponentsLandmarks) * (numComponentsMotionModel + numComponentsLandmarks*numLandmarks) 
         // (3 + 2) * (3 + 2*numLandmarks)
         //?? Replace all 2s everywhere with numLandmarkComponents OR numLandmarkDims
-        Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);
-        Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(3,3);
-        Fxj(numModelStates+1, landmarkId) = 1;
-        Fxj(numModelStates+1+1, landmarkId+1) = 1;
+        Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
+        Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
+        
+        std::cout << Fxj << std::endl;
 
+        Fxj(numModelStates, numModelStates + landmarkId) = 1;
+        std::cout << Fxj << std::endl;
+        Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
+        std::cout << Fxj << std::endl;
+/*
         // Partial differential of:
         // zHat_x wrt modelX, modelY, modelTh, mx, my
         // zHat_y wrt modelX, modelY, modelTh, mx, my
@@ -348,11 +353,10 @@ public:
         states = predictedStates;
         variances = predictedVariances;
 
-//*/
-
         std::cout << "STATES and VARIANCES" << std::endl;
         std::cout << states << std::endl;
         std::cout << variances << std::endl;
+*/        
 
     };
 
