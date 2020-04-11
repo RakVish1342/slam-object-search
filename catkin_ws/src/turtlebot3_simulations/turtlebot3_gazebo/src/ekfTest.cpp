@@ -378,7 +378,11 @@ public:
         // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
         // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
         Eigen::MatrixXd K (numTotStates, numComponents);
-        K = predictedVariances*HFxj.transpose()*( HFxj * predictedVariances * HFxj.transpose() ).inverse(); //?? Add process/variance noise inside inversion term
+        Eigen::MatrixXd tmp (numComponents, numComponents);
+        Eigen::MatrixXd tmpInv (numComponents, numComponents);
+        tmp = HFxj * predictedVariances * HFxj.transpose();
+        tmpInv = tmp.inverse();
+        K = predictedVariances*HFxj.transpose()*tmpInv; //?? Add process/variance noise inside inversion term
         std::cout << "K = " << std::endl;
         std::cout << K << std::endl;
 
