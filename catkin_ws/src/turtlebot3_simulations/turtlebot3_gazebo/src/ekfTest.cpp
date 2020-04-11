@@ -102,6 +102,8 @@ public:
         // Init theta to PI/2 as per X axis definition: perp to the right
         predictedStates(2) = PI/2.0;        
         states(2) = PI/2.0;
+        // predictedStates(2) = 0;
+        // states(2) = 0;
 
         // Set landmark variances to inf
         predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
@@ -296,6 +298,11 @@ public:
         //?? May not be needed to make a copy.
         // Eigen::VectorXd predictedStates = states;
         // Eigen::MatrixXd predictedVariances = variances;
+
+        std::cout << "Predicted states before correction step = " << std::endl;
+        std::cout << predictedStates << std::endl;
+        std::cout << "Predicted variances before correction step = " << std::endl;
+        std::cout << predictedVariances << std::endl;        
 
 //// Begin For loop for each landmark
 
