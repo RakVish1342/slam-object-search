@@ -68,9 +68,10 @@ private:
     int numTotStates;
     int numComponents;
 
-    Eigen::VectorXd states;
-    Eigen::VectorXd prevStates; // Prev State vector also being maintained since while calc of variance, prevState vec would be reqd, 
+    Eigen::VectorXd predictedStates; // Prev State vector also being maintained since while calc of variance, prevState vec would be reqd, 
                                 // but the states would have already been updated as per motion eqns
+    Eigen::VectorXd states; // ie. Corrected States
+    Eigen::MatrixXd predictedVariances;    
     Eigen::MatrixXd variances;
     Eigen::MatrixXd Fx;
     Eigen::VectorXd bSeenLandmark;
@@ -83,8 +84,9 @@ public:
     numLandmarks(1),
     numTotStates(numModelStates + 2*numLandmarks),
     numComponents(2),
+    predictedStates(Eigen::VectorXd::Zero(numTotStates)),
     states(Eigen::VectorXd::Zero(numTotStates)),
-    prevStates(Eigen::VectorXd::Zero(numTotStates)),
+    predictedVariances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),    
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks))
@@ -98,13 +100,17 @@ public:
         turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  // turtle_lidar = n.subscribe("/scan", 10, cbLidar);
 
         // Init theta to PI/2 as per X axis definition: perp to the right
+        predictedStates(2) = PI/2.0;        
         states(2) = PI/2.0;
-        prevStates(2) = PI/2.0;
 
         // Set landmark variances to inf
+        predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
+        predictedVariances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
+        predictedVariances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
         variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
         variances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
         variances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
+
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         globalTStart = ros::Time::now().toSec();
@@ -124,32 +130,28 @@ public:
             double r = linVel/angVel;
 
             //?? ADD other condition of angles 
-            states(0) = prevStates(0) + ( -r*sin(prevStates(2)) + r*sin(prevStates(2) + angVel*deltaT) );
-            states(1) = prevStates(1) + ( +r*cos(prevStates(2)) - r*cos(prevStates(2) + angVel*deltaT) );
-            states(2) = prevStates(2) + angVel*deltaT;
+            predictedStates(0) = states(0) + ( -r*sin(states(2)) + r*sin(states(2) + angVel*deltaT) );
+            predictedStates(1) = states(1) + ( +r*cos(states(2)) - r*cos(states(2) + angVel*deltaT) );
+            predictedStates(2) = states(2) + angVel*deltaT;
         }
         else
         {
             double dist = linVel*deltaT;
 
             // ADD other condition of angles 
-            states(0) = prevStates(0) - dist*cos(prevStates(2));
-            states(1) = prevStates(1) + dist*sin(prevStates(2));
-            states(2) = prevStates(2);
+            predictedStates(0) = states(0) - dist*cos(states(2));
+            predictedStates(1) = states(1) + dist*sin(states(2));
+            predictedStates(2) = states(2);
         }
 
-        states(2) = normalizeAngle(states(2));
+        predictedStates(2) = normalizeAngle(predictedStates(2));
 
         //?? Will need to remove this update step from here. Take it to the end of sensor model
-        prevStates = states; 
+        // prevStates = states; 
 
         //??prt
         std::cout << "Predicted states = " << std::endl;
-        std::cout << "Predicted states = " << std::endl;
-        std::cout << "Predicted states = " << std::endl;
-        std::cout << "Predicted states = " << std::endl;
-        std::cout << "Predicted states = " << std::endl;
-        std::cout << states << std::endl;
+        std::cout << predictedStates << std::endl;
         // std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
 
         // return states;
@@ -165,8 +167,8 @@ public:
             double r = linVel/angVel;
 
             // Derivative of X and Y wrt Th
-            derivXTh = -r*cos(prevStates(2)) + r*cos(prevStates(2) + angVel*deltaT);
-            derivYTh = -r*sin(prevStates(2)) + r*sin(prevStates(2) + angVel*deltaT);
+            derivXTh = -r*cos(states(2)) + r*cos(states(2) + angVel*deltaT);
+            derivYTh = -r*sin(states(2)) + r*sin(states(2) + angVel*deltaT);
             // derivTh = 1 got from Identity addition
         }
         else
@@ -174,8 +176,8 @@ public:
             double dist = linVel*deltaT;
 
             // ADD other condition of angles 
-            derivXTh = dist*sin(prevStates(2));
-            derivYTh = dist*cos(prevStates(2));
+            derivXTh = dist*sin(states(2));
+            derivYTh = dist*cos(states(2));
             // derivTh = 1 got from Identity addition
         }
 
@@ -186,12 +188,12 @@ public:
         Eigen::MatrixXd Gt =  Eigen::MatrixXd::Identity(numTotStates, numTotStates) + Fx.transpose() * tmp * Fx;
 
         // Variance Calculation
-        variances = Gt * variances * Gt.transpose(); //?? Add process/gaussian noise
+        predictedVariances = Gt * variances * Gt.transpose(); //?? Add process/gaussian noise
 
         //??prt
         // std::cout << tmp << std::endl;
         std::cout << "Predicted variances = " << std::endl;
-        std::cout << variances << std::endl;
+        std::cout << predictedVariances << std::endl;
 
         // return variances;
 
@@ -292,8 +294,8 @@ public:
         double headingMiddle = landmarkMeasurement[1];
 
         //?? May not be needed to make a copy.
-        Eigen::VectorXd predictedStates = states;
-        Eigen::MatrixXd predictedVariances = variances;
+        // Eigen::VectorXd predictedStates = states;
+        // Eigen::MatrixXd predictedVariances = variances;
 
 //// Begin For loop for each landmark
 
