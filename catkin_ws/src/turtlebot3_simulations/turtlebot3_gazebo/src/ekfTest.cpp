@@ -116,6 +116,8 @@ public:
 
     void motionModel(double angVel, double linVel, double deltaT)
     {
+        //?? Now with the sensor model in place, the entire motion model should be working on predicted states. Not the actual states
+        //?? Do the same for the motionModelVariances() function also 
     
         if (angVel > 0.001)
         {
@@ -143,7 +145,11 @@ public:
 
         //??prt
         std::cout << "Predicted states = " << std::endl;
-        std::cout << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
+        std::cout << "Predicted states = " << std::endl;
+        std::cout << "Predicted states = " << std::endl;
+        std::cout << "Predicted states = " << std::endl;
+        std::cout << "Predicted states = " << std::endl;
+        std::cout << states << std::endl;
         // std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
 
         // return states;
@@ -293,27 +299,36 @@ public:
 
         //?? Setting a landmark manually for now. Will need a loop actually
         int landmarkId = 0;
-        int stateIdx = numModelStates + landmarkId;
+        int stateIdx = (numModelStates-1) + (landmarkId+1);
+        std::cout << "stateIdx = " << stateIdx << std::endl;
         if ( !bSeenLandmark(landmarkId) ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
         {
             // NOTE: ujx is the state in states that corsp to this j-th landmark
 
             // u_jx = u_tx + r*cos(phi + u_tth)
             // land_x = robot_x + r*cos(phi + robot_heading)
-            states(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
-            states(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
+            predictedStates(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
+            predictedStates(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
+
+            std::cout << "ONE TIME STATES" << std::endl;
+            std::cout << predictedStates << std::endl;
 
             bSeenLandmark(landmarkId) = 1;
         }
 
-        double delx = states(stateIdx) - predictedStates(0);
-        double dely = states(stateIdx+1) - predictedStates(1);
+        double delx = predictedStates(stateIdx) - predictedStates(0);
+        double dely = predictedStates(stateIdx+1) - predictedStates(1);
         double q = delx*delx + dely*dely;
+        std::cout << "delx, dely and q = " << std::endl;
+        std::cout << delx << std::endl;
+        std::cout << dely << std::endl;
+        std::cout << q << std::endl;
+
 
         Eigen::VectorXd zj(2);
         Eigen::VectorXd zjHat (2);
         zj << avgRange, headingMiddle;
-        zjHat << std::sqrt(q) , ( atan2(dely, delx) - predictedStates(2) );
+        zjHat << std::sqrt(q) , ( std::atan2(dely, delx) - predictedStates(2) );
         std::cout << "z and zHat = " << std::endl;
         std::cout << zj << std::endl;
         std::cout << zjHat << std::endl;
@@ -334,9 +349,12 @@ public:
         // zHat_y wrt modelX, modelY, modelTh, mx, my
         // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
         Eigen::MatrixXd H (numComponents, numTotStates);
+        // H << 
+        //     std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , -std::sqrt(q)*delx   , std::sqrt(q)*dely ,
+        //     dely              , delx               , -1   , -dely                , -delx;
         H << 
-            std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , -std::sqrt(q)*delx   , std::sqrt(q)*dely ,
-            dely              , delx               , -1   , -dely                , -delx;
+            -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
+            dely              , -delx               , -1   , -dely               , delx;        
         H = (1/q) * H;
         // std::cout << "H = " << std::endl;
         // std::cout << H << std::endl;
@@ -351,12 +369,14 @@ public:
         // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
         // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
         Eigen::MatrixXd K (numTotStates, numComponents);
-        K = predictedVariances*HFxj.transpose()*( H * predictedVariances * HFxj.transpose() ).inverse(); //?? Add process/variance noise inside inversion term
+        K = predictedVariances*HFxj.transpose()*( HFxj * predictedVariances * HFxj.transpose() ).inverse(); //?? Add process/variance noise inside inversion term
         std::cout << "K = " << std::endl;
         std::cout << K << std::endl;
 
         predictedStates = predictedStates + K * (zj - zjHat);
-        predictedVariances = ( Eigen::MatrixXd::Identity(numTotStates, numTotStates) - K*HFxj) * predictedVariances;
+        Eigen::MatrixXd I (numTotStates, numTotStates);
+        I = Eigen::MatrixXd::Identity(numTotStates, numTotStates);
+        predictedVariances = ( I - K*HFxj) * predictedVariances;
         
 //// End For loop for each landmark
 
