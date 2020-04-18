@@ -8,7 +8,6 @@
 #include <sensor_msgs/LaserScan.h> // Found it using "rostopic info /scan". Is located in /opt/ros/kinetic/include/sensor_msgs
 #include <vector>
 
-
 #define PI 3.14159265
 
 
@@ -76,6 +75,9 @@ private:
     Eigen::MatrixXd Fx;
     Eigen::VectorXd bSeenLandmark;
 
+    Eigen::MatrixXd RmotionCovar;
+    Eigen::MatrixXd QsensorCovar;
+
 
 public:
     TurtleEkf() :
@@ -115,6 +117,14 @@ public:
 
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
+        Eigen::VectorXd tmp1 (3);
+        tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
+        RmotionCovar = tmp1.asDiagonal();
+
+        Eigen::VectorXd tmp2 (2);
+        tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        QsensorCovar = tmp2.asDiagonal();
+
         globalTStart = ros::Time::now().toSec();
         prevT = globalTStart;
 
@@ -124,8 +134,6 @@ public:
 
     void motionModel(double angVel, double linVel, double deltaT)
     {
-        //?? Now with the sensor model in place, the entire motion model should be working on predicted states. Not the actual states
-        //?? Do the same for the motionModelVariances() function also 
     
         if (angVel > 0.001)
         {
@@ -147,9 +155,6 @@ public:
         }
 
         predictedStates(2) = normalizeAngle(predictedStates(2));
-
-        //?? Will need to remove this update step from here. Take it to the end of sensor model
-        // prevStates = states; 
 
         //??prt
         std::cout << "Predicted states = " << std::endl;
@@ -190,7 +195,9 @@ public:
         Eigen::MatrixXd Gt =  Eigen::MatrixXd::Identity(numTotStates, numTotStates) + Fx.transpose() * tmp * Fx;
 
         // Variance Calculation
-        predictedVariances = Gt * variances * Gt.transpose(); //?? Add process/gaussian noise
+        // predictedVariances = Gt * variances * Gt.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+                                                              //matrix inversion does not yield inv(0) and thus Nan after sometime
+        predictedVariances = Gt * variances * Gt.transpose() + Fx.transpose() * RmotionCovar * Fx;
 
         //??prt
         // std::cout << tmp << std::endl;
@@ -270,10 +277,6 @@ public:
             }
         }
 
-        // std::cout << "LIDARLIDARLIDAR EKFEKFEKFEKFEKF" << std::endl;
-        // std::cout << "StartAngle, StopAngle, MidAngle: " << headingStart << ", " << headingStop << ", " << headingMiddle << std::endl;
-        // std::cout << "Range, Angle: " << avgRange << ", " << headingMiddle << std::endl;
-
         std::vector<double> output = {avgRange, headingMiddle};
         return output;
     }
@@ -283,7 +286,6 @@ public:
     //OR instead of making it static, might be able to use: 
     //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
     //turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  --- In the constructor where the subscriber is initiated.
-
     // static void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
     void cbLidar(const sensor_msgs::LaserScan::ConstPtr &msg)
     {
@@ -294,10 +296,6 @@ public:
         std::vector<double> landmarkMeasurement = lidarRangeHeading(lidarRange, angleInc);
         double avgRange = landmarkMeasurement[0];
         double headingMiddle = landmarkMeasurement[1];
-
-        //?? May not be needed to make a copy.
-        // Eigen::VectorXd predictedStates = states;
-        // Eigen::MatrixXd predictedVariances = variances;
 
         std::cout << "Predicted states before correction step = " << std::endl;
         std::cout << predictedStates << std::endl;
@@ -315,7 +313,7 @@ public:
             // NOTE: ujx is the state in states that corsp to this j-th landmark
 
             // u_jx = u_tx + r*cos(phi + u_tth)
-            // land_x = robot_x + r*cos(phi + robot_heading)
+            // landmark_x = robot_x + r*cos(phi + robot_heading)
             predictedStates(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
             predictedStates(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
 
@@ -342,9 +340,6 @@ public:
         std::cout << zj << std::endl;
         std::cout << zjHat << std::endl;
 
-        // (numComponentsMotionModel + numComponentsLandmarks) * (numComponentsMotionModel + numComponentsLandmarks*numLandmarks) 
-        // (3 + 2) * (3 + 2*numLandmarks)
-        //?? Replace all 2s everywhere with numLandmarkComponents OR numLandmarkDims
         Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
         Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
         
@@ -358,9 +353,6 @@ public:
         // zHat_y wrt modelX, modelY, modelTh, mx, my
         // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
         Eigen::MatrixXd H (numComponents, numTotStates);
-        // H << 
-        //     std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , -std::sqrt(q)*delx   , std::sqrt(q)*dely ,
-        //     dely              , delx               , -1   , -dely                , -delx;
         H << 
             -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
             dely              , -delx               , -1   , -dely               , delx;        
@@ -374,15 +366,15 @@ public:
         std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
         std::cout << HFxj << std::endl;        
 
-        // K = sigma * H' * (H * sigma * H')
-        // (3+2n)x(3+2n) * (5)x(5) * inv( (5)x(5) * ()x() * (5)x(5) )
-        // (5)x(5) * (5)x(5) * inv( (5)x(5) * (5)x(5) * (5)x(5) )
         Eigen::MatrixXd K (numTotStates, numComponents);
         Eigen::MatrixXd tmp (numComponents, numComponents);
         Eigen::MatrixXd tmpInv (numComponents, numComponents);
-        tmp = HFxj * predictedVariances * HFxj.transpose();
+        tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+                                                            //matrix inversion does not yield inv(0) and thus Nan after sometime
+        // tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
         tmpInv = tmp.inverse();
-        K = predictedVariances*HFxj.transpose()*tmpInv; //?? Add process/variance noise inside inversion term
+        K = predictedVariances*HFxj.transpose()*tmpInv; 
+
         std::cout << "K = " << std::endl;
         std::cout << K << std::endl;
 
@@ -405,17 +397,14 @@ public:
     // OR instead of making it static, can use:
     //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
     //turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  --- In the constructor where the subscriber is initiated.
-
     // static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
     void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
     {
 
         double odomX = msg->pose.pose.position.x;
         double odomY = msg->pose.pose.position.y;
-
         //??prt        
         // std::cout << "odomX, odomY: " << odomX << ", " << odomY << std::endl;
-        
     };
 
     void controlLoop()
@@ -492,3 +481,4 @@ int main(int argc, char** argv)
 // remains at inf, and only motion model is present so that stays fully certain at 0. Eqn wise, tmp happens to just stay really close to 0
 // Later see how it performs when some noise is incorporated. Noise to be added to v, w, th and to variance matrix as Rt.
 //?? Get rid of the the static functions in the class by using the "&" template in the subscriber description line
+//?? Replace all 2s everywhere with numLandmarkComponents OR numLandmarkDims
