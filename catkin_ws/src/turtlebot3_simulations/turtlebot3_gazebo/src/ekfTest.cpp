@@ -369,9 +369,9 @@ public:
         Eigen::MatrixXd K (numTotStates, numComponents);
         Eigen::MatrixXd tmp (numComponents, numComponents);
         Eigen::MatrixXd tmpInv (numComponents, numComponents);
-        tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+        // tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
                                                             //matrix inversion does not yield inv(0) and thus Nan after sometime
-        // tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
+        tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
         tmpInv = tmp.inverse();
         K = predictedVariances*HFxj.transpose()*tmpInv; 
 
