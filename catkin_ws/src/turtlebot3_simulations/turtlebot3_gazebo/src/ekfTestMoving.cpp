@@ -96,8 +96,8 @@ public:
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
-    bTestMotionModelOnly(1),
-    timeThresh(8), 
+    bTestMotionModelOnly(0),
+    timeThresh(1), 
     angVelThresh(0.001)
     {
         ROS_INFO("Started Node: efk_singleBlock");
@@ -128,12 +128,13 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
-        // tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
-        tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance
+        tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
+        // tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        tmp2 << 0.005, 0.005; // 0.05m 0.05m of variance.
+        // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
         globalTStart = ros::Time::now().toSec();
@@ -209,9 +210,9 @@ public:
         Eigen::MatrixXd Gt =  Eigen::MatrixXd::Identity(numTotStates, numTotStates) + Fx.transpose() * tmp * Fx;
 
         // Variance Calculation
-        predictedVariances = Gt * variances * Gt.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+        // predictedVariances = Gt * variances * Gt.transpose(); // MUST add process/gaussian noise so that in Correction step, 
                                                               //matrix inversion does not yield inv(0) and thus Nan after sometime
-        // predictedVariances = Gt * variances * Gt.transpose() + Fx.transpose() * RmotionCovar * Fx;
+        predictedVariances = Gt * variances * Gt.transpose() + Fx.transpose() * RmotionCovar * Fx;
 
         //??prt
         // std::cout << tmp << std::endl;
@@ -435,8 +436,11 @@ public:
         double linVel, angVel;
         if(globalTStop > 0 && globalTStop < timeThresh)
         {
-            msg.linear.x = 0.5;
-            msg.angular.z = 0.25;
+            // msg.linear.x = 0.5;
+            // msg.angular.z = 0.25;
+            msg.linear.x = 0.0;
+            msg.angular.z = 0.0;
+
         }
         else if(globalTStop >= timeThresh)
         {
