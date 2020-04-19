@@ -97,7 +97,7 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(1), 
+    timeThresh(4), 
     angVelThresh(0.001)
     {
         ROS_INFO("Started Node: efk_singleBlock");
@@ -133,7 +133,7 @@ public:
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.005, 0.005; // 0.05m 0.05m of variance.
+        tmp2 << 0.05, 0.05; // 0.05m 0.05m of variance.
         // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
@@ -432,18 +432,22 @@ public:
 
         // global execution time
         double globalTStop = ros::Time::now().toSec() - globalTStart;
+        double timeWaitGazebo = 4; // Wait 4s for gazebo to initialize
 
         double linVel, angVel;
-        if(globalTStop > 0 && globalTStop < timeThresh)
+        // if(globalTStop > 0 && globalTStop < timeThresh)
+        if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
         {
+            std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.0;
+            msg.linear.x = 0.1;
             msg.angular.z = 0.0;
 
         }
-        else if(globalTStop >= timeThresh)
+        else if(globalTStop >= timeWaitGazebo + timeThresh)
         {
+            std::cout << ">>> STOPPED..." << globalTStop << std::endl;
             msg.linear.x = 0.0;
             msg.angular.z = 0.0;    
         }
