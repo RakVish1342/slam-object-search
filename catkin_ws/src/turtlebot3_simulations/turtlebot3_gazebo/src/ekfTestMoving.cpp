@@ -97,7 +97,7 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(4), 
+    timeThresh(8), 
     angVelThresh(0.001)
     {
         ROS_INFO("Started Node: efk_singleBlock");
@@ -353,7 +353,8 @@ public:
         Eigen::VectorXd zj(2);
         Eigen::VectorXd zjHat (2);
         zj << avgRange, headingMiddle;
-        zjHat << std::sqrt(q) , ( std::atan2(dely, delx) - predictedStates(2) );
+        double tmpAngle = std::atan2(dely, delx) - predictedStates(2);
+        zjHat << std::sqrt(q) , normalizeAngle(tmpAngle);
         std::cout << "z and zHat = " << std::endl;
         std::cout << zj << std::endl;
         std::cout << zjHat << std::endl;
