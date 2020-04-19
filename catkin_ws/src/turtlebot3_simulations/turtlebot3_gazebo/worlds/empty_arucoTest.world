@@ -44,7 +44,11 @@
       <uri>model://aruco_visual_marker_0</uri>
     </include>
 
+     <include>
+      <uri>model://aruco_visual_marker_1</uri>
+    </include>
 
+   
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>0.8 0.0 12.0 0 1.5708 0</pose>
