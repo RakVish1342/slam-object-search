@@ -97,7 +97,7 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(8), 
+    timeThresh(2), 
     angVelThresh(0.001)
     {
         ROS_INFO("Started Node: efk_singleBlock");
@@ -128,7 +128,7 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
-        tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
+        tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
         // tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
         RmotionCovar = tmp1.asDiagonal();
 
@@ -458,7 +458,7 @@ public:
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.0;
+            msg.linear.x = 0.5;
             msg.angular.z = 0.0;
 
         }
