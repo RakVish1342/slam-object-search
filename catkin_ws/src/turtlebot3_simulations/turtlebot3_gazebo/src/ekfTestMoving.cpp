@@ -81,7 +81,7 @@ private:
     Eigen::MatrixXd QsensorCovar;
 
     bool bTestMotionModelOnly;
-
+    bool bAllDebugPrint;
 
 public:
     TurtleEkf() :
@@ -97,8 +97,9 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(2), 
-    angVelThresh(0.001)
+    timeThresh(6), 
+    angVelThresh(0.001),
+    bAllDebugPrint(0)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
@@ -114,8 +115,6 @@ public:
         // Init theta to PI/2 as per X axis definition: perp to the right
         predictedStates(2) = PI/2.0;        
         states(2) = PI/2.0;
-        // predictedStates(2) = 0;
-        // states(2) = 0;
 
         // Set landmark variances to inf
         predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
@@ -168,10 +167,13 @@ public:
 
         predictedStates(2) = normalizeAngle(predictedStates(2));
 
-        //??prt
-        std::cout << "Predicted states = " << std::endl;
-        std::cout << predictedStates << std::endl;
-        // std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
+        if(bAllDebugPrint)
+        {
+            //??prt
+            std::cout << "Predicted states = " << std::endl;
+            std::cout << predictedStates << std::endl;
+            // std::cout << "X', Y', Th': " << states(0) << ", " << states(1) << ", " << states(2) << std::endl;
+        }
 
         if(bTestMotionModelOnly)
         {
@@ -214,10 +216,13 @@ public:
                                                               //matrix inversion does not yield inv(0) and thus Nan after sometime
         predictedVariances = Gt * variances * Gt.transpose() + Fx.transpose() * RmotionCovar * Fx;
 
-        //??prt
-        // std::cout << tmp << std::endl;
-        std::cout << "Predicted variances = " << std::endl;
-        std::cout << predictedVariances << std::endl;
+        if(bAllDebugPrint)
+        {
+            //??prt
+            // std::cout << tmp << std::endl;
+            std::cout << "Predicted variances = " << std::endl;
+            std::cout << predictedVariances << std::endl;
+        }
 
         if(bTestMotionModelOnly)
         {
@@ -324,17 +329,22 @@ public:
 
         if( !(std::abs(avgRange) >= INF) )
         {
-            std::cout << "Predicted states before correction step = " << std::endl;
-            std::cout << predictedStates << std::endl;
-            std::cout << "Predicted variances before correction step = " << std::endl;
-            std::cout << predictedVariances << std::endl;        
-
+            if(bAllDebugPrint)
+            {
+                std::cout << "Predicted states before correction step = " << std::endl;
+                std::cout << predictedStates << std::endl;
+                std::cout << "Predicted variances before correction step = " << std::endl;
+                std::cout << predictedVariances << std::endl;        
+            }
     //// Begin For loop for each landmark
 
             //?? Setting a landmark manually for now. Will need a loop actually
             int landmarkId = 0;
             int stateIdx = (numModelStates-1) + (landmarkId+1);
-            std::cout << "stateIdx = " << stateIdx << std::endl;
+            if(bAllDebugPrint)
+            {
+                std::cout << "stateIdx = " << stateIdx << std::endl;
+            }
             if ( !bSeenLandmark(landmarkId) ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
             {
                 // NOTE: ujx is the state in states that corsp to this j-th landmark
@@ -344,8 +354,11 @@ public:
                 predictedStates(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
                 predictedStates(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
 
-                std::cout << "ONE TIME STATES" << std::endl;
-                std::cout << predictedStates << std::endl;
+                if(bAllDebugPrint)
+                {
+                    std::cout << "ONE TIME STATES" << std::endl;
+                    std::cout << predictedStates << std::endl;
+                }
 
                 bSeenLandmark(landmarkId) = 1;
             }
@@ -353,28 +366,36 @@ public:
             double delx = predictedStates(stateIdx) - predictedStates(0);
             double dely = predictedStates(stateIdx+1) - predictedStates(1);
             double q = delx*delx + dely*dely;
-            std::cout << "delx, dely and q = " << std::endl;
-            std::cout << delx << std::endl;
-            std::cout << dely << std::endl;
-            std::cout << q << std::endl;
-
+            if(bAllDebugPrint)
+            {
+                std::cout << "delx, dely and q = " << std::endl;
+                std::cout << delx << std::endl;
+                std::cout << dely << std::endl;
+                std::cout << q << std::endl;
+            }
 
             Eigen::VectorXd zj(2);
             Eigen::VectorXd zjHat (2);
             zj << avgRange, headingMiddle;
             double tmpAngle = std::atan2(dely, delx) - predictedStates(2);
             zjHat << std::sqrt(q) , normalizeAngle(tmpAngle);
-            std::cout << "z and zHat = " << std::endl;
-            std::cout << zj << std::endl;
-            std::cout << zjHat << std::endl;
+            if(bAllDebugPrint)
+            {
+                std::cout << "z and zHat = " << std::endl;
+                std::cout << zj << std::endl;
+                std::cout << zjHat << std::endl;
+            }
 
             Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
             Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
             
             Fxj(numModelStates, numModelStates + landmarkId) = 1;
             Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
-            std::cout << "Fxj = " << std::endl;
-            std::cout << Fxj << std::endl;
+            if(bAllDebugPrint)
+            {
+                std::cout << "Fxj = " << std::endl;
+                std::cout << Fxj << std::endl;
+            }
 
             // Partial differential of:
             // zHat_x wrt modelX, modelY, modelTh, mx, my
@@ -391,8 +412,11 @@ public:
             // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
             Eigen::MatrixXd HFxj (numTotStates, numTotStates);
             HFxj = H * Fxj;
-            std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
-            std::cout << HFxj << std::endl;        
+            if(bAllDebugPrint)
+            {
+                std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
+                std::cout << HFxj << std::endl;        
+            }
 
             Eigen::MatrixXd K (numTotStates, numComponents);
             Eigen::MatrixXd tmp (numComponents, numComponents);
@@ -403,8 +427,11 @@ public:
             tmpInv = tmp.inverse();
             K = predictedVariances*HFxj.transpose()*tmpInv; 
 
-            std::cout << "K = " << std::endl;
-            std::cout << K << std::endl;
+            if(bAllDebugPrint)
+            {
+                std::cout << "K = " << std::endl;
+                std::cout << K << std::endl;
+            }
 
             predictedStates = predictedStates + K * (zj - zjHat);
             Eigen::MatrixXd I (numTotStates, numTotStates);
@@ -416,9 +443,12 @@ public:
             states = predictedStates;
             variances = predictedVariances;
 
-            std::cout << "Corrected states and variances" << std::endl;
-            std::cout << states << std::endl;
-            std::cout << variances << std::endl;
+            if(bAllDebugPrint)
+            {
+                std::cout << "Corrected states and variances" << std::endl;
+                std::cout << states << std::endl;
+                std::cout << variances << std::endl;
+            }
         }
         else
         {
@@ -458,8 +488,8 @@ public:
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.5;
-            msg.angular.z = 0.0;
+            msg.linear.x = 0.25;
+            msg.angular.z = 0.1;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
@@ -487,6 +517,15 @@ public:
 
     };
 
+    Eigen::VectorXd getStates()
+    {
+        return states;
+    };
+    Eigen::MatrixXd getVariances()
+    {
+        return variances;
+    };
+
 };
 
 
@@ -505,6 +544,10 @@ int main(int argc, char** argv)
         turtlebot->controlLoop();
         std::cout << ">>> Correction Step" << std::endl;
         ros::spinOnce();
+        std::cout << ">>> States after this time step: " << std::endl;
+        std::cout << turtlebot->getStates() << std::endl;
+        std::cout << "---" << std::endl;
+        std::cout << turtlebot->getVariances() << std::endl;
         
         loop_rate.sleep();
     }
