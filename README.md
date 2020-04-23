@@ -59,5 +59,6 @@ roslaunch aruco_ros marker_publisher.launch ref_frame:=base_footprint
 rostopic echo /aruco_marker_publisher/markers
 ```
 
-Location of model and SDF files for markers: catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/aruco_visual_marker_X/ --- include these as a URI in the world files
-Location of aruco source repo/project: catkin_ws/src/aruco_ros/aruco_ros
+Location of model and SDF files for markers: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/aruco_visual_marker_X/``` --- include these as a URI in the world files
+
+Location of aruco source repo/project: ```catkin_ws/src/aruco_ros/aruco_ros```
