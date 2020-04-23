@@ -133,7 +133,7 @@ public:
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.05, 0.05; // 0.05m 0.05m of variance.
+        tmp2 << 0.005, 0.005; // 0.05m 0.05m of variance.
         // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
@@ -449,7 +449,7 @@ public:
 
         // global execution time
         double globalTStop = ros::Time::now().toSec() - globalTStart;
-        double timeWaitGazebo = 4; // Wait 4s for gazebo to initialize
+        double timeWaitGazebo = 8; // Wait 4s for gazebo to initialize
 
         double linVel, angVel;
         // if(globalTStop > 0 && globalTStop < timeThresh)
