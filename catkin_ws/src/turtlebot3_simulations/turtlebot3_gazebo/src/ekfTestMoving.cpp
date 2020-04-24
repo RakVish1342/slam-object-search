@@ -127,8 +127,9 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
+        tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
         // tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
-        tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
+        // tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
@@ -459,7 +460,7 @@ public:
                 std::cout << K << std::endl;
             }
 
-            if( std::abs(tmp.determinant()) > 0.000002 )
+            if( std::abs(tmp.determinant()) > 0.0001 ) // 10 power -4
             {
                 predictedStates = predictedStates + K * (zj - zjHat);
                 Eigen::MatrixXd Iden (numTotStates, numTotStates);
@@ -520,8 +521,8 @@ public:
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.0;
-            msg.angular.z = 0;
+            msg.linear.x = 0.25;
+            msg.angular.z = 0.0;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
