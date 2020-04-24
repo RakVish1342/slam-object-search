@@ -127,11 +127,12 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
-        tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
-        // tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
+        // tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
+        tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
+        // tmp2 << 0.0, 0.0; // 0.05m 0.05m of variance.
         // tmp2 << 0.05, 0.05; // 0.05m 0.05m of variance.
         tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
@@ -142,6 +143,24 @@ public:
     };
 
     ~TurtleEkf() {};
+
+    void displayAll()
+    {
+        std::cout << "INIT STATES" << std::endl;
+        std::cout << "INF " << INF << std::endl;
+        std::cout << "numModelStates " << numModelStates << std::endl;
+        std::cout << "numLandmarks " << numLandmarks << std::endl;
+        std::cout << "numTotStates " << numTotStates << std::endl;
+        std::cout << "numComponents " << numComponents << std::endl;
+        std::cout << "predictedStates " << predictedStates << std::endl;
+        std::cout << "states " << states << std::endl;
+        std::cout << "predictedVariances " << predictedVariances << std::endl;
+        std::cout << "variances " << variances << std::endl;
+        std::cout << "Fx " << Fx << std::endl;
+        // std::cout <<  << std::endl;
+        // std::cout <<  << std::endl;
+
+    }
 
     void motionModel(double angVel, double linVel, double deltaT)
     {
@@ -405,13 +424,14 @@ public:
             Eigen::MatrixXd H (numComponents, numTotStates);
             H << 
                 -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
-                dely              , -delx               , -1   , -dely               , delx;        
+                dely              , -delx               , -q   , -dely               , delx;        
             H = (1/q) * H;
             // std::cout << "H = " << std::endl;
             // std::cout << H << std::endl;
 
             // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
             Eigen::MatrixXd HFxj (numTotStates, numTotStates);
+            Eigen::MatrixXd Htrans (numTotStates, numTotStates);
             HFxj = H * Fxj;
             if(bAllDebugPrint)
             {
@@ -424,9 +444,14 @@ public:
             Eigen::MatrixXd tmpInv (numComponents, numComponents);
             // tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
                                                                 //matrix inversion does not yield inv(0) and thus Nan after sometime
-            tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
-            tmpInv = tmp.inverse();
-            K = predictedVariances*HFxj.transpose()*tmpInv; 
+            Htrans = HFxj.transpose();
+            tmp = HFxj * predictedVariances * Htrans + QsensorCovar;
+            tmpInv = tmp.inverse(); // As explained in the doc (http://eigen.tuxfamily.org/dox-devel/cl ... 030f79f9da), mat.inverse() returns the inverse of mat, keeping mat unchanged:
+            std::cout << "tmp Det" << std::endl;
+            std::cout << tmp.determinant() << std::endl;            
+            std::cout << "tmpInv" << std::endl;
+            std::cout << tmpInv << std::endl;
+            K = predictedVariances * Htrans * tmpInv; 
 
             if(bAllDebugPrint)
             {
@@ -434,24 +459,28 @@ public:
                 std::cout << K << std::endl;
             }
 
-            predictedStates = predictedStates + K * (zj - zjHat);
-            Eigen::MatrixXd I (numTotStates, numTotStates);
-            I = Eigen::MatrixXd::Identity(numTotStates, numTotStates);
-            predictedVariances = ( I - K*HFxj) * predictedVariances;
-            
+            if( std::abs(tmp.determinant()) > 0.000002 )
+            {
+                predictedStates = predictedStates + K * (zj - zjHat);
+                Eigen::MatrixXd Iden (numTotStates, numTotStates);
+                Iden = Eigen::MatrixXd::Identity(numTotStates, numTotStates);
+                predictedVariances = ( Iden - K*HFxj) * predictedVariances;
+            }
+            else
+            {
+                std::cout << "UNSTABLE" << std::endl;
+            }
     //// End For loop for each landmark
-
-            states = predictedStates;
-            variances = predictedVariances;
 
         }
         else
         {
-
             std::cout << ">>> No Obstacle in Lidar Range" << std::endl;
-            states = predictedStates;
-            variances = predictedVariances;        
         }
+
+        states = predictedStates;
+        variances = predictedVariances;
+
 
         if(bAllDebugPrint)
         {
@@ -492,7 +521,7 @@ public:
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
             msg.linear.x = 0.0;
-            msg.angular.z = 0.25;
+            msg.angular.z = 0;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
@@ -538,6 +567,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "ekf_Test");
 
     TurtleEkf* turtlebot = new TurtleEkf(); // Init on heap so that large lidar data isn't an issue
+    turtlebot->displayAll();
 
     ros::Rate loop_rate(100);
     while(ros::ok())
