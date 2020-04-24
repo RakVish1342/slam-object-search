@@ -127,14 +127,12 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
-        tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
+        tmp1 << 0, 0, 0; // 0.05m 0.05m 0.05rad of variance
         // tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
-        // tmp1 << 0.005, 0.005, 0.005; // 0.05m 0.05m 0.05rad of variance BETTER NOT KEEP IT THIS SMALL for both. Else Nan at inversion might happen again
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.0, 0.0; // 0.05m 0.05m of variance.
-        // tmp2 << 0.05, 0.05; // 0.05m 0.05m of variance.
+        tmp2 << 0.05, 0.05; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
@@ -158,8 +156,8 @@ public:
         std::cout << "predictedVariances " << predictedVariances << std::endl;
         std::cout << "variances " << variances << std::endl;
         std::cout << "Fx " << Fx << std::endl;
-        // std::cout <<  << std::endl;
-        // std::cout <<  << std::endl;
+        std::cout << "RmotionCovar " << RmotionCovar << std::endl;
+        std::cout << "QsensorCovar" << QsensorCovar << std::endl;
 
     }
 
@@ -423,17 +421,19 @@ public:
             // zHat_y wrt modelX, modelY, modelTh, mx, my
             // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
             Eigen::MatrixXd H (numComponents, numTotStates);
+            Eigen::MatrixXd Hq (numComponents, numTotStates);
             H << 
                 -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
                 dely              , -delx               , -q   , -dely               , delx;        
-            H = (1/q) * H;
+            Hq = (1/q) * H;
+            // H = H * (1/q);
             // std::cout << "H = " << std::endl;
             // std::cout << H << std::endl;
 
             // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
             Eigen::MatrixXd HFxj (numTotStates, numTotStates);
             Eigen::MatrixXd Htrans (numTotStates, numTotStates);
-            HFxj = H * Fxj;
+            HFxj = Hq * Fxj;
             if(bAllDebugPrint)
             {
                 std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
@@ -522,7 +522,7 @@ public:
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
             msg.linear.x = 0.25;
-            msg.angular.z = 0.0;
+            msg.angular.z = 0.25;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
