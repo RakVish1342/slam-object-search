@@ -129,9 +129,9 @@ int main(int argc, char** argv)
 
         if(tstop>0 && tstop<12)
         {
-            msg.linear.x = 0.5;
+            msg.linear.x = 0;
             msg.angular.z = 0.25;
-            linVel = 0.5;
+            linVel = 0;
             angVel = 0.25;
         }
         // else if(tstop>=3 && tstop<4)
