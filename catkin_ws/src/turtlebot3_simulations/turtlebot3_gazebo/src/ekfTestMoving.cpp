@@ -97,9 +97,9 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(6), 
+    timeThresh(8), 
     angVelThresh(0.001),
-    bAllDebugPrint(0)
+    bAllDebugPrint(1)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
@@ -132,8 +132,8 @@ public:
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.005, 0.005; // 0.05m 0.05m of variance.
-        // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        // tmp2 << 0.05, 0.05; // 0.05m 0.05m of variance.
+        tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
         globalTStart = ros::Time::now().toSec();
@@ -327,6 +327,7 @@ public:
         double avgRange = landmarkMeasurement[0];
         double headingMiddle = landmarkMeasurement[1];
 
+        // avgRange = INF;
         if( !(std::abs(avgRange) >= INF) )
         {
             if(bAllDebugPrint)
@@ -421,9 +422,9 @@ public:
             Eigen::MatrixXd K (numTotStates, numComponents);
             Eigen::MatrixXd tmp (numComponents, numComponents);
             Eigen::MatrixXd tmpInv (numComponents, numComponents);
-            tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+            // tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
                                                                 //matrix inversion does not yield inv(0) and thus Nan after sometime
-            // tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
+            tmp = HFxj * predictedVariances * HFxj.transpose() + QsensorCovar;
             tmpInv = tmp.inverse();
             K = predictedVariances*HFxj.transpose()*tmpInv; 
 
@@ -443,18 +444,20 @@ public:
             states = predictedStates;
             variances = predictedVariances;
 
-            if(bAllDebugPrint)
-            {
-                std::cout << "Corrected states and variances" << std::endl;
-                std::cout << states << std::endl;
-                std::cout << variances << std::endl;
-            }
         }
         else
         {
+
             std::cout << ">>> No Obstacle in Lidar Range" << std::endl;
             states = predictedStates;
-            variances = predictedVariances;
+            variances = predictedVariances;        
+        }
+
+        if(bAllDebugPrint)
+        {
+            std::cout << "Corrected states and variances" << std::endl;
+            std::cout << states << std::endl;
+            std::cout << variances << std::endl;
         }
 
     };
@@ -479,7 +482,7 @@ public:
 
         // global execution time
         double globalTStop = ros::Time::now().toSec() - globalTStart;
-        double timeWaitGazebo = 8; // Wait 4s for gazebo to initialize
+        double timeWaitGazebo = 10; // Wait 4s for gazebo to initialize
 
         double linVel, angVel;
         // if(globalTStop > 0 && globalTStop < timeThresh)
@@ -488,8 +491,8 @@ public:
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.25;
-            msg.angular.z = 0.2;
+            msg.linear.x = 0.0;
+            msg.angular.z = 0.25;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
@@ -544,6 +547,7 @@ int main(int argc, char** argv)
         turtlebot->controlLoop();
         std::cout << ">>> Correction Step" << std::endl;
         ros::spinOnce();
+
         std::cout << ">>> States after this time step: " << std::endl;
         std::cout << turtlebot->getStates() << std::endl;
         std::cout << "---" << std::endl;
