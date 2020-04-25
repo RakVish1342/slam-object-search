@@ -341,6 +341,8 @@ public:
         std::cout << predictedStates(stateIdx) << ", " << predictedStates(stateIdx+1) << std::endl;
         std::cout << "diffs" << std::endl;
         std::cout << predictedStates(stateIdx) - predictedStates(0) << ", " << predictedStates(stateIdx+1) - predictedStates(1) << std::endl;
+        std::cout << "theta" << std::endl;
+        std::cout << predictedStates(2) << ", " << states(2) << std::endl;
         std::cout << "alpha" << std::endl;
         std::cout << tmpAngle << std::endl;
         std::cout << "z and zHat" << std::endl;
@@ -543,7 +545,7 @@ public:
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
-            msg.linear.x = 0.25;
+            msg.linear.x = 0.0;
             msg.angular.z = 0.25;
 
         }
