@@ -177,12 +177,17 @@ public:
         }
         else
         {
-            double dist = linVel*deltaT;
+            // double dist = linVel*deltaT;
+            // // ADD other condition of angles 
+            // predictedStates(0) = states(0) - dist*cos(states(2));
+            // predictedStates(1) = states(1) + dist*sin(states(2));
+            // predictedStates(2) = states(2);
 
-            // ADD other condition of angles 
-            predictedStates(0) = states(0) - dist*cos(states(2));
-            predictedStates(1) = states(1) + dist*sin(states(2));
-            predictedStates(2) = states(2);
+            double r = linVel*deltaT;
+            predictedStates(0) = states(0) + ( -r*sin(states(2)) + r*sin(states(2) + angVel*deltaT) );
+            predictedStates(1) = states(1) + ( +r*cos(states(2)) - r*cos(states(2) + angVel*deltaT) );
+            predictedStates(2) = states(2) + angVel*deltaT;
+
         }
 
         predictedStates(2) = normalizeAngle(predictedStates(2));
@@ -217,11 +222,16 @@ public:
         }
         else
         {
-            double dist = linVel*deltaT;
+            // double dist = linVel*deltaT;
+            // // ADD other condition of angles 
+            // derivXTh = dist*sin(states(2));
+            // derivYTh = dist*cos(states(2));
+            // // derivTh = 1 got from Identity addition
 
-            // ADD other condition of angles 
-            derivXTh = dist*sin(states(2));
-            derivYTh = dist*cos(states(2));
+            double r = linVel*deltaT;
+            // Derivative of X and Y wrt Th
+            derivXTh = -r*cos(states(2)) + r*cos(states(2) + angVel*deltaT);
+            derivYTh = -r*sin(states(2)) + r*sin(states(2) + angVel*deltaT);
             // derivTh = 1 got from Identity addition
         }
 
@@ -546,7 +556,7 @@ public:
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
             msg.linear.x = 0.25;
-            msg.angular.z = 0.0;
+            msg.angular.z = 0.25;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
