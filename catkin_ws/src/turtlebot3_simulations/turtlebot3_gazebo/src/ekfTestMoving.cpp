@@ -134,7 +134,7 @@ public:
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0, 0; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 

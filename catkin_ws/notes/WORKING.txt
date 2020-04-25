@@ -1,0 +1,17 @@
+Seems like selecting covariance matrix R and Q properly was the key.
+
+---
+Following combos work (For linear and angular velocity cases):
+R = 0.05, 0.05, 0.05
+Q = 0, 0
+---
+R = 0.05, 0.05, 0.05
+Q = 0.005, 0.005
+
+Following does NOT work:
+R = 0.05, 0.05, 0.005
+Q = 0, 0
+---
+R = 0.05, 0.05, 0.005
+Q = 0.005, 0.005
+
