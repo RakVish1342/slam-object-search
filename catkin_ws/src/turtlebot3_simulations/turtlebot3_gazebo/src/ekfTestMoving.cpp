@@ -332,6 +332,24 @@ public:
     }
 
 
+
+    void tmpPrint(Eigen::VectorXd z, Eigen::VectorXd zHat, int stateIdx, double tmpAngle)
+    {
+        std::cout << "-------------------------" << std::endl;
+        std::cout << "x, mX and y, mY" << std::endl;
+        std::cout << predictedStates(0) << ", " << predictedStates(1) << std::endl;
+        std::cout << predictedStates(stateIdx) << ", " << predictedStates(stateIdx+1) << std::endl;
+        std::cout << "diffs" << std::endl;
+        std::cout << predictedStates(stateIdx) - predictedStates(0) << ", " << predictedStates(stateIdx+1) - predictedStates(1) << std::endl;
+        std::cout << "alpha" << std::endl;
+        std::cout << tmpAngle << std::endl;
+        std::cout << "z and zHat" << std::endl;
+        std::cout << z(0) << ", " << z(1)*(180/PI) << std::endl;
+        std::cout << zHat(0) << ", " << zHat(1)*(180/PI) << std::endl;
+        std::cout << "-------------------------" << std::endl;
+    }
+
+
     // Also behaves as the sensorModel()
     //OR instead of making it static, might be able to use: 
     //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
@@ -406,6 +424,8 @@ public:
                 std::cout << zj << std::endl;
                 std::cout << zjHat << std::endl;
             }
+
+            tmpPrint(zj, zjHat, stateIdx, tmpAngle);
 
             Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
             Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
