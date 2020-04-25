@@ -115,6 +115,8 @@ public:
         // Init theta to PI/2 as per X axis definition: perp to the right
         predictedStates(2) = PI/2.0;        
         states(2) = PI/2.0;
+        // predictedStates(2) = 0;        
+        // states(2) = 0;
 
         // Set landmark variances to inf
         predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
@@ -127,12 +129,12 @@ public:
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
         Eigen::VectorXd tmp1 (3);
-        tmp1 << 0, 0, 0; // 0.05m 0.05m 0.05rad of variance
+        tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
         // tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.05, 0.05; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        tmp2 << 0, 0; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         QsensorCovar = tmp2.asDiagonal();
 
