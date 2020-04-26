@@ -1,0 +1,3 @@
+Now, compared to when lidar and a single obstacle was used, the updates for the arc don't change as accurately back from -2.8 to +2.8 due to simulation error/drift anymore since only motion model is being used at that point, which does not have any idea about that simulation drift. 
+
+Only reason lidar model could correct that unexpected motion drift earlier was because the obstacle was still in reach of the lidar scan. So this might seem like a slight setback or mistake, but code is actually functioning fine.
