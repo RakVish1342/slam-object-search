@@ -113,7 +113,7 @@ public:
         turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
         if(! bTestMotionModelOnly)
         {
-            turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  // turtle_lidar = n.subscribe("/scan", 10, cbLidar);
+            // turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  // turtle_lidar = n.subscribe("/scan", 10, cbLidar);
             turtle_aruco = n.subscribe("/aruco_marker_publisher/markers", 10, &TurtleEkf::cbAruco, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
         }
 
