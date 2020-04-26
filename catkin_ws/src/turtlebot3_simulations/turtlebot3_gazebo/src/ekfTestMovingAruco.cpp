@@ -91,7 +91,7 @@ public:
     TurtleEkf() :
     INF(std::numeric_limits<float>::max()),
     numModelStates(3),
-    numLandmarks(2),
+    numLandmarks(3),
     numTotStates(numModelStates + 2*numLandmarks),
     numComponents(2),
     predictedStates(Eigen::VectorXd::Zero(numTotStates)),
@@ -289,7 +289,7 @@ public:
 
             int landmarkId = marker_i.id; //Was written for landmark indexes starting from 0. But Aruco markers from idx 1 are being used.
             int stateIdx = numModelStates + 2*landmarkId;
-            std::cout << "ARUCOMARKER IDX" << std::endl;
+            std::cout << "Arucomarker idx, State idx" << std::endl;
             std::cout << landmarkId << ", " << stateIdx << std::endl;
 
             if(bAllDebugPrint)
