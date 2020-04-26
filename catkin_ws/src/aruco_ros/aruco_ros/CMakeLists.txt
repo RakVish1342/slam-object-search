@@ -73,3 +73,9 @@ foreach(dir etc launch)
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
 
+
+#message("###################################################")
+#message(${catkin_INCLUDE_DIRS})
+#message("###################################################")
+#message(${OpenCV_INCLUDE_DIRS})
+

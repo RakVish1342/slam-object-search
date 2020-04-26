@@ -33,7 +33,12 @@
   <node name="ekf_Test" pkg="turtlebot3_gazebo" type="ekf_Test" output="screen"/>
   ?>
 
+  <?ignore
   <!-- The ekfSingleBlockMoving node -->
   <node name="ekf_TestMoving" pkg="turtlebot3_gazebo" type="ekf_TestMoving" output="screen"/>
+  ?>
+
+  <!-- The ekfArucoMoving node -->
+  <node name="ekf_TestMovingAruco" pkg="turtlebot3_gazebo" type="ekf_TestMovingAruco" output="screen"/>
 
 </launch>

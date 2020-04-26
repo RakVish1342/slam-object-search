@@ -23,6 +23,8 @@
   <depend>nav_msgs</depend>
   <depend>tf</depend>
   <depend>gazebo_ros</depend>
+  <depend>aruco_ros</depend>
+  <depend>aruco_msgs</depend>
   <exec_depend>gazebo</exec_depend>
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>

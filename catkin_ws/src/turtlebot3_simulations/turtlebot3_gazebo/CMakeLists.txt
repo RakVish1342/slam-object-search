@@ -21,6 +21,8 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   tf
   gazebo_ros
+  aruco_ros
+  aruco_msgs
 )
 
 find_package(gazebo REQUIRED)
@@ -42,7 +44,7 @@ find_package(gazebo REQUIRED)
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros aruco_ros aruco_msgs
   DEPENDS gazebo
 )
 
@@ -63,6 +65,7 @@ add_executable(motion_model src/motionModel.cpp)
 add_executable(ekf_lidarTest src/ekfLidarTest.cpp)
 add_executable(ekf_Test src/ekfTest.cpp)
 add_executable(ekf_TestMoving src/ekfTestMoving.cpp)
+add_executable(ekf_TestMovingAruco src/ekfTestMovingAruco.cpp)
 
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
@@ -72,6 +75,7 @@ target_link_libraries(motion_model ${catkin_LIBRARIES})
 target_link_libraries(ekf_lidarTest ${catkin_LIBRARIES})
 target_link_libraries(ekf_Test ${catkin_LIBRARIES})
 target_link_libraries(ekf_TestMoving ${catkin_LIBRARIES})
+target_link_libraries(ekf_TestMovingAruco ${catkin_LIBRARIES})
 
 ################################################################################
 # Install
@@ -89,11 +93,12 @@ install(DIRECTORY launch models rviz worlds
 )
 
 #message("***************************************")
-#message(CATKIN_PACKAGE_BIN_DESTINATION)
+#message("MY PATHS")
 #message("***************************************")
-#message(${catkin_LIBRARIES})
+#message(${EIGEN_DIRS})
 #message("***************************************")
-#message(${GAZEBO_LIBRARIES})
+#message(${catkin_INCLUDE_DIRS})
+#message("***************************************")
 ################################################################################
 # Test
 ################################################################################

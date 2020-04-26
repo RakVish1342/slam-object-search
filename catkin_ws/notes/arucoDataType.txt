@@ -1,0 +1,11 @@
+#include <aruco_msgs/MarkerArray.h> // Located in devel/include/aruco_msgs/MarkerArray.h, not sure how it gets generated automatically or if it gets shifted or copied automatically
+
+DATA TYPE IDENTIFICATION:
+Found out that aruco_msgs::MarkerArray data type is required looking at the cpp files in "catkin_ws/src/aruco_ros/aruco_ros/src/marker_publish.cpp" (NOTE the double aruco_ros folders). 
+
+HEADER FILE IDENTIFICATION:
+Found this file by looking at the launch file "marker_publisher.launch" and searching for the corsp node name and also simply searching for "publisher" since I knew some node had to publish to the required topic.
+
+Then, I saw MarkerArray.h was being used, but could not find it. So searched for MarkerArray.h in /opt/ros/kinetic (incase somehow aruco_ros had also been installed there), and also searched in /catkin_ws since the aruco marker CMakeLists.txt was using the catkin_INCLUDE_DIRECTORIES which in turn called the /catkin_ws and /catkin_ws/devel directories. 
+
+So, that's how it was finally clear that the header file was located in devel.
