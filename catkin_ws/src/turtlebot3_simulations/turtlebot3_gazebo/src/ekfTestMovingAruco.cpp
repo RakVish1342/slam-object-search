@@ -120,8 +120,6 @@ public:
         // Init theta to PI/2 as per X axis definition: perp to the right
         predictedStates(2) = PI/2.0;        
         states(2) = PI/2.0;
-        // predictedStates(2) = 0;        
-        // states(2) = 0;
 
         // Set landmark variances to inf
         predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
@@ -135,12 +133,12 @@ public:
 
         Eigen::VectorXd tmp1 (3);
         tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
-        // tmp1 << 0.05, 0.05, 0.005; // 0.05m 0.05m 0.05rad of variance
+        // tmp1 << 0.05, 0.05, 0.005;
         RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
         tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
-        // tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        // tmp2 << 0.005, 0.005;
         QsensorCovar = tmp2.asDiagonal();
 
         globalTStart = ros::Time::now().toSec();
@@ -268,17 +266,168 @@ public:
 
 
 
-    void arucoAngle()
-    {
-        std::cout << "ARUCOANGLE" << std::endl;
+    // void arucoAngle()
+    // {
+    //     std::cout << "ARUCOANGLE" << std::endl;
 
-    }
+    // }
 
-    // void cbAruco(const aruco_msgs::MarkerArray::ConstPtr &msg)
     void cbAruco(const aruco_msgs::MarkerArray::Ptr &msg)
     {
         std::cout << "ARUCOARUCO" << std::endl;
-    }
+        std::cout << msg->markers.size() << std::endl;
+        if(bAllDebugPrint)
+        {
+            std::cout << "Predicted states before correction step = " << std::endl;
+            std::cout << predictedStates << std::endl;
+            std::cout << "Predicted variances before correction step = " << std::endl;
+            std::cout << predictedVariances << std::endl;        
+        }
+
+        for(int i=0; i<msg->markers.size(); ++i)
+        {
+            aruco_msgs::Marker &marker_i = msg->markers.at(i);
+            double x = marker_i.pose.pose.position.x;
+            double z = marker_i.pose.pose.position.z;
+
+            double avgRange = z;
+            double headingMiddle = -std::atan2(x,z); // negated so that angle is positive to the LHS of robot
+
+    //// Begin For loop for each landmark
+
+            //?? Setting a landmark manually for now. Will need a loop actually
+            int landmarkId = 0;
+            int stateIdx = (numModelStates-1) + (landmarkId+1);
+            if(bAllDebugPrint)
+            {
+                std::cout << "stateIdx = " << stateIdx << std::endl;
+            }
+            if ( !bSeenLandmark(landmarkId) ) // If landmark not seen before, set the prior of that landmark to global position of the landmark
+            {
+                // NOTE: ujx is the state in states that corsp to this j-th landmark
+
+                // u_jx = u_tx + r*cos(phi + u_tth)
+                // landmark_x = robot_x + r*cos(phi + robot_heading)
+                predictedStates(stateIdx) = predictedStates(0) + avgRange * cos(headingMiddle + predictedStates(2));
+                predictedStates(stateIdx+1) = predictedStates(1) + avgRange * sin(headingMiddle + predictedStates(2));
+
+                if(bAllDebugPrint)
+                {
+                    std::cout << "ONE TIME STATES" << std::endl;
+                    std::cout << predictedStates << std::endl;
+                }
+
+                bSeenLandmark(landmarkId) = 1;
+            }
+
+            double delx = predictedStates(stateIdx) - predictedStates(0);
+            double dely = predictedStates(stateIdx+1) - predictedStates(1);
+            double q = delx*delx + dely*dely;
+            if(bAllDebugPrint)
+            {
+                std::cout << "delx, dely and q = " << std::endl;
+                std::cout << delx << std::endl;
+                std::cout << dely << std::endl;
+                std::cout << q << std::endl;
+            }
+
+            Eigen::VectorXd zj(2);
+            Eigen::VectorXd zjHat (2);
+            zj << avgRange, headingMiddle;
+            double tmpAngle = std::atan2(dely, delx) - predictedStates(2);
+            zjHat << std::sqrt(q) , normalizeAngle(tmpAngle);
+            if(bAllDebugPrint)
+            {
+                std::cout << "z and zHat = " << std::endl;
+                std::cout << zj << std::endl;
+                std::cout << zjHat << std::endl;
+            }
+
+            tmpPrint(zj, zjHat, stateIdx, tmpAngle);
+
+            Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
+            Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
+            
+            Fxj(numModelStates, numModelStates + landmarkId) = 1;
+            Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
+            if(bAllDebugPrint)
+            {
+                std::cout << "Fxj = " << std::endl;
+                std::cout << Fxj << std::endl;
+            }
+
+            // Partial differential of:
+            // zHat_x wrt modelX, modelY, modelTh, mx, my
+            // zHat_y wrt modelX, modelY, modelTh, mx, my
+            // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
+            Eigen::MatrixXd H (numComponents, numTotStates);
+            Eigen::MatrixXd Hq (numComponents, numTotStates);
+            H << 
+                -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
+                dely              , -delx               , -q   , -dely               , delx;        
+            Hq = (1/q) * H;
+            // H = H * (1/q);
+            // std::cout << "H = " << std::endl;
+            // std::cout << H << std::endl;
+
+            // (3+2)x(3+2n) = 5x5 for single landmark case, with each landmark being 2D
+            Eigen::MatrixXd HFxj (numTotStates, numTotStates);
+            Eigen::MatrixXd Htrans (numTotStates, numTotStates);
+            HFxj = Hq * Fxj;
+            if(bAllDebugPrint)
+            {
+                std::cout << "HFxj = " << std::endl; // Same as H since with only one obstacle, we get just F to be identity
+                std::cout << HFxj << std::endl;        
+            }
+
+            Eigen::MatrixXd K (numTotStates, numComponents);
+            Eigen::MatrixXd tmp (numComponents, numComponents);
+            Eigen::MatrixXd tmpInv (numComponents, numComponents);
+            // tmp = HFxj * predictedVariances * HFxj.transpose(); // MUST add process/gaussian noise so that in Correction step, 
+                                                                //matrix inversion does not yield inv(0) and thus Nan after sometime
+            Htrans = HFxj.transpose();
+            tmp = HFxj * predictedVariances * Htrans + QsensorCovar;
+            tmpInv = tmp.inverse(); // As explained in the doc (http://eigen.tuxfamily.org/dox-devel/cl ... 030f79f9da), mat.inverse() returns the inverse of mat, keeping mat unchanged:
+            std::cout << "tmp Det" << std::endl;
+            std::cout << tmp.determinant() << std::endl;            
+            std::cout << "tmpInv" << std::endl;
+            std::cout << tmpInv << std::endl;
+            K = predictedVariances * Htrans * tmpInv; 
+
+            if(bAllDebugPrint)
+            {
+                std::cout << "K = " << std::endl;
+                std::cout << K << std::endl;
+            }
+
+            if( std::abs(tmp.determinant()) > 0.0001 ) // 10 power -4
+            {
+                predictedStates = predictedStates + K * (zj - zjHat);
+                Eigen::MatrixXd Iden (numTotStates, numTotStates);
+                Iden = Eigen::MatrixXd::Identity(numTotStates, numTotStates);
+                predictedVariances = ( Iden - K*HFxj) * predictedVariances;
+            }
+            else
+            {
+                std::cout << "UNSTABLE" << std::endl;
+            }
+
+        }
+
+
+    //// End For loop for each landmark
+
+        states = predictedStates;
+        variances = predictedVariances;
+
+        if(bAllDebugPrint)
+        {
+            std::cout << "Corrected states and variances" << std::endl;
+            std::cout << states << std::endl;
+            std::cout << variances << std::endl;
+        }
+
+    };
 
 
 
