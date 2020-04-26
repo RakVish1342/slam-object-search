@@ -91,7 +91,7 @@ public:
     TurtleEkf() :
     INF(std::numeric_limits<float>::max()),
     numModelStates(3),
-    numLandmarks(1),
+    numLandmarks(2),
     numTotStates(numModelStates + 2*numLandmarks),
     numComponents(2),
     predictedStates(Eigen::VectorXd::Zero(numTotStates)),
@@ -101,7 +101,7 @@ public:
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
     bTestMotionModelOnly(0),
-    timeThresh(8), 
+    timeThresh(6), 
     angVelThresh(0.001),
     bAllDebugPrint(1)
     {
@@ -192,13 +192,6 @@ public:
             // predictedStates(1) = states(1) + ( +r*cos(states(2)) - r*cos(states(2) + angVel*deltaT) );
             // predictedStates(2) = states(2) + angVel*deltaT;
 
-            // std::cout << "++++++++" << std::endl;
-            // std::cout << r << std::endl;
-            std::cout << "++++++++" << std::endl;
-            std::cout << predictedStates << std::endl;
-            std::cout << "++++++++" << std::endl;
-            std::cout << states << std::endl;
-
         }
 
         predictedStates(2) = normalizeAngle(predictedStates(2));
@@ -287,14 +280,17 @@ public:
 
         for(int i=0; i<msg->markers.size(); ++i)
         {
+
             aruco_msgs::Marker &marker_i = msg->markers.at(i);
             double x = marker_i.pose.pose.position.x;
             double z = marker_i.pose.pose.position.z;
             double avgRange = z;
             double headingMiddle = -std::atan2(x,z); // negated so that angle is positive to the LHS of robot
 
-            int landmarkId = marker_i.id - 1; //Was written for landmark indexes starting from 0. But Aruco markers from idx 1 are being used.
-            int stateIdx = (numModelStates-1) + (landmarkId+1);
+            int landmarkId = marker_i.id; //Was written for landmark indexes starting from 0. But Aruco markers from idx 1 are being used.
+            int stateIdx = numModelStates + 2*landmarkId;
+            std::cout << "ARUCOMARKER IDX" << std::endl;
+            std::cout << landmarkId << ", " << stateIdx << std::endl;
 
             if(bAllDebugPrint)
             {
@@ -346,8 +342,8 @@ public:
             Eigen::MatrixXd Fxj = Eigen::MatrixXd::Zero( (numModelStates + numComponents), numTotStates);        
             Fxj.topLeftCorner(numModelStates,numModelStates) = Eigen::MatrixXd::Identity(numModelStates,numModelStates);
             
-            Fxj(numModelStates, numModelStates + landmarkId) = 1;
-            Fxj(numModelStates+1, numModelStates + landmarkId+1) = 1;
+            Fxj(numModelStates, stateIdx) = 1;
+            Fxj(numModelStates+1, stateIdx+1) = 1;
             if(bAllDebugPrint)
             {
                 std::cout << "Fxj = " << std::endl;
@@ -358,8 +354,8 @@ public:
             // zHat_x wrt modelX, modelY, modelTh, mx, my
             // zHat_y wrt modelX, modelY, modelTh, mx, my
             // H*z ==nt Cx or Hx in traditional state space model, but here input x for this step is estimated/expected sensor reading = zHat
-            Eigen::MatrixXd H (numComponents, numTotStates);
-            Eigen::MatrixXd Hq (numComponents, numTotStates);
+            Eigen::MatrixXd H (numComponents, numModelStates + numComponents);
+            Eigen::MatrixXd Hq (numComponents, numModelStates + numComponents);
             H << 
                 -std::sqrt(q)*delx , -std::sqrt(q)*dely , 0    , std::sqrt(q)*delx   , std::sqrt(q)*dely ,
                 dely              , -delx               , -q   , -dely               , delx;        
@@ -471,7 +467,7 @@ public:
         {
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             msg.linear.x = 0.25;
-            msg.angular.z = 0.25;
+            msg.angular.z = 0.0;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
