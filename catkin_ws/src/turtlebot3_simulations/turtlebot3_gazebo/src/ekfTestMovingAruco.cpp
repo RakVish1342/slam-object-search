@@ -467,7 +467,7 @@ public:
         {
             std::cout << ">>> MOVING..." << globalTStop << std::endl;
             msg.linear.x = 0.25;
-            msg.angular.z = 0.0;
+            msg.angular.z = 0.25;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
