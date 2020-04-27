@@ -100,7 +100,7 @@ public:
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
-    bTestMotionModelOnly(0),
+    bTestMotionModelOnly(1),
     timeThresh(6), 
     angVelThresh(0.001),
     bAllDebugPrint(0)
@@ -461,21 +461,32 @@ public:
         double globalTStop = ros::Time::now().toSec() - globalTStart;
         double timeWaitGazebo = 10; // Wait 4s for gazebo to initialize
 
+	double transitionTime = 1;
+        double speed = 0.25;
+
         double linVel, angVel;
         // if(globalTStop > 0 && globalTStop < timeThresh)
         if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
         {
             std::cout << ">>> MOVING1..." << globalTStop << std::endl;
-            msg.linear.x = 0.25;
-            msg.angular.z = 0.25;
+            msg.linear.x = speed;
+            msg.angular.z = speed;
 
         }
 
-        else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + 2*timeThresh) )
+        else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + timeThresh + transitionTime) )
+        {
+            std::cout << ">>> TRANSITION1..." << globalTStop << std::endl;
+            msg.linear.x = 0;
+            msg.angular.z = 0;
+
+        }
+ 
+        else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh ) )
         {
             std::cout << ">>> MOVING2..." << globalTStop << std::endl;
-            msg.linear.x = 0.25;
-            msg.angular.z = -0.25;
+            msg.linear.x = speed;
+            msg.angular.z = -speed;
 
         }
  
