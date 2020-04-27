@@ -464,7 +464,7 @@ public:
         double globalTStop = ros::Time::now().toSec() - globalTStart;
         double timeWaitGazebo = 10; // Wait 4s for gazebo to initialize
 
-	double transitionTime = 1;
+	double transitionTime = 0;
         double speed = 0.25;
 
         // double linVel, angVel;
@@ -502,7 +502,7 @@ public:
 
         }
  
-        else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh ) )
+        else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh + 2 ) )
         {
             std::cout << ">>> MOVING2..." << globalTStop << std::endl;
             msg.linear.x = speed;
@@ -510,7 +510,15 @@ public:
 
         }
  
-        else if(globalTStop >= (timeWaitGazebo + 2*timeThresh))
+        else if( globalTStop > (timeWaitGazebo + timeThresh + 2*timeThresh + 2) && globalTStop < (timeWaitGazebo + timeThresh + 3*timeThresh + 2  ) )
+        {
+            std::cout << ">>> MOVING3..." << globalTStop << std::endl;
+            msg.linear.x = speed/2;
+            msg.angular.z = 0;
+
+        }
+
+        else if(globalTStop >= (timeWaitGazebo + 3*timeThresh +2))
         {
             std::cout << ">>> STOPPED..." << globalTStop << std::endl;
             msg.linear.x = 0.0;

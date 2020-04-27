@@ -8,6 +8,9 @@
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/empty_arucoForEkf.world"/>
 
 <?ignore
+    <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/objectSearchRight.world"/>
+?>
+<?ignore
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot_aruco.world"/>
 ?>
 
