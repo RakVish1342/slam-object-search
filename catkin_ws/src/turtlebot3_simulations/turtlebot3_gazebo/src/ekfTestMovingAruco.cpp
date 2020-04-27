@@ -91,7 +91,7 @@ public:
     TurtleEkf() :
     INF(std::numeric_limits<float>::max()),
     numModelStates(3),
-    numLandmarks(4),
+    numLandmarks(5),
     numTotStates(numModelStates + 2*numLandmarks),
     numComponents(2),
     predictedStates(Eigen::VectorXd::Zero(numTotStates)),
@@ -100,10 +100,10 @@ public:
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
-    bTestMotionModelOnly(1),
+    bTestMotionModelOnly(0),
     timeThresh(6), 
     angVelThresh(0.001),
-    bAllDebugPrint(1)
+    bAllDebugPrint(0)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
