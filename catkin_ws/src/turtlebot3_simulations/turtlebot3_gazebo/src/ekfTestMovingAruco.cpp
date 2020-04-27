@@ -91,7 +91,7 @@ public:
     TurtleEkf() :
     INF(std::numeric_limits<float>::max()),
     numModelStates(3),
-    numLandmarks(3),
+    numLandmarks(4),
     numTotStates(numModelStates + 2*numLandmarks),
     numComponents(2),
     predictedStates(Eigen::VectorXd::Zero(numTotStates)),
@@ -103,14 +103,14 @@ public:
     bTestMotionModelOnly(0),
     timeThresh(6), 
     angVelThresh(0.001),
-    bAllDebugPrint(1)
+    bAllDebugPrint(0)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
 
         // Init the publishers and subscribers
         turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-        turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
+        // turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
         if(! bTestMotionModelOnly)
         {
             // turtle_lidar = n.subscribe("/scan", 10, &TurtleEkf::cbLidar, this);  // turtle_lidar = n.subscribe("/scan", 10, cbLidar);
@@ -439,19 +439,19 @@ public:
     }
 
 
-    // OR instead of making it static, can use:
-    //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
-    //turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  --- In the constructor where the subscriber is initiated.
-    // static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
-    void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
-    {
+    // // OR instead of making it static, can use:
+    // //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
+    // //turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  --- In the constructor where the subscriber is initiated.
+    // // static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
+    // void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
+    // {
 
-        double odomX = msg->pose.pose.position.x;
-        double odomY = msg->pose.pose.position.y;
+    //     double odomX = msg->pose.pose.position.x;
+    //     double odomY = msg->pose.pose.position.y;
 
-        std::cout << ">>> Actual Position (Gazebo frame)" << std::endl;
-        std::cout << "GazebOdomX, GazebOdomY: " << odomX << ", " << odomY << std::endl;
-    };
+    //     std::cout << ">>> Actual Position (Gazebo frame)" << std::endl;
+    //     std::cout << "GazebOdomX, GazebOdomY: " << odomX << ", " << odomY << std::endl;
+    // };
 
     void controlLoop()
     {
@@ -465,12 +465,21 @@ public:
         // if(globalTStop > 0 && globalTStop < timeThresh)
         if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
         {
-            std::cout << ">>> MOVING..." << globalTStop << std::endl;
+            std::cout << ">>> MOVING1..." << globalTStop << std::endl;
             msg.linear.x = 0.25;
             msg.angular.z = 0.25;
 
         }
-        else if(globalTStop >= timeWaitGazebo + timeThresh)
+
+        else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + 2*timeThresh) )
+        {
+            std::cout << ">>> MOVING2..." << globalTStop << std::endl;
+            msg.linear.x = 0.25;
+            msg.angular.z = -0.25;
+
+        }
+ 
+        else if(globalTStop >= (timeWaitGazebo + 2*timeThresh))
         {
             std::cout << ">>> STOPPED..." << globalTStop << std::endl;
             msg.linear.x = 0.0;
@@ -512,9 +521,11 @@ int main(int argc, char** argv)
     turtlebot->displayAll();
 
     ros::Rate loop_rate(100);
+    int i = 0;
     while(ros::ok())
     {
         std::cout << "===========" << std::endl;
+        std::cout << ++i << std::endl;
         std::cout << ">>> Prediction Step" << std::endl;
         turtlebot->controlLoop();
         std::cout << ">>> Correction Step" << std::endl;
