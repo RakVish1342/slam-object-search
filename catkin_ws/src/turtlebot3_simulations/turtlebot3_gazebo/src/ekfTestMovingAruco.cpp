@@ -103,7 +103,7 @@ public:
     bTestMotionModelOnly(1),
     timeThresh(6), 
     angVelThresh(0.001),
-    bAllDebugPrint(0)
+    bAllDebugPrint(1)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
@@ -168,8 +168,11 @@ public:
 
     void motionModel(double angVel, double linVel, double deltaT)
     {
+        std::cout << "%%%%%%%%%%%%%" << std::endl;
+        std::cout << linVel << "," << angVel << std::endl;
+        std::cout << deltaT << "," << angVel*deltaT << std::endl;
     
-        if (angVel > angVelThresh)
+        if (std::abs(angVel) > angVelThresh)
         {
             double r = linVel/angVel;
 
@@ -211,7 +214,7 @@ public:
     // {
         double derivXTh, derivYTh;
     
-        if (angVel > angVelThresh)
+        if (std::abs(angVel) > angVelThresh)
         {
             double r = linVel/angVel;
 
@@ -463,6 +466,23 @@ public:
 
 	double transitionTime = 1;
         double speed = 0.25;
+
+        // double linVel, angVel;
+        // // if(globalTStop > 0 && globalTStop < timeThresh)
+        // if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
+        // {
+        //     std::cout << ">>> MOVING1..." << globalTStop << std::endl;
+        //     msg.linear.x = speed;
+        //     msg.angular.z = -speed;
+
+        // } 
+        // else if(globalTStop >= (timeWaitGazebo + timeThresh))
+        // {
+        //     std::cout << ">>> STOPPED..." << globalTStop << std::endl;
+        //     msg.linear.x = 0.0;
+        //     msg.angular.z = 0.0;    
+        // }
+
 
         double linVel, angVel;
         // if(globalTStop > 0 && globalTStop < timeThresh)
