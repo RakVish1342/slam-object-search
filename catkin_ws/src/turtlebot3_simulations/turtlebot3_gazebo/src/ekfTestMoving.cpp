@@ -96,7 +96,7 @@ public:
     variances(Eigen::MatrixXd::Zero(numTotStates, numTotStates)),
     Fx (Eigen::MatrixXd::Zero(numModelStates, numTotStates)), 
     bSeenLandmark(Eigen::VectorXd::Zero(numLandmarks)),
-    bTestMotionModelOnly(1),
+    bTestMotionModelOnly(0),
     timeThresh(8), 
     angVelThresh(0.001),
     bAllDebugPrint(1)
@@ -556,7 +556,7 @@ public:
             // msg.linear.x = 0.5;
             // msg.angular.z = 0.25;
             msg.linear.x = 0.25;
-            msg.angular.z = 0.0;
+            msg.angular.z = 0.25;
 
         }
         else if(globalTStop >= timeWaitGazebo + timeThresh)
