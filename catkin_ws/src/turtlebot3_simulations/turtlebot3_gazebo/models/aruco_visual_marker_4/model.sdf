@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
-  <model name='aruco_visual_marker_2_ekf'>
+  <model name='aruco_visual_marker_4'>
 
     <link name='marker'>
-      <pose frame=''>1 1 0.0889 0 -1.5708 0</pose>
+      <pose frame=''>2 4 0.0889 0 -1.5708 1.5708</pose>
       <visual name='visual'>
         <geometry>
           <box>
@@ -12,9 +12,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://aruco_visual_marker_2/materials/scripts</uri>
-            <uri>model://aruco_visual_marker_2/materials/textures</uri>
-            <name>ArucoVisualMarker2/Marker</name>
+            <uri>model://aruco_visual_marker_4/materials/scripts</uri>
+            <uri>model://aruco_visual_marker_4/materials/textures</uri>
+            <name>ArucoVisualMarker4/Marker</name>
           </script>
           <ambient>1 1 1 1</ambient>
           <diffuse>1 1 1 1</diffuse>

@@ -40,16 +40,21 @@
 
  <!-- Load world -->
 
-     <include>
+     <!-- <include>
       <uri>model://aruco_visual_marker_0_ekf</uri>
-    </include>
+    </include> -->
 
      <include>
       <uri>model://aruco_visual_marker_1_ekf</uri>
     </include>
-
      <include>
       <uri>model://aruco_visual_marker_2</uri>
+    </include>
+     <include>
+      <uri>model://aruco_visual_marker_3</uri>
+    </include>
+     <include>
+      <uri>model://aruco_visual_marker_4</uri>
     </include>
 
 
