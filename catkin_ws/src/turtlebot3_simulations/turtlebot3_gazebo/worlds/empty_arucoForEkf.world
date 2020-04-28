@@ -56,7 +56,9 @@
      <include>
       <uri>model://aruco_visual_marker_4</uri>
     </include>
-
+     <include>
+      <uri>model://ekfWallsRight</uri>
+    </include>
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
