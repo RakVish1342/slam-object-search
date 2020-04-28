@@ -1,0 +1,18 @@
+Everything was working perfectly in the previous commit 
+(catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/ekfTestMovingAruco.cpp)
+(catkin_ws/notes/tmp4LandsWalls)
+(ekfTestMovingAruco.launch)
+
+1. States were tracked well
+2. States of missing marker was some random number
+3. Variances were all small, except that corsp to the missing marker
+
+
+After trying to split the node into a control node and an ekf node (made a new launch file for this and modified the CMakeLists.txt file),
+()
+(catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/ekf.cpp)
+(catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/control.cpp)
+(ekf.launch)
+
+1. The old files tracks states properly, but the variances go off to infinity
+2. The new files don't track states or variances properly. Motion model is fine. Robot still goes in desired trajectory (Tested that robot is going in desired trajectory with motion model only flag and with gui on)
