@@ -24,7 +24,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -53,7 +53,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -82,7 +82,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -111,7 +111,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -140,7 +140,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -169,7 +169,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -198,7 +198,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -227,7 +227,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -256,7 +256,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -285,7 +285,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -314,7 +314,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -343,7 +343,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
@@ -372,7 +372,7 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/CeilingTiled</name>
           </script>
-          <ambient>0.996078 0.47451 0.0196078 1</ambient>
+          <ambient>0.921569 0.807843 0.615686 1</ambient>
         </material>
         <meta>
           <layer>0</layer>
