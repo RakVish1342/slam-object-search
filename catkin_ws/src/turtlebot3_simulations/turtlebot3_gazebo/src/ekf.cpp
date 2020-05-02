@@ -90,6 +90,7 @@ private:
 
     bool bTestMotionModelOnly;
     bool bAllDebugPrint;
+    bool bSensorModelUpdating;
 
 public:
     TurtleEkf() :
@@ -107,7 +108,8 @@ public:
     bTestMotionModelOnly(0),
     timeThresh(6), 
     angVelThresh(0.001),
-    bAllDebugPrint(1)
+    bAllDebugPrint(1),
+    bSensorModelUpdating(0)
     {
         ROS_INFO("Started Node: efk_singleBlock");
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
@@ -271,9 +273,13 @@ public:
             std::cout << predictedVariances << std::endl;
         }
 
-        states = predictedStates;
-        variances = predictedVariances;
-
+        // Perform motion update only if sensor model is not updating. Else midway through sensor model update,
+        // some states might get changed causing errors. ie. Ignore motionUpdate if in the middle of sensorUpdate
+        if(!bSensorModelUpdating)
+        {
+            states = predictedStates;
+            variances = predictedVariances;
+        }
     };
 
 
@@ -282,7 +288,7 @@ public:
         std::cout << "ARUCOARUCO" << std::endl;
         std::cout << msg->markers.size() << std::endl;
 
-
+        bSensorModelUpdating = 1;
         predictedStates = states;
         predictedVariances = variances;
 
@@ -427,6 +433,7 @@ public:
 
         states = predictedStates;
         variances = predictedVariances;
+        bSensorModelUpdating = 0;
 
         if(bAllDebugPrint)
         {
