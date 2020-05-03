@@ -9,6 +9,8 @@ add_compile_options(-std=c++11)
 
 ## User defined valriables
 set(EIGEN_DIRS "/usr/include/eigen3")
+set(ROS_BASE_DIR_KINETIC "/opt/ros/kinetic/include")
+set(ROS_BASE_DIR_MELODIC "/opt/ros/melodic/include")
 
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
@@ -58,6 +60,8 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   ${GAZEBO_INCLUDE_DIRS}
   ${EIGEN_DIRS}
+  ${ROS_BASE_DIR_KINETIC}
+  ${ROS_BASE_DIR_MELODIC}
 )
 
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)

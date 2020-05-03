@@ -1,5 +1,5 @@
-#include "/opt/ros/kinetic/include/ros/ros.h"
-#include "/opt/ros/kinetic/include/geometry_msgs/Twist.h"
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
 // #include "/opt/ros/kinetic/include/eigen_stl_containers/eigen_stl_containers.h"
 #include <aruco_msgs/MarkerArray.h> // Located in devel/include/aruco_msgs/MarkerArray.h, not sure how it gets generated automatically or if it gets shifted or copied automatically
 // #include "aruco.h" // Fix CMakeFiles.txt so that the aruco_ros and aruco_msgs package and msgs get discovered properly like nav_msgs etc

@@ -1,5 +1,5 @@
-#include "/opt/ros/kinetic/include/ros/ros.h"
-#include "/opt/ros/kinetic/include/geometry_msgs/Twist.h"
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
 // #include "/opt/ros/kinetic/include/eigen_stl_containers/eigen_stl_containers.h"
 #include "Eigen/Dense" // Added include library EIGEN_DIRS=/usr/include/eigen3
 #include <math.h>
