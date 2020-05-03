@@ -9,6 +9,7 @@
 #include <nav_msgs/Odometry.h> // Found it using "rostopic info /odom". Is located in /opt/ros/kinetic/include/nav_msgs
 #include <sensor_msgs/LaserScan.h> // Found it using "rostopic info /scan". Is located in /opt/ros/kinetic/include/sensor_msgs
 #include <std_msgs/Header.h>
+#include <std_msgs/Float64MultiArray.h>
 #include <vector>
 
 #define PI 3.14159265
@@ -58,6 +59,8 @@ class TurtleEkf
 private:
     ros::NodeHandle n;
     ros::Publisher turtle_vel;
+    ros::Publisher turtle_states;
+    ros::Publisher turtle_variances;    
     ros::Subscriber turtle_odom;
     ros::Subscriber turtle_lidar;
     ros::Subscriber turtle_aruco;
@@ -115,7 +118,8 @@ public:
         ROS_INFO_STREAM("Started Node: efk_singleBlock");
 
         // Init the publishers and subscribers
-        // turtle_vel = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+        turtle_states = n.advertise<std_msgs::Float64MultiArray>("/turtle/states", 10);
+        turtle_variances = n.advertise<std_msgs::Float64MultiArray>("/turtle/variances", 10);
         turtle_motion = n.subscribe("/cmd_vel", 10, &TurtleEkf::cbMotionModel, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
         // turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  // turtle_odom = n.subscribe("/odom", 10, cbOdom);
         if(! bTestMotionModelOnly)
@@ -279,7 +283,44 @@ public:
         {
             states = predictedStates;
             variances = predictedVariances;
+
+            //Send states to topic
+            std_msgs::Float64MultiArray msg;
+            // Set layout for multiarray
+            msg.layout.dim.push_back(std_msgs::MultiArrayDimension());  
+            msg.layout.dim[0].label = "states_length";
+            msg.layout.dim[0].size = states.size();
+            msg.layout.dim[0].stride = 1;
+            // Push data
+            msg.data.clear();
+            for(int i = 0; i < states.size(); ++i)
+            {
+                msg.data.push_back(states[i]); 
+            }
+            turtle_states.publish(msg);
+
+            //Send variances to topic
+            // Set layout for multiarray (Row major as per docs)
+            msg.layout.dim.push_back(std_msgs::MultiArrayDimension());  
+            msg.layout.dim[0].label = "variances_num_rows";            
+            msg.layout.dim[0].size = variances.rows();
+            msg.layout.dim[0].stride = variances.cols();
+            msg.layout.dim[1].label = "variances_num_cols";
+            msg.layout.dim[1].size = variances.cols();
+            msg.layout.dim[1].stride = 1;
+            // Push data
+            msg.data.clear();
+            for(int i = 0; i < variances.rows(); ++i)
+            {
+                for(int j = 0; j < variances.cols(); ++j)
+                {
+                    // msg.data.push_back( variances.block(i,j,1,1) ); // mat.block(loc_row, loc_col, len_row, len_col) ... But this returns element in MatrixXd form
+                    msg.data.push_back( variances(i,j) ); // This returns just the element, in Float646/double form
+                }
+            }
+            turtle_variances.publish(msg);
         }
+
     };
 
 
@@ -433,6 +474,43 @@ public:
 
         states = predictedStates;
         variances = predictedVariances;
+
+        //Send states to topic
+        std_msgs::Float64MultiArray msgSt;
+        // Set layout for multiarray
+        msgSt.layout.dim.push_back(std_msgs::MultiArrayDimension());  
+        msgSt.layout.dim[0].label = "states_length";
+        msgSt.layout.dim[0].size = states.size();
+        msgSt.layout.dim[0].stride = 1;
+        // Push data
+        msgSt.data.clear();
+        for(int i = 0; i < states.size(); ++i)
+        {
+            msgSt.data.push_back(states[i]); 
+        }
+        turtle_states.publish(msgSt);
+
+        //Send variances to topic
+        // Set layout for multiarray (Row major as per docs)
+        msgSt.layout.dim.push_back(std_msgs::MultiArrayDimension());  
+        msgSt.layout.dim[0].label = "variances_num_rows";            
+        msgSt.layout.dim[0].size = variances.rows();
+        msgSt.layout.dim[0].stride = variances.cols();
+        msgSt.layout.dim[1].label = "variances_num_cols";
+        msgSt.layout.dim[1].size = variances.cols();
+        msgSt.layout.dim[1].stride = 1;
+        // Push data
+        msgSt.data.clear();
+        for(int i = 0; i < variances.rows(); ++i)
+        {
+            for(int j = 0; j < variances.cols(); ++j)
+            {
+                // msgSt.data.push_back( variances.block(i,j,1,1) ); // mat.block(loc_row, loc_col, len_row, len_col) ... But this returns element in MatrixXd form
+                msgSt.data.push_back( variances(i,j) ); // This returns just the element, in Float646/double form
+            }
+        }
+        turtle_variances.publish(msgSt);
+
         bSensorModelUpdating = 0;
 
         if(bAllDebugPrint)
@@ -462,113 +540,6 @@ public:
         std::cout << "-------------------------" << std::endl;
     }
 
-
-    // // // OR instead of making it static, can use:
-    // // //https://answers.ros.org/question/282259/ros-class-with-callback-methods/
-    // // //turtle_odom = n.subscribe("/odom", 10, &TurtleEkf::cbOdom, this);  --- In the constructor where the subscriber is initiated.
-    // // // static void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
-    // // void cbOdom(const nav_msgs::Odometry::ConstPtr &msg)
-    // // {
-
-    // //     double odomX = msg->pose.pose.position.x;
-    // //     double odomY = msg->pose.pose.position.y;
-
-    // //     std::cout << ">>> Actual Position (Gazebo frame)" << std::endl;
-    // //     std::cout << "GazebOdomX, GazebOdomY: " << odomX << ", " << odomY << std::endl;
-    // // };
-
-    // void controlLoop()
-    // {
-    //     geometry_msgs::Twist msg;        
-
-    //     // global execution time
-    //     double globalTStop = ros::Time::now().toSec() - globalTStart;
-    //     double timeWaitGazebo = 10; // Wait 4s for gazebo to initialize
-
-	// double transitionTime = 0;
-    //     double speed = 0.25;
-
-    //     // double linVel, angVel;
-    //     // // if(globalTStop > 0 && globalTStop < timeThresh)
-    //     // if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
-    //     // {
-    //     //     std::cout << ">>> MOVING1..." << globalTStop << std::endl;
-    //     //     msg.linear.x = speed;
-    //     //     msg.angular.z = -speed;
-
-    //     // } 
-    //     // else if(globalTStop >= (timeWaitGazebo + timeThresh))
-    //     // {
-    //     //     std::cout << ">>> STOPPED..." << globalTStop << std::endl;
-    //     //     msg.linear.x = 0.0;
-    //     //     msg.angular.z = 0.0;    
-    //     // }
-
-
-    //     double linVel, angVel;
-    //     // if(globalTStop > 0 && globalTStop < timeThresh)
-    //     if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
-    //     {
-    //         std::cout << ">>> MOVING1..." << globalTStop << std::endl;
-    //         msg.linear.x = speed;
-    //         msg.angular.z = speed;
-
-    //     }
-
-    //     else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + timeThresh + transitionTime) )
-    //     {
-    //         std::cout << ">>> TRANSITION1..." << globalTStop << std::endl;
-    //         msg.linear.x = 0;
-    //         msg.angular.z = 0;
-
-    //     }
- 
-    //     else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh + 1 ) )
-    //     {
-    //         std::cout << ">>> MOVING2..." << globalTStop << std::endl;
-    //         msg.linear.x = speed;
-    //         msg.angular.z = -speed;
-
-    //     }
- 
-    //     else if( globalTStop > (timeWaitGazebo + timeThresh + 2*timeThresh + 1) && globalTStop < (timeWaitGazebo + timeThresh + 3*timeThresh + 1  ) )
-    //     {
-    //         std::cout << ">>> MOVING3..." << globalTStop << std::endl;
-    //         msg.linear.x = speed/2;
-    //         msg.angular.z = 0;
-
-    //     }
-
-    //     else if(globalTStop >= (timeWaitGazebo + 3*timeThresh + 1))
-    //     {
-    //         std::cout << ">>> STOPPED..." << globalTStop << std::endl;
-    //         msg.linear.x = 0.0;
-    //         msg.angular.z = 0.0;    
-    //     }
-
-    //     // send velocity commands
-    //     turtle_vel.publish(msg);
-
-    //     //delta_t calc
-    //     double currT = ros::Time::now().toSec();
-    //     double deltaT = currT - prevT;
-    //     prevT = currT;
-
-    //     // Call the motion model and pass lin and angular vel
-    //     motionModel(msg.angular.z, msg.linear.x, deltaT);
-    //     // motionModelVariance(msg.angular.z, msg.linear.x, deltaT);
-
-    // };
-
-    // Eigen::VectorXd getStates()
-    // {
-    //     return states;
-    // };
-    // Eigen::MatrixXd getVariances()
-    // {
-    //     return variances;
-    // };
-
 };
 
 
@@ -581,25 +552,6 @@ int main(int argc, char** argv)
     turtlebot->displayAll();
 
     ros::spin();
-
-    // ros::Rate loop_rate(100);
-    // int i = 0;
-    // while(ros::ok())
-    // {
-    //     std::cout << "===========" << std::endl;
-    //     std::cout << ++i << std::endl;
-    //     std::cout << ">>> Prediction Step" << std::endl;
-    //     turtlebot->controlLoop();
-    //     std::cout << ">>> Correction Step" << std::endl;
-    //     ros::spinOnce();
-
-    //     std::cout << ">>> States after this time step: " << std::endl;
-    //     std::cout << turtlebot->getStates() << std::endl;
-    //     std::cout << "---" << std::endl;
-    //     std::cout << turtlebot->getVariances() << std::endl;
-        
-    //     loop_rate.sleep();
-    // }
 
     return 0;
 }
