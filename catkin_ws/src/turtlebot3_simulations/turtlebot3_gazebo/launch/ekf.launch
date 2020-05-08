@@ -16,7 +16,7 @@
 
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
+    <arg name="gui" value="false"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
@@ -53,6 +53,7 @@
 
   <!-- The control_loop node -->
   <node name="control_loop" pkg="turtlebot3_gazebo" type="control_loop" output="screen"/>
+  <!-- node name="control_py" pkg="turtlebot3_gazebo" type="control_py.py" output="screen"/> -->
 
   <!-- The ekf node -->
   <node name="ekf" pkg="turtlebot3_gazebo" type="ekf" output="screen"/>
@@ -81,7 +82,10 @@
   <node type ="tf_broadcaster.py" pkg="turtlebot3_gazebo" name="tf_broadcaster"/>
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="static_frame1"
-      args="0 0 0 0 0 0 map start_frame" />
+      args="0 0 0 -1.57079632679 0 0 odom start_frame" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_frame2"
+      args="0 0 0 0 0 0 base_footprint base_scan" />
 
   <!-- Laser to Point cloud node -->
   
@@ -92,8 +96,9 @@
   <node name="transform_point_cloud_py" pkg="transform_point_cloud"
       type="transform_point_cloud_py.py"
       output="screen" >
-    <param name="source_frame" value="base_scan" />
-    <param name="target_frame" value="start_frame" />
+    <param name="source_frame" value="base_footprint" />
+    <param name="target_frame" value="odom" />
+    <param name="timeout" value="5" />
   </node>
 
   <!-- Rviz node-->
@@ -103,5 +108,5 @@
       required="true"
       output="screen">
   </node>
-  
+
 </launch>

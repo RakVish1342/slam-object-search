@@ -63,7 +63,8 @@ public:
 
         double linVel, angVel;
         // if(globalTStop > 0 && globalTStop < timeThresh)
-        if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
+        // if(globalTStop > timeWaitGazebo && globalTStop < timeWaitGazebo + timeThresh)
+        if(globalTStop > 10 && globalTStop < 16)
         {
             std::cout << ">>> MOVING1..." << globalTStop << std::endl;
             msg.linear.x = speed;
@@ -71,15 +72,16 @@ public:
 
         }
 
-        else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + timeThresh + transitionTime) )
-        {
-            std::cout << ">>> TRANSITION1..." << globalTStop << std::endl;
-            msg.linear.x = 0;
-            msg.angular.z = 0;
+        // else if(globalTStop > timeWaitGazebo + timeThresh && globalTStop < (timeWaitGazebo + timeThresh + transitionTime) )
+        // {
+        //     std::cout << ">>> TRANSITION1..." << globalTStop << std::endl;
+        //     msg.linear.x = 0;
+        //     msg.angular.z = 0;
 
-        }
+        // }
 
-        else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh + 1 ) )
+        // else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh + 1 ) )
+        else if( (globalTStop >= 16) && globalTStop < 29 )
         {
             std::cout << ">>> MOVING2..." << globalTStop << std::endl;
             msg.linear.x = speed;
@@ -87,7 +89,8 @@ public:
 
         }
 
-        else if( globalTStop > (timeWaitGazebo + timeThresh + 2*timeThresh + 1) && globalTStop < (timeWaitGazebo + timeThresh + 3*timeThresh + 1  ) )
+        // else if( globalTStop > (timeWaitGazebo + timeThresh + 2*timeThresh + 1) && globalTStop < (timeWaitGazebo + timeThresh + 3*timeThresh + 1  ) )
+        else if( globalTStop > (29) && globalTStop < (32) )
         {
             std::cout << ">>> MOVING3..." << globalTStop << std::endl;
             msg.linear.x = speed/2;
@@ -95,7 +98,8 @@ public:
 
         }
 
-        else if(globalTStop >= (timeWaitGazebo + 3*timeThresh + 1))
+        // else if(globalTStop >= (timeWaitGazebo + 3*timeThresh + 1))
+        else if(globalTStop >= (32))
         {
             std::cout << ">>> STOPPED..." << globalTStop << std::endl;
             msg.linear.x = 0.0;
