@@ -115,7 +115,7 @@ public:
     bSensorModelUpdating(0)
     {
         ROS_INFO("Started Node: efk_singleBlock");
-        ROS_INFO_STREAM("Started Node: efk_singleBlock");
+        ROS_INFO_STREAM("Started Node: efk_s                                                                                                                                                                                     ingleBlock");
 
         // Init the publishers and subscribers
         turtle_states = n.advertise<std_msgs::Float64MultiArray>("/turtle/states", 10);
@@ -188,10 +188,13 @@ public:
         linVel = msg.linear.x;
         angVel = msg.angular.z;
 
-        std::cout << "%%%%%%%%%%%%%" << std::endl;
-        std::cout << linVel << "," << angVel << std::endl;
-        std::cout << deltaT << "," << angVel*deltaT << std::endl;
-    
+        // std::cout << "%%%%%%%%%%%%%" << std::endl;
+        // std::cout << linVel << "," << angVel << std::endl;
+        // std::cout << deltaT << "," << angVel*deltaT << std::endl;
+        
+        // To update all components to latest value including the ones that are not updated specifically in motion update
+        predictedStates = states;
+        predictedVariances = variances;
         if (std::abs(angVel) > angVelThresh)
         {
             double r = linVel/angVel;
@@ -446,10 +449,10 @@ public:
             Htrans = HFxj.transpose();
             tmp = HFxj * predictedVariances * Htrans + QsensorCovar;
             tmpInv = tmp.inverse(); // As explained in the doc (http://eigen.tuxfamily.org/dox-devel/cl ... 030f79f9da), mat.inverse() returns the inverse of mat, keeping mat unchanged:
-            std::cout << "tmp Det" << std::endl;
-            std::cout << tmp.determinant() << std::endl;            
-            std::cout << "tmpInv" << std::endl;
-            std::cout << tmpInv << std::endl;
+            // std::cout << "tmp Det" << std::endl;
+            // std::cout << tmp.determinant() << std::endl;            
+            // std::cout << "tmpInv" << std::endl;
+            // std::cout << tmpInv << std::endl;
             K = predictedVariances * Htrans * tmpInv; 
 
             if(bAllDebugPrint)

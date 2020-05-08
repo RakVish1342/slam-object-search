@@ -37,6 +37,9 @@ class ObstacleAvoid(object):
         self.marker = Marker()
         self.goal = PointStamped()
         self.markerid = []
+        self.dist = 0.3
+        self.flag = 0 
+        self.range_degree = 180
         #rospy.spin()
 
     def cbmarkerid(self, msg):
@@ -66,6 +69,9 @@ class ObstacleAvoid(object):
     def cbLidardata(self,msg):
         try:
             self.lidarscan = msg.ranges
+            if self.flag != 1:
+                [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+                self.updateTarget(inrangectr)
             # print(self.lidarscan[:60])   
         except rospy.ServiceException, e:
             rospy.logwarn("Obstacle Avoidance service failed: %s", e)
@@ -79,9 +85,9 @@ class ObstacleAvoid(object):
         avgr = 0
         sumr = 0
         cr=1
-        inrangert = self.lidarscan[:60]
-        inrangelft = self.lidarscan[300:]
-        inrangectr = self.lidarscan[300:] + self.lidarscan[:60]
+        inrangert = self.lidarscan[:abs(self.range_degree/2)]
+        inrangelft = self.lidarscan[360 - abs(self.range_degree/2):]
+        inrangectr = self.lidarscan[360 - abs(self.range_degree/2):] + self.lidarscan[:abs(self.range_degree/2)]
         # print(inrangectr)
         for i in range(len(inrangelft)):
             if(inrangelft[i]>3.5):
@@ -116,23 +122,48 @@ class ObstacleAvoid(object):
                     max_indices = [i]
         return max_indices
 
-    def movebot(self):    
-        rate = rospy.Rate(30)
-        flag = 0 
-        [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
-        maxvalues = self.maxelements(inrangectr)
-        print(maxvalues)
-        length=len(maxvalues)
+    def updateTarget(self,scan_values):
+        print("Updating target")
+        # temp = avgmax
+        # [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+        maxvalues = self.maxelements(scan_values)
+        # print(maxvalues)
+        length=len(maxvalues) 
         avgmax = sum(maxvalues)/length
-        goalangle = ((avgmax - 60)*3.14)/180
-        print(avgmax)
-        dist = 1.5
-        self.goal.point.x = dist*cos(goalangle)
-        self.goal.point.y = dist*sin(goalangle)
+        # closest = maxvalues[min(range(len(maxvalues)), key = lambda i: abs(maxvalues[i]-temp))]
+        # closest = random.choice(maxvalues)
+        # goalangle = ((avgmax - abs(self.range_degree/2))*3.14)/180
+        goalangle = ((maxvalues[-1] - abs(self.range_degree/2))*3.14)/180
+        # print(closest)
+        # print()
+        # if((closest - goalangle)>30):
+        #     goalangle = closest
+        #     temp = goalangle
+        self.goal.header.stamp=rospy.Time.now()
+        # dist = 0.3
+        self.goal.point.x = self.posex + self.dist*cos(goalangle)
+        self.goal.point.y = self.posey + self.dist*sin(goalangle)
+
+    def movebot(self):    
+        rate = rospy.Rate(15)
+        self.flag = 0 
+        [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+        # maxvalues = self.maxelements(inrangectr)
+        # print(maxvalues)
+        # length=len(maxvalues)
+        # avgmax = sum(maxvalues)/length
+        # goalangle = ((avgmax - 60)*3.14)/180
+        # print(avgmax)
+        # dist = 0.3
+        # self.goal.point.x = self.dist*cos(goalangle)
+        # self.goal.point.y = self.dist*sin(goalangle)
+        self.updateTarget(inrangectr)
         self.goal.header.frame_id = "odom"
+
         while not rospy.is_shutdown():    
         # while(flag==0):
             [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist()   
+
             # print(goalx)
             # print(self.posex-goalx)
             # print(goaly)
@@ -143,59 +174,75 @@ class ObstacleAvoid(object):
             # print(angle_to_goal)
             error = angle_to_goal - self.theta
             # print(error)
+
             if(4 in self.markerid):
                 print("Box Seen")
-                self.goal.point.x = 3
+                self.goal.point.x = 3.5
                 self.goal.point.y = -1.5
-                flag = 1
+                self.flag = 1
+
                 # if(abs(self.posex-self.goal.position.x)>0.15 and abs(self.posey-self.goal.position.y)>0.15):
                 # # time.sleep(3)
                 # # self.cmd_vel.linear.x = 0.09
                 # # self.cmd_vel.angular.z = 0.03
                 #     self.cmd_vel.linear.x = 0
-                #     self.cmd_vel.angular.z = 0  
-            elif(min(inrangectr)<0.5):
+                #     self.cmd_vel.angular.z = 0 
+
+            if min(inrangelft)<0.5 and self.flag != 1:
+                print("Obstacle Avoidance")
+                self.cmd_vel.linear.x = 0
+                self.cmd_vel.angular.z = 0.2 
+                self.updateTarget(inrangectr)
+
+            elif min(inrangert)<0.5 and self.flag != 1:
+                print("Obstacle Avoidance")
                 self.cmd_vel.linear.x = 0
                 self.cmd_vel.angular.z = -0.2 
+                self.updateTarget(inrangectr)
+
             elif(error<-0.1):
                 self.cmd_vel.linear.x = 0.05
                 self.cmd_vel.angular.z = -0.2 #0.2
+
             # elif(self.posex<goalx and self.posey<goaly):
             elif(error>0.1):
                 self.cmd_vel.linear.x = 0.05
                 self.cmd_vel.angular.z = 0.2
-            elif(abs(self.posex-self.goal.point.x)>0.15 and abs(self.posey-self.goal.point.y)>0.15):
+
+            elif(abs(self.posex-self.goal.point.x)>0.1 or abs(self.posey-self.goal.point.y)>0.1):
                 # time.sleep(3)
                 # self.cmd_vel.linear.x = 0.09
                 # self.cmd_vel.angular.z = 0.03
-                self.cmd_vel.linear.x = 0.3
+                self.cmd_vel.linear.x = 0.2
                 self.cmd_vel.angular.z = 0.02                   
             else:
-                if(flag==1):
+                if(self.flag==1):
+                    print("Stop flag activated")
                     self.cmd_vel.linear.x = 0
                     self.cmd_vel.angular.z = 0  
+
                 else:
-                    print("QQQQQQQQQ")
                     self.cmd_vel.linear.x = 0
                     self.cmd_vel.angular.z = 0
-                    temp = avgmax
-                    [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
-                    maxvalues = self.maxelements(inrangectr)
-                    print(maxvalues)
-                    length=len(maxvalues) 
-                    avgmax = sum(maxvalues)/length
-                    closest = maxvalues[min(range(len(maxvalues)), key = lambda i: abs(maxvalues[i]-temp))]
-                    # closest = random.choice(maxvalues)
-                    goalangle = ((closest - 60)*3.14)/180
-                    print(closest)
-                    print()
-                    # if((closest - goalangle)>30):
-                    #     goalangle = closest
-                    #     temp = goalangle
-                    self.goal.header.stamp=rospy.Time.now()
-                    dist = 1.5
-                    self.goal.point.x = self.posex + dist*cos(goalangle)
-                    self.goal.point.y = self.posey + dist*sin(goalangle)
+                    self.updateTarget(inrangectr)
+                    # temp = avgmax
+                    # [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+                    # maxvalues = self.maxelements(inrangectr)
+                    # print(maxvalues)
+                    # length=len(maxvalues) 
+                    # avgmax = sum(maxvalues)/length
+                    # closest = maxvalues[min(range(len(maxvalues)), key = lambda i: abs(maxvalues[i]-temp))]
+                    # # closest = random.choice(maxvalues)
+                    # goalangle = ((avgmax - 60)*3.14)/180
+                    # # print(closest)
+                    # print(avgmax)
+                    # # if((closest - goalangle)>30):
+                    # #     goalangle = closest
+                    # #     temp = goalangle
+                    # self.goal.header.stamp=rospy.Time.now()
+                    # dist = 0.3
+                    # self.goal.point.x = self.posex + dist*cos(goalangle)
+                    # self.goal.point.y = self.posey + dist*sin(goalangle)
             self.turtle_vel.publish (self.cmd_vel)  
             self.target_pos.publish (self.goal) 
             rate.sleep()

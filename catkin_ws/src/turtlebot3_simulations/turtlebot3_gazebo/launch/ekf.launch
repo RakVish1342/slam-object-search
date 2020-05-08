@@ -57,7 +57,7 @@
  <node name="obstacle_avoid" pkg="turtlebot3_gazebo" type="obstacle_avoid" output="screen"/>
 
   <!-- The ekf node -->
-  <node name="ekf" pkg="turtlebot3_gazebo" type="ekf" output="screen"/> 
+  <node name="ekf" pkg="turtlebot3_gazebo" type="ekf" output="screen"/>
 
 
   <!-- Aruco Marker publishing node -->
