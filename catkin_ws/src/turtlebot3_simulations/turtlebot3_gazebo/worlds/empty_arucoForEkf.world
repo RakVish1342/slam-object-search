@@ -59,6 +59,9 @@
      <include>
       <uri>model://ekfWallsRight</uri>
     </include>
+     <include>
+      <uri>model://Final_Box</uri>
+    </include>
 
     <gui fullscreen='0'>
       <camera name='user_camera'>

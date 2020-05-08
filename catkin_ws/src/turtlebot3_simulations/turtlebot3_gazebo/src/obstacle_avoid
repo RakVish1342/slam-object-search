@@ -1,0 +1,209 @@
+#!/usr/bin/env python
+
+import cv2
+import math
+from cv_bridge import CvBridge
+from geometry_msgs.msg import Point,Quaternion,Vector3,Pose, PointStamped,Twist
+import math
+import numpy as np
+import rospy
+import time
+import random
+from std_msgs.msg import Float64, UInt32MultiArray
+from sensor_msgs.msg import LaserScan
+from nav_msgs.msg import Odometry
+from tf.transformations import euler_from_quaternion
+from math import atan2, sin, cos
+from visualization_msgs.msg import Marker
+from std_msgs.msg import Header, ColorRGBA
+
+class ObstacleAvoid(object):
+    def __init__(self):
+        rospy.init_node('obstacle_avoid')
+        print(">> Obstacle Avoidance node initialized")
+        self.turtle_vel = rospy.Publisher('/cmd_vel',Twist, queue_size=10)
+        self.target_pos = rospy.Publisher('/target_pos',PointStamped, queue_size=10)
+        self.Lidarscan = rospy.Subscriber("/scan", LaserScan, self.cbLidardata)
+        self.Turtle_Pose = rospy.Subscriber("/odom", Odometry,self.cbPose)
+        self.marker_publisher = rospy.Publisher('visualization_marker', Marker, queue_size=10)
+        self.Marker_id = rospy.Subscriber("/aruco_marker_publisher/markers_list", UInt32MultiArray,self.cbmarkerid)
+        self.posex = 0
+        self.posey = 0
+        self.cmd_vel = Twist()
+        self.lidarscan = []
+        self.theta = 0
+        self.roll=0
+        self.pitch = 0
+        self.marker = Marker()
+        self.goal = PointStamped()
+        self.markerid = []
+        #rospy.spin()
+
+    def cbmarkerid(self, msg):
+        try:
+            self.markerid = msg.data
+            # print(self.markerid)
+            # print(">>>X twist:")
+            # print(self.twistx)
+            # print(">>>Y twist:")
+            # print(self.twisty)
+        except rospy.ServiceException, e:
+            rospy.logwarn("Obstacle Avoidance service failed: %s", e)
+            
+    def cbPose(self, msg):
+        try:
+            self.posex = msg.pose.pose.position.x
+            self.posey = msg.pose.pose.position.y
+            rot_q = msg.pose.pose.orientation 
+            (self.roll, self.pitch, self.theta) = euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
+            # print(">>>X twist:")
+            # print(self.twistx)
+            # print(">>>Y twist:")
+            # print(self.twisty)
+        except rospy.ServiceException, e:
+            rospy.logwarn("Obstacle Avoidance service failed: %s", e)
+
+    def cbLidardata(self,msg):
+        try:
+            self.lidarscan = msg.ranges
+            # print(self.lidarscan[:60])   
+        except rospy.ServiceException, e:
+            rospy.logwarn("Obstacle Avoidance service failed: %s", e)
+
+    def ObstacleDist(self):
+        lftinf = 0
+        rgtinf = 0
+        avgl = 0
+        suml = 0
+        cl=1
+        avgr = 0
+        sumr = 0
+        cr=1
+        inrangert = self.lidarscan[:60]
+        inrangelft = self.lidarscan[300:]
+        inrangectr = self.lidarscan[300:] + self.lidarscan[:60]
+        # print(inrangectr)
+        for i in range(len(inrangelft)):
+            if(inrangelft[i]>3.5):
+                lftinf += 1 
+            else:
+                suml += inrangelft[i]
+                cl += 1 
+        if(cl == 0):
+            cl=1   
+        avgl = suml/cl
+        for i in range(len(inrangert)):
+            if(inrangert[i]>3.5):
+                rgtinf += 1 
+            else:
+                sumr+= inrangert[i]
+                cr += 1
+        if(cr == 0):
+            cr=1
+        avgr = sumr/cr
+               
+        return inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr   
+
+    def maxelements(self,seq):
+        max_indices = []
+        if seq:
+            max_val = seq[0]
+            for i,val in ((i,val) for i,val in enumerate(seq) if val >= max_val):
+                if val == max_val:
+                    max_indices.append(i)
+                else:
+                    max_val = val
+                    max_indices = [i]
+        return max_indices
+
+    def movebot(self):    
+        rate = rospy.Rate(30)
+        flag = 0 
+        [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+        maxvalues = self.maxelements(inrangectr)
+        print(maxvalues)
+        length=len(maxvalues)
+        avgmax = sum(maxvalues)/length
+        goalangle = ((avgmax - 60)*3.14)/180
+        print(avgmax)
+        dist = 1.5
+        self.goal.point.x = dist*cos(goalangle)
+        self.goal.point.y = dist*sin(goalangle)
+        self.goal.header.frame_id = "odom"
+        while not rospy.is_shutdown():    
+        # while(flag==0):
+            [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist()   
+            # print(goalx)
+            # print(self.posex-goalx)
+            # print(goaly)
+            # if(flag == 0):
+            inc_x = self.goal.point.x - self.posex
+            inc_y = self.goal.point.y - self.posey
+            angle_to_goal = atan2(inc_y,inc_x)
+            # print(angle_to_goal)
+            error = angle_to_goal - self.theta
+            # print(error)
+            if(4 in self.markerid):
+                print("Box Seen")
+                self.goal.point.x = 3
+                self.goal.point.y = -1.5
+                flag = 1
+                # if(abs(self.posex-self.goal.position.x)>0.15 and abs(self.posey-self.goal.position.y)>0.15):
+                # # time.sleep(3)
+                # # self.cmd_vel.linear.x = 0.09
+                # # self.cmd_vel.angular.z = 0.03
+                #     self.cmd_vel.linear.x = 0
+                #     self.cmd_vel.angular.z = 0  
+            elif(min(inrangectr)<0.5):
+                self.cmd_vel.linear.x = 0
+                self.cmd_vel.angular.z = -0.2 
+            elif(error<-0.1):
+                self.cmd_vel.linear.x = 0.05
+                self.cmd_vel.angular.z = -0.2 #0.2
+            # elif(self.posex<goalx and self.posey<goaly):
+            elif(error>0.1):
+                self.cmd_vel.linear.x = 0.05
+                self.cmd_vel.angular.z = 0.2
+            elif(abs(self.posex-self.goal.point.x)>0.15 and abs(self.posey-self.goal.point.y)>0.15):
+                # time.sleep(3)
+                # self.cmd_vel.linear.x = 0.09
+                # self.cmd_vel.angular.z = 0.03
+                self.cmd_vel.linear.x = 0.3
+                self.cmd_vel.angular.z = 0.02                   
+            else:
+                if(flag==1):
+                    self.cmd_vel.linear.x = 0
+                    self.cmd_vel.angular.z = 0  
+                else:
+                    print("QQQQQQQQQ")
+                    self.cmd_vel.linear.x = 0
+                    self.cmd_vel.angular.z = 0
+                    temp = avgmax
+                    [inrangectr,inrangelft,inrangert,lftinf,rgtinf,avgl,avgr] = self.ObstacleDist() 
+                    maxvalues = self.maxelements(inrangectr)
+                    print(maxvalues)
+                    length=len(maxvalues) 
+                    avgmax = sum(maxvalues)/length
+                    closest = maxvalues[min(range(len(maxvalues)), key = lambda i: abs(maxvalues[i]-temp))]
+                    # closest = random.choice(maxvalues)
+                    goalangle = ((closest - 60)*3.14)/180
+                    print(closest)
+                    print()
+                    # if((closest - goalangle)>30):
+                    #     goalangle = closest
+                    #     temp = goalangle
+                    self.goal.header.stamp=rospy.Time.now()
+                    dist = 1.5
+                    self.goal.point.x = self.posex + dist*cos(goalangle)
+                    self.goal.point.y = self.posey + dist*sin(goalangle)
+            self.turtle_vel.publish (self.cmd_vel)  
+            self.target_pos.publish (self.goal) 
+            rate.sleep()
+
+if __name__ == '__main__':
+    try: 
+        b = ObstacleAvoid()
+        time.sleep(5)
+        b.movebot()
+    except rospy.ROSInterruptException:
+        pass
