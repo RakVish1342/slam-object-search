@@ -3,7 +3,7 @@
   <model name='aruco_visual_marker_2'>
 
     <link name='marker'>
-      <pose frame=''>1.5 3 0.0889 0 -1.5708 1.5708</pose>
+      <pose frame=''>1.2 2.7 0.0889 0 -1.5708 1.5708</pose>
       <visual name='visual'>
         <geometry>
           <box>

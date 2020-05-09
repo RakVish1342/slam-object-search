@@ -90,14 +90,21 @@ private:
 
     Eigen::MatrixXd RmotionCovar;
     Eigen::MatrixXd QsensorCovar;
+    Eigen::MatrixXd Vt;
+    Eigen::MatrixXd Mt;
 
     bool bTestMotionModelOnly;
     bool bAllDebugPrint;
     bool bSensorModelUpdating;
+    double alpha1; 
+    double alpha2; 
+    double alpha3;
+    double alpha4;
 
 public:
     TurtleEkf() :
-    INF(std::numeric_limits<float>::max()),
+    // INF(std::numeric_limits<float>::max()),
+    INF(5),
     numModelStates(3),
     numLandmarks(5),
     numTotStates(numModelStates + 2*numLandmarks),
@@ -133,22 +140,34 @@ public:
         states(2) = PI/2.0;
 
         // Set landmark variances to inf
-        predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
-        predictedVariances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
-        predictedVariances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
-        variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
-        variances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
-        variances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
+        Eigen::VectorXd diagonal (2*numLandmarks);
+        diagonal << INF, INF, INF, INF, INF, INF, INF, INF, INF, INF;
+
+        // predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
+        // predictedVariances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
+        // predictedVariances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);        
+        // variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = Eigen::MatrixXd::Constant(2*numLandmarks, 2*numLandmarks, INF);
+        // variances.topRightCorner(numModelStates, 2*numLandmarks) = Eigen::MatrixXd::Constant(numModelStates, 2*numLandmarks, INF);
+        // variances.bottomLeftCorner(2*numLandmarks, numModelStates) = Eigen::MatrixXd::Constant(2*numLandmarks, numModelStates, INF);
+        predictedVariances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = diagonal.asDiagonal();
+        variances.bottomRightCorner(2*numLandmarks, 2*numLandmarks) = diagonal.asDiagonal();
 
         Fx.topLeftCorner(numModelStates, numModelStates) = Eigen::MatrixXd::Identity(numModelStates, numModelStates);
 
-        Eigen::VectorXd tmp1 (3);
-        tmp1 << 0.05, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
+        Vt = Eigen::MatrixXd::Zero(numModelStates, numComponents);
+        Mt = Eigen::MatrixXd::Zero(numComponents, numComponents);
+        alpha1 = 2;
+        alpha2 = 1;
+        alpha3 = 2;
+        alpha4 = 1;
+
+        // Eigen::VectorXd tmp1 (3);
+        // tmp1 << 0.2, 0.05, 0.05; // 0.05m 0.05m 0.05rad of variance
         // tmp1 << 0.05, 0.05, 0.005;
-        RmotionCovar = tmp1.asDiagonal();
+        // RmotionCovar = tmp1.asDiagonal();
 
         Eigen::VectorXd tmp2 (2);
-        tmp2 << 0.005, 0.005; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
+        tmp2 << 0.05, 0.05; // 0.005m 0.005m of variance. Lidar data is much more reliable from simulation that estimated motion model
         // tmp2 << 0.005, 0.005;
         QsensorCovar = tmp2.asDiagonal();
 
@@ -207,16 +226,22 @@ public:
         }
         else
         {
-            double dist = linVel*deltaT;
-            // ADD other condition of angles 
-            predictedStates(0) = states(0) - dist*cos(states(2));
-            predictedStates(1) = states(1) + dist*sin(states(2));
-            predictedStates(2) = states(2);
+            // double dist = linVel*deltaT;
+            // // ADD other condition of angles 
+            // predictedStates(0) = states(0) - dist*cos(states(2));
+            // predictedStates(1) = states(1) + dist*sin(states(2));
+            // predictedStates(2) = states(2) ;
 
             // double r = linVel*deltaT;
             // predictedStates(0) = states(0) + ( -r*sin(states(2)) + r*sin(states(2) + angVel*deltaT) );
             // predictedStates(1) = states(1) + ( +r*cos(states(2)) - r*cos(states(2) + angVel*deltaT) );
             // predictedStates(2) = states(2) + angVel*deltaT;
+
+            double dist = linVel*deltaT;
+            // ADD other condition of angles 
+            predictedStates(0) = states(0) - dist*cos(states(2));
+            predictedStates(1) = states(1) + dist*sin(states(2));
+            predictedStates(2) = states(2) + angVel*deltaT;
 
         }
 
@@ -266,6 +291,33 @@ public:
         tmp(1,2) = derivYTh;
         // Jacobian of non-linear motion model
         Eigen::MatrixXd Gt =  Eigen::MatrixXd::Identity(numTotStates, numTotStates) + Fx.transpose() * tmp * Fx;
+
+        // RmotionCovar calculation
+        Vt  << ( -sin(predictedStates(2)) + sin(predictedStates(2) + angVel*deltaT) )/angVel, 
+            ( linVel * (sin(predictedStates(2)) - sin(predictedStates(2) + angVel*deltaT) )/(angVel*angVel)) 
+            + ( (linVel*cos(predictedStates(2) + angVel*deltaT)*deltaT) /angVel), 
+            ( cos(predictedStates(2)) - cos(predictedStates(2) + angVel*deltaT) )/angVel,
+            -( linVel * ( cos(predictedStates(2)) - cos(predictedStates(2) + angVel*deltaT) ) /(angVel*angVel) ) 
+            + ( (linVel*sin(predictedStates(2) + angVel*deltaT)*deltaT) /angVel),
+            0,  
+            deltaT;
+
+        Mt  << alpha1*linVel*linVel + alpha2*angVel*angVel,
+            0, 
+            0, 
+            alpha3*linVel*linVel + alpha4*angVel*angVel;
+
+        if(angVel < angVelThresh)
+        {   
+            Eigen::VectorXd tmp1 (3);
+            tmp1 << 0.2, 0.2, 0.2; // 0.05m 0.05m 0.05rad of variance
+            // tmp1 << 0.05, 0.05, 0.005;
+            RmotionCovar = tmp1.asDiagonal();
+        } else {
+            RmotionCovar = Vt*Mt*Vt.transpose();    
+        }
+
+        
 
         // Variance Calculation
         // predictedVariances = Gt * variances * Gt.transpose(); // MUST add process/gaussian noise so that in Correction step, 
@@ -457,11 +509,26 @@ public:
 
             if(bAllDebugPrint)
             {
+
+                std::cout << "Before Q = " << std::endl;
+                std::cout << HFxj * predictedVariances * Htrans << std::endl;
+
+                std::cout << "Tmp = " << std::endl;
+                std::cout << tmp << std::endl;
+
+                std::cout << "Inv = " << std::endl;
+                std::cout << tmpInv << std::endl;
+                std::cout << "H *Inv = " << std::endl;
+                std::cout << Htrans * tmpInv << std::endl;
                 std::cout << "K = " << std::endl;
                 std::cout << K << std::endl;
+                std::cout << "determinant = " << std::endl;
+                std::cout << tmpInv.determinant() << std::endl;
+
+
             }
 
-            if( std::abs(tmp.determinant()) > 0.0001 ) // 10 power -4
+            if( std::abs(tmpInv.determinant()) > 0.0001 ) // 10 power -4
             {
                 predictedStates = predictedStates + K * (zj - zjHat);
                 Eigen::MatrixXd Iden (numTotStates, numTotStates);

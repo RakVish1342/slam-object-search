@@ -1,6 +1,6 @@
 <launch>
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
-  <arg name="x_pos" default="-0.5"/>
+  <arg name="x_pos" default="-1.5"/>
   <arg name="y_pos" default="0.0"/>
   <arg name="z_pos" default="0.0"/>
 
@@ -54,7 +54,7 @@
   <!-- The control_loop node -->
   <!-- <node name="control_loop" pkg="turtlebot3_gazebo" type="control_loop" output="screen"/> -->
   <!-- node name="control_py" pkg="turtlebot3_gazebo" type="control_py.py" output="screen"/> -->
- <node name="obstacle_avoid" pkg="turtlebot3_gazebo" type="obstacle_avoid" output="screen"/>
+   <node name="obstacle_avoid" pkg="turtlebot3_gazebo" type="obstacle_avoid" output="screen"/> 
 
   <!-- The ekf node -->
   <node name="ekf" pkg="turtlebot3_gazebo" type="ekf" output="screen"/>
@@ -83,7 +83,7 @@
   <node type ="tf_broadcaster.py" pkg="turtlebot3_gazebo" name="tf_broadcaster"/>
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="static_frame1"
-      args="-0.5 0 0 -1.57079632679 0 0 odom start_frame" />
+      args="-1.5 0 0 -1.57079632679 0 0 odom start_frame" />
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="static_frame2"
       args="0 0 0 0 0 0 base_footprint base_scan" />

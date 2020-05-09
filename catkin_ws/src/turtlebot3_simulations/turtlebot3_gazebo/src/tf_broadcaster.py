@@ -16,6 +16,13 @@ def handle_turtle_pose(msg):
                      "base_scan",
                      "start_frame")
 
+    br0 = tf.TransformBroadcaster()
+    br0.sendTransform((msg.data[3], msg.data[4], 0),
+                     tf.transformations.quaternion_from_euler(0, 0, 0),
+                     rospy.Time.now(),
+                     "marker_0",
+                     "start_frame")
+
     br1 = tf.TransformBroadcaster()
     br1.sendTransform((msg.data[5], msg.data[6], 0),
                      tf.transformations.quaternion_from_euler(0, 0, 0),

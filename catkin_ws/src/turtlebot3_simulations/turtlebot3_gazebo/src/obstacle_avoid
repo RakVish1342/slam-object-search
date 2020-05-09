@@ -41,6 +41,7 @@ class ObstacleAvoid(object):
         self.flag = 0 
         self.range_degree = 180
         #rospy.spin()
+        time.sleep(5)
 
     def cbmarkerid(self, msg):
         try:
@@ -188,13 +189,13 @@ class ObstacleAvoid(object):
                 #     self.cmd_vel.linear.x = 0
                 #     self.cmd_vel.angular.z = 0 
 
-            if min(inrangelft)<0.5 and self.flag != 1:
+            if min(inrangelft)<0.7 and self.flag != 1:
                 print("Obstacle Avoidance")
                 self.cmd_vel.linear.x = 0
                 self.cmd_vel.angular.z = 0.2 
                 self.updateTarget(inrangectr)
 
-            elif min(inrangert)<0.5 and self.flag != 1:
+            elif min(inrangert)<0.7 and self.flag != 1:
                 print("Obstacle Avoidance")
                 self.cmd_vel.linear.x = 0
                 self.cmd_vel.angular.z = -0.2 
@@ -209,12 +210,12 @@ class ObstacleAvoid(object):
                 self.cmd_vel.linear.x = 0.05
                 self.cmd_vel.angular.z = 0.2
 
-            elif(abs(self.posex-self.goal.point.x)>0.1 or abs(self.posey-self.goal.point.y)>0.1):
+            elif(abs(self.posex-self.goal.point.x)>0.2 or abs(self.posey-self.goal.point.y)>0.2):
                 # time.sleep(3)
                 # self.cmd_vel.linear.x = 0.09
                 # self.cmd_vel.angular.z = 0.03
                 self.cmd_vel.linear.x = 0.2
-                self.cmd_vel.angular.z = 0.02                   
+                self.cmd_vel.angular.z = 0.05                   
             else:
                 if(self.flag==1):
                     print("Stop flag activated")
