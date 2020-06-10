@@ -97,7 +97,8 @@ private:
 
 public:
     TurtleEkf() :
-    INF(std::numeric_limits<float>::max()),
+    // INF(std::numeric_limits<float>::max()), // Using such a large number can make the inversion in the update step very sensitive to numerical errors
+    INF(100),
     numModelStates(3),
     numLandmarks(5),
     numTotStates(numModelStates + 2*numLandmarks),

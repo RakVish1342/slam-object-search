@@ -72,6 +72,7 @@ add_executable(ekf_TestMoving src/ekfTestMoving.cpp)
 add_executable(ekf_TestMovingAruco src/ekfTestMovingAruco.cpp)
 add_executable(ekf src/ekf.cpp)
 add_executable(control_loop src/control.cpp)
+add_executable(ekf_sensorMle src/ekfSensorMle.cpp)
 
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
@@ -84,6 +85,7 @@ target_link_libraries(ekf_TestMoving ${catkin_LIBRARIES})
 target_link_libraries(ekf_TestMovingAruco ${catkin_LIBRARIES})
 target_link_libraries(ekf ${catkin_LIBRARIES})
 target_link_libraries(control_loop ${catkin_LIBRARIES})
+target_link_libraries(ekf_sensorMle ${catkin_LIBRARIES})
 
 ################################################################################
 # Install

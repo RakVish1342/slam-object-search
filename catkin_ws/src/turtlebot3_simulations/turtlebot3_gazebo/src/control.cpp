@@ -81,7 +81,7 @@ public:
         // }
 
         // else if( (globalTStop > timeWaitGazebo + timeThresh + transitionTime) && globalTStop < (timeWaitGazebo + timeThresh + 2*timeThresh + 1 ) )
-        else if( (globalTStop >= 16) && globalTStop < 29 )
+        else if( (globalTStop >= 16) && globalTStop < 29)
         {
             std::cout << ">>> MOVING2..." << globalTStop << std::endl;
             msg.linear.x = speed;
@@ -90,16 +90,17 @@ public:
         }
 
         // else if( globalTStop > (timeWaitGazebo + timeThresh + 2*timeThresh + 1) && globalTStop < (timeWaitGazebo + timeThresh + 3*timeThresh + 1  ) )
-        else if( globalTStop > (29) && globalTStop < (32) )
-        {
-            std::cout << ">>> MOVING3..." << globalTStop << std::endl;
-            msg.linear.x = speed/2;
-            msg.angular.z = 0;
+        // else if( globalTStop > (29) && globalTStop < (32) )
+        // {
+        //     std::cout << ">>> MOVING3..." << globalTStop << std::endl;
+        //     msg.linear.x = speed/2;
+        //     msg.angular.z = 0;
 
-        }
+        // }
 
         // else if(globalTStop >= (timeWaitGazebo + 3*timeThresh + 1))
-        else if(globalTStop >= (32))
+        // else if(globalTStop >= (32))
+        else if(globalTStop >= (29))
         {
             std::cout << ">>> STOPPED..." << globalTStop << std::endl;
             msg.linear.x = 0.0;
