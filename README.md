@@ -35,7 +35,7 @@ roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 <img src="./images/ekf1.png" height="300" width="600" />
 
 2. Correction Step:
-<img src="./images/ekf2.png" height="300" width="600" />
+<img src="./images/ekf2.png" height="600" width="600" />
 
 #### Demo Videos:
 
@@ -45,7 +45,7 @@ roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 
 ##### Demo 1: Fixed Trajectory (provided by control.cpp):
 
-<img src="./gifs/slamFixedPath.gif" height="300" width="600" />
+<img src="./gifs/slamFixedPath.gif" height="350" width="600" />
 
 ##### Demo 2: Manual Control (using teleop node: ```rosrun turtlebot3_teleop turtlebot3_teleop_key```):
 
