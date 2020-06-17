@@ -32,10 +32,10 @@ roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 #### Equations implemented in C++ (Eigen used matrix representations):
 
 1. Prediction Step:
-<img src="./images/overview_gazebo.png" height="300" width="600" />
+<img src="./images/ekf1.png" height="300" width="600" />
 
 2. Correction Step:
-<img src="./images/overview_gazebo.png" height="300" width="600" />
+<img src="./images/ekf2.png" height="300" width="600" />
 
 #### Demo Videos:
 
@@ -66,9 +66,9 @@ roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 
 #### Future Work for Performance Improvement:
 
-1. **Process/Measurement noise matrices: ** The matrices R and Q which represent the covariance in the prediciton and correction step were set by trial and error. They should be set properly according to the wheel encoder and aruco marker detection specifications.
+1. Process/Measurement noise matrices: The matrices R and Q which represent the covariance in the prediciton and correction step were set by trial and error. They should be set properly according to the wheel encoder and aruco marker detection specifications.
 
-2. **More Landmarks: ** States diverged primarily in places where there was no landmark to view and localize with. Including more landmarks so that the robot has at least a couple landmarks in sight at all times would help avoid this issue.
+2. More Landmarks: States diverged primarily in places where there was no landmark to view and localize with. Including more landmarks so that the robot has at least a couple landmarks in sight at all times would help avoid this issue.
 
-3. **Other Filters/Smoothers: ** Test the same environment with other algorithms like Particle Filters or Smoothing and Mapping. This may resolve some of the issues faced in this paradigm.
+3. Other Filters/Smoothers: Test the same environment with other algorithms like Particle Filters or Smoothing and Mapping. This may resolve some of the issues faced in this paradigm.
 
