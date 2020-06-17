@@ -1,64 +1,74 @@
-SLAM Object Search
----
+### SLAM Object Search
 
-Common commands:
 
-1. To try motion model (some commands or code for motionModel.cpp may be deprecated and incorrect now.):
+#### Description:
 
-* Launch in turtlebot3\_world:
+* This project aims to apply the Extended Kalman Filter for the Velocity Motion Model of a mobile robot to perform SLAM. 
+* The reason the EKF was selected as the estimation algorithm was to understand some of the intricacies when in use, and to get a feel for some of its drawbacks.
 
-```
-roslaunch  turtlebot3_gazebo turtlebot3_world_test.launch
-```
+#### Environment:
 
-Call sequence: turtlebot3\_world\_test.launch >> turtlebot3\_world.world, turtlebot, motionModel.cpp OR
+A Gazebo and ROS setup was used. The following environment with the Turtlebot3 and sparse Aruco landmarks was used:
 
-Call sequence: turtlebot3\_empty\_world\_test.launch >> empty.world, turtlebot, motionModel.cpp
+<img src="./images/overview_gazebo.png" height="300" width="600" />
 
-Location of motionModel.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src```
+#### Usage:
 
-* Launch in an empty world:
+Run the following commands:
 
 ```
-roslaunch  turtlebot3_gazebo turtlebot3_world.launch
-```
-Similar call sequence but world file comments out "turtelbot3_world" so that empty world opens up.
-
-
-2. To test april tags:
-```
-roslaunch  turtlebot3_gazebo turtlebot3_empty_world.launch
+cd catkin_ws
+catkin_make
+source devel/setup.bash
 ```
 
-Call sequence: turtlebot3_empty_world.launch >> empty.world >> models/box_color/model.sdf >> apriltag.dae >> marker.png
-
-3. To try Lidar only in EKF code (default is without motion):
+Then run one of the two commands below:
 
 ```
-roslaunch turtlebot3_gazebo turtlebot3_empty_world_lidarTest.launch
-```
-Call sequence: turtlebot3_empty_world_lidarTest.launch >> empty\_lidarTest.world, turtlebot, ekfLidarTest.cpp
-
-Location of ekfLidarTest.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src```
-
-
-4. To try Full EKF code with single obstacle:
-
-```
-roslaunch turtlebot3_gazebo turtlebot3_empty_world_ekf.launch
-```
-Call sequence: turtlebot3_empty_world_lidarTest.launch >> empty\_lidarTest.world, turtlebot, ekfTest.cpp
-
-Location of ekfTest.cpp is: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src```
-
-5. Aruco Markers
-
-```
-roslaunch turtlebot3_gazebo turtlebot3_empty_world_arucoTest.launch
-roslaunch aruco_ros marker_publisher.launch ref_frame:=base_footprint
-rostopic echo /aruco_marker_publisher/markers
+roslaunch turtlebot3_gazebo ekf.launch
+roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 ```
 
-Location of model and SDF files for markers: ```catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/aruco_visual_marker_X/``` --- include these as a URI in the world files
+#### Equations implemented in C++ (Eigen used matrix representations):
 
-Location of aruco source repo/project: ```catkin_ws/src/aruco_ros/aruco_ros```
+1. Prediction Step:
+<img src="./images/overview_gazebo.png" height="300" width="600" />
+
+2. Correction Step:
+<img src="./images/overview_gazebo.png" height="300" width="600" />
+
+#### Demo Videos:
+
+* Red boundary = lidar scan taken from the actual turtlebot pose in gazebo world. Used as a reference to guage performance of EKF algorithm.
+* Moving Axes = Actual and Estimated pose of turtlebot.
+* Stationary Axes = Detected Aruco landmark markers.
+
+##### Demo 1: Fixed Trajectory (provided by control.cpp):
+
+<img src="./gifs/slamFixedPath.gif" height="300" width="600" />
+
+##### Demo 2: Manual Control (using teleop node: ```rosrun turtlebot3_teleop turtlebot3_teleop_key```):
+
+<img src="./gifs/slamManualCtrl.gif" height="300" width="600" />
+
+
+#### Results and Points to Note:
+
+1. Both trials estimated the position of the robot and the landmarks with a +/-0.3m error margin.
+
+2. States diverged primarily in places where there was no landmark to view and localize with.
+
+3. Maximum Likelihood Estimate was used with a sample length of 30 sample before initializing the prior for each landmark. This helped reduce issues that occured by wrongly idenifying the landmark location in the first reading.  
+
+4. To reduce numerical instability during matrix inversion (especially in the first few update steps), the covariance values of landmarks was changed from ```std::numeric_limits<double>::max()``` to ```1000```.
+
+5. Use of velocity motion model requires robot to always move in arcs. Moving in a straight line for prolonged periods can lead to errors in robot heading. The heading of the robot will never be updated for linear motion and a small offset can accumulate over time. Thus motion is always in arcs (ie. angular_velocity is non zero always)
+
+#### Future Work for Performance Improvement:
+
+1. **Process/Measurement noise matrices: ** The matrices R and Q which represent the covariance in the prediciton and correction step were set by trial and error. They should be set properly according to the wheel encoder and aruco marker detection specifications.
+
+2. **More Landmarks: ** States diverged primarily in places where there was no landmark to view and localize with. Including more landmarks so that the robot has at least a couple landmarks in sight at all times would help avoid this issue.
+
+3. **Other Filters/Smoothers: ** Test the same environment with other algorithms like Particle Filters or Smoothing and Mapping. This may resolve some of the issues faced in this paradigm.
+
