@@ -367,6 +367,12 @@ public:
             int stateIdx = numModelStates + 2*landmarkId;
             std::cout << "Arucomarker idx, State idx" << std::endl;
             std::cout << landmarkId << ", " << stateIdx << std::endl;
+            
+            if(landmarkId > 10) // Sometimes landmarkId 1023 detected. Condition to ignore such a detection.
+            {
+                std::cout << "Detected bad aruco marker: " << landmarkId<< std::endl;
+                continue;
+            }
 
             if(bAllDebugPrint)
             {
