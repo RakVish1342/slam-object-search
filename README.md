@@ -72,3 +72,5 @@ roslaunch turtlebot3_gazebo ekf_sensorMle.launch
 
 3. Other Filters/Smoothers: Test the same environment with other algorithms like Particle Filters or Smoothing and Mapping. This may resolve some of the issues faced in this paradigm.
 
+#### Selected Build Instructions
+* GTSAM has been included in the project's CMakeLists.txt. This uses dynamic linking so ensure $LD_LIBRARY_PATH is set properly (On my system: ```/opt/ros/melodic/lib:/usr/local/lib```)
